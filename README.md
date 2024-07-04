@@ -19,7 +19,7 @@ Estamos atualmente na fase de prototipagem utilizando o Figma. O link para o pro
 
 ## Links importantes
 
-![Protótipo no Figma](https://www.figma.com/design/efReRAJKbrNF5IXx0aE0K2/AUMA-SITE?node-id=0-1&t=Bm7eSybxa9UeJbZ5-0)
+[Protótipo no Figma](https://www.figma.com/design/efReRAJKbrNF5IXx0aE0K2/AUMA-SITE?node-id=0-1&t=Bm7eSybxa9UeJbZ5-0)
 
 ## Como Contribuir
 
