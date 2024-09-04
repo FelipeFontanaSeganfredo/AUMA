@@ -8,8 +8,7 @@ O presente projeto faz parte da matéria de Práticas Curriculares em Sociedade 
 
 ## Status do Projeto
 
-Estamos atualmente na fase de prototipagem utilizando o Figma, bem como a apresentação do que foi feito até o momento para a turma. O link para o protótipo e a apresentação serão compartilhado abaixo.
-
+Estamos atualmente na fase inicial de desenvolvimento do projeto. Adicione suas páginas (HTML, CSS E JS) dentro da página desenvolvimento.
 ## Etapas do Projeto
 
 | Etapa    | Descrição                   | Status  |	   
