@@ -15,8 +15,9 @@ Estamos atualmente na fase de prototipagem utilizando o Figma, bem como a aprese
 | Etapa    | Descrição                   | Status  |	   
 |----------|-----------------------------|---------|
 | Etapa 1  | Reunião e Discussão         |    ✔️    |
-| Etapa 2  | Prototipação                |    𓈓    |
-| Etapa 3  | Apresentação                |    𓈓    |
+| Etapa 2  | Prototipação                |    ✔️    |
+| Etapa 3  | Apresentação                |    ✔️   |
+| Etapa 4  | Desenvolvimento             |    𓈓    |
 
 ## Links importantes
 
