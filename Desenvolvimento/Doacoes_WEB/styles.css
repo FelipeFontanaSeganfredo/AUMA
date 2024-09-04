@@ -1,0 +1,118 @@
+/* General styles */
+
+/* Novo estilo para o retângulo cinza na parte inferior */
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%; /* Adjust this value as needed */
+    border-radius: 20px; /* Bordas arredondadas */
+    background-color: lightgrey; /* Just for visual reference */
+}
+
+/* Ajuste para posicionamento e margem */
+main {
+    padding-bottom: 60px; /* Espaçamento inferior */
+    background-color: #F5F5F5;
+}
+
+.content {
+    padding-bottom: 40px; /* Espaçamento inferior */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #E0E0E0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: #000066; /* Replace with actual logo image */
+    border-radius: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.doar-button {
+    background-color: #6666FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+main .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.right {
+    flex: 2;
+    text-align: justify;
+}
+
+.right p {
+    line-height: 1.6;
+}
+
+.doe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #3366FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.doe-button:hover {
+    background-color: #254EDD;
+}
+
+.text {
+    font-family: Nova Square;
+    
+}
