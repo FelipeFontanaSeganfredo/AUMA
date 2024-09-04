@@ -28,7 +28,7 @@ Estamos atualmente na fase inicial de desenvolvimento do projeto. Adicione suas 
 
 Para contribuir com este projeto, siga as etapas abaixo:
 
-1. Clone esse repositório
+1. Clone esse repositório `git clone https://github.com/FelipeFontanaSeganfredo/AUMA.git`
 2. Crie uma nova branch: `git checkout -b minha-nova-funcionalidade`.
 3. Faça suas alterações e comite: `git commit -m 'Adiciona nova funcionalidade'`.
 4. Envie para o repositório remoto: `git push origin minha-nova-funcionalidade`.
