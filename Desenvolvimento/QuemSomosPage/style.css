@@ -1,0 +1,346 @@
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: #000066;
+    /* Replace with actual logo image */
+    border-radius: 4px;
+}
+
+body {
+    font-family: "Nova Square";
+    background-color: #F0F0F0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.doar-button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 5px 15px;
+}
+
+.doar-button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General styles */
+
+/* Novo estilo para o retângulo cinza na parte inferior */
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    /* Adjust this value as needed */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    background-color: lightgrey;
+    /* Just for visual reference */
+}
+
+/* Ajuste para posicionamento e margem */
+main {
+    padding-bottom: 60px;
+    /* Espaçamento inferior */
+    background-color: #F5F5F5;
+}
+
+.content {
+    padding-bottom: 40px;
+    /* Espaçamento inferior */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.right {
+    flex: 2;
+    text-align: justify;
+}
+
+.right p {
+    line-height: 1.6;
+}
+
+.doe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #3366FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.doe-button:hover {
+    background-color: #254EDD;
+}
+
+.text {
+    font-family: "Nova Square";
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.illustration {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.illustration img {
+    margin-top: 50px;
+    width: auto;
+    height: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-height: 15vh;
+}
+
+.mission {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mission h1,
+.values h1 {
+    font-family: "Nova Square";
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.mission p {
+    font-family: "Nova Square";
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: justify;
+}
+
+.values {
+    text-align: center;
+    font-family: "Nova Square";
+}
+
+.values h1 {
+    margin-top: 50px;
+    font-family: "Nova Square";
+}
+
+.values .value-item {
+    display: inline-block;
+    width: 23%;
+    margin: 20px 1%;
+    vertical-align: top;
+}
+
+.values .value-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.values .value-item p {
+    font-family: "Nova Square";
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* General styles */
+
+/* Novo estilo para o retângulo cinza na parte inferior */
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    /* Adjust this value as needed */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    background-color: lightgrey;
+    /* Just for visual reference */
+}
+
+/* Ajuste para posicionamento e margem */
+main {
+    padding-bottom: 60px;
+    /* Espaçamento inferior */
+    background-color: #F5F5F5;
+}
+
+.content {
+    padding-bottom: 40px;
+    /* Espaçamento inferior */
+}
+
+body {
+    font-family: "Nova Square";
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 2px solid #E0E0E0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background-color: #000066;
+    /* Replace with actual logo image */
+    border-radius: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.doar-button {
+    background-color: #6666FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+main .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.right {
+    flex: 2;
+    text-align: justify;
+}
+
+.right p {
+    line-height: 1.6;
+}
+
+.doe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #3366FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.doe-button:hover {
+    background-color: #254EDD;
+}
+
+.text {
+    font-family: "Nova Square";
+
+}
