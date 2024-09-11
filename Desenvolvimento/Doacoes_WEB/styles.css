@@ -1,28 +1,24 @@
-/* General styles */
-
-/* Novo estilo para o retângulo cinza na parte inferior */
 .bottom-box {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 40%; /* Adjust this value as needed */
-    border-radius: 20px; /* Bordas arredondadas */
-    background-color: lightgrey; /* Just for visual reference */
+    height: 40%; 
+    border-radius: 20px;
+    background-color: lightgrey;
 }
 
-/* Ajuste para posicionamento e margem */
 main {
-    padding-bottom: 60px; /* Espaçamento inferior */
+    padding-bottom: 60px;
     background-color: #F5F5F5;
 }
 
 .content {
-    padding-bottom: 40px; /* Espaçamento inferior */
+    padding-bottom: 40px;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Nova Square";
     margin: 0;
     padding: 0;
     background-color: #F5F5F5;
@@ -39,9 +35,8 @@ header {
 }
 
 .logo {
-    width: 40px;
+    width: 30px;
     height: 40px;
-    background-color: #000066; /* Replace with actual logo image */
     border-radius: 4px;
 }
 
@@ -82,7 +77,7 @@ main .content {
 }
 
 .left img {
-    width: 150px;
+    width: 50%;
     height: auto;
     margin-top: 20px;
 }
@@ -110,9 +105,4 @@ main .content {
 
 .doe-button:hover {
     background-color: #254EDD;
-}
-
-.text {
-    font-family: Nova Square;
-    
 }

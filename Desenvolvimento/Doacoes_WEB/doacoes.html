@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação AUMA</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
 </head>
 <body>
     <header>
-        <div class="logo"></div>
+        <div class="logo"><img src="logo.png" alt="logo-img" width="180%" height="115%"></div>
         <nav>
             <ul>
                 <li><a href="#">home</a></li>
                 <li><a href="#">contato</a></li>
                 <li><a href="#">quem somos</a></li>
                 <li><a href="#">notícias</a></li>
-                <li><a href="#" class="doar-button">DOAR</a></li>
+                <li><a href="#" class="doar-button" id="doarBtn">DOAR</a></li>
             </ul>
         </nav>
     </header>
@@ -24,17 +27,71 @@
         <div class="content">
             <div class="left">
                 <h1>Sua doação muda o jogo</h1>
-                <img src="person.png" alt="Desenho de uma criança">
+                <img src="person.png" alt="Desenho de uma criança" >
             </div>
             <div class="right">
-                <p class="">
+                <p>
                     Doações são essenciais para a AUMA, permitindo financiar terapias, apoio educacional e atividades sociais que beneficiam diretamente pessoas com Transtorno do Espectro Autista (TEA) e suas famílias. Cada contribuição ajuda a ampliar o alcance e o impacto positivo da AUMA na vida de seus beneficiários, promovendo uma sociedade mais inclusiva e solidária.
                 </p>
-                <a href="#" class="doe-button">DOE AQUI</a>
+                <a href="#" class="doe-button" id="doeAquiBtn">DOE AQUI</a>
             </div>
         </div>
-        <div class="bottom-box"></div> <!-- Novo retângulo cinza -->
+        <div class="bottom-box"></div>
     </main>
+
+    <script>
+        document.getElementById('doarBtn').addEventListener('click', function () {
+        // Criação do QR code
+        const qrDiv = document.createElement('div');
+        qrDiv.id = 'qrcode';
+
+        // Geração do QR code usando qrcode.js
+        new QRCode(qrDiv, {
+            text: "https://br.lipsum.com/",
+            width: 128,
+            height: 128
+        });
+
+        // Dados bancários
+        const bankDetails = `
+            <div style="margin-top: 20px;">
+                <h4>Depósito Bancário:</h4>
+                <p><strong>Banco:</strong> Banco do Brasil</p>
+                <p><strong>Agência:</strong> 0001</p>
+                <p><strong>Conta Corrente:</strong> 12345-6</p>
+                <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+            </div>
+        `;
+
+        // Exibindo SweetAlert com o QR code e os detalhes bancários
+        Swal.fire({
+            title: 'Doe via QR Code ou Depósito Bancário',
+            html: `
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div>${qrDiv.outerHTML}</div> <!-- Posiciona o QR code mais para cima -->
+                    <br><br><br><br>
+                    <div style="text-align: left;">${bankDetails}</div> <!-- Detalhes do depósito -->
+                </div>
+            `,
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText: 'Fechar'
+        });
+    
+        // Garante a renderização do QR code no modal
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://br.lipsum.com/",
+            width: 170,
+            height: 170
+        });
+    });
+
+    // Funcionalidade ao botão "DOE AQUI"
+    document.getElementById('doeAquiBtn').addEventListener('click', function () {
+        document.getElementById('doarBtn').click();
+    });
+
+    </script>
 
 </body>
 </html>
