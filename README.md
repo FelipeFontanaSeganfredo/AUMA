@@ -23,7 +23,7 @@ Estamos atualmente na fase inicial de desenvolvimento do projeto. Adicione suas 
 - [Protótipo no Figma](https://www.figma.com/design/efReRAJKbrNF5IXx0aE0K2/AUMA-SITE?node-id=0-1&t=Bm7eSybxa9UeJbZ5-0)
 - [Link dos slides da apresentação](https://docs.google.com/presentation/d/1o1_iY2cpOWW2KEBOZ3aDRi7cSNvo-k46nrdCA5IFOFg/edit?usp=sharing)
 - [Atividade de sabado letivo](https://docs.google.com/document/d/1-dgkWvzSf15XW1WXjZajoselfaAeGXrv-uxoyKMbfis/edit#heading=h.7h6jgbw77me8)
-
+- [Gerenciamento do projeto no Trello](https://trello.com/b/Q78HiRi0/auma)
 ## Como Contribuir
 
 Para contribuir com este projeto, siga as etapas abaixo:
