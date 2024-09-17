@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUMA</title>
+    <title>AUMA - HomePage</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
 </head>
 <body>
     <header>
@@ -19,41 +22,27 @@
             </ul>
         </nav>
     </header>
-
-    <main>
-
-        <div class="content">
-
-            <div class="left">
-                <h1>Mudando o futuro de <br> autistas e suas <br> famílias</h1>
-                <a href="#" class="doar-agora">DOAR AGORA</a>
-                <br>
-                <img src="./kids.png" alt="Crianças alegres" class="kidsImage">
-            </div>
-
+    <div class="container">
+        <div class="section section1">
+            <div class="sub-div" id="homeTitleDiv"><h1 id="homeTitle">Mudando o futuro de autistas e suas famílias</h1></div>
+            <div class="sub-div" id="buttonDiv"><button id="donateButton">Doar agora</button></div>
+            <div class="sub-div"><img src="../Assets/linhas.png" alt="" id="linesImage"></div>
         </div>
-        <!--
-        <div class="content">
-            <div class="left">
-                <h1>Mudando o futuro de autistas e suas famílias</h1>
-                <img src="astronaut.png" alt="Desenho de uma criança">
-            </div>
-            <div class="right">
-                <p class="">
-                    O autista vê o mundo de um ângulo
-                    diferente. A AUMA vê o mesmo
-                    ângulo.                </p>
-                <a href="#" class="doe-button">DOAR AGORA</a>
-            </div>
-            <div>
-                <p></p>
-                <a href="#" class="conferir-atuacao">CONFERIR ATUAÇÃO</a>
-            </div>
+        <div class="section section0">
+            <img src="../Assets/astronaut.png" alt="" id="astronautImage">
         </div>
-        <div class="bottom-box"></div>
-         -->
-    
-    </main>
+    </div>
 
+    <!-- Parte inferior -->
+    <div class="container" id="bottomSection">
+        <div class="left">
+            <img src="../Assets/kids.png" alt="" id="kidsImage">
+        </div>
+        <div class="right">
+            <img src="../Assets/autism.png" alt="" id="autismImage">
+            <p id="AUMAtext">O autista vê o mundo de um ângulo <br> diferente. A AUMA vê o mesmo <br> ângulo.</p>
+            <button id="donateButtonBottom">Conferir atuação</button>
+        </div>
+    </div>
 </body>
 </html>
