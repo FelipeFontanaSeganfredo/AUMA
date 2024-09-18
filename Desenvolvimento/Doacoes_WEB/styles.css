@@ -21,7 +21,7 @@ body {
     font-family: "Nova Square";
     margin: 0;
     padding: 0;
-    background-color: #F5F5F5;
+    background-color: #ffffff;
     color: #333;
 }
 
@@ -77,14 +77,19 @@ main .content {
 }
 
 .left img {
-    width: 50%;
+    width: 185%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 10%;
+    margin-left: 100%;
 }
 
 .right {
     flex: 2;
     text-align: justify;
+    font-size: xx-large;
+    margin-right: 15%;
+    margin-left: 30%;
+    margin-top: -10%;
 }
 
 .right p {
@@ -92,16 +97,21 @@ main .content {
 }
 
 .doe-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #3366FF;
+    display: block; /* Altera para block para centralizar mais facilmente */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 5% 10%; /* Usa porcentagens para o padding */
+    background-color: #6666FF;
     color: white;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 50px; /* Bordas arredondadas */
+    font-size: 2vw; /* Usa viewport width para o tamanho da fonte */
+    max-width: 70%; /* Define uma largura máxima usando porcentagem */
+    min-width: 200px; /* Define uma largura mínima para manter um tamanho adequado */
 }
+
+
 
 .doe-button:hover {
     background-color: #254EDD;
