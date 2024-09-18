@@ -6,20 +6,13 @@
     border-radius: 4px;
 }
 
-body {
+.corpo {
     font-family: "Nova Square";
-    background-color: #F0F0F0;
+    background-color: #ffffff;
     margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #FFFFFF;
-    border-bottom: 2px solid #000000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 15px;
 }
 
 nav ul {
@@ -43,13 +36,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f0f0f0;
+    background-color: #fafafa;
 }
 
 .doar-button {
     background-color: #007BFF;
     color: #FFFFFF;
-    padding: 5px 15px;
+    padding: 5px;
 }
 
 .doar-button:hover {
@@ -77,7 +70,7 @@ nav ul li a:hover {
     /* Adjust this value as needed */
     border-radius: 20px;
     /* Bordas arredondadas */
-    background-color: lightgrey;
+    background-color: rgb(255, 255, 255);
     /* Just for visual reference */
 }
 
@@ -85,7 +78,7 @@ nav ul li a:hover {
 main {
     padding-bottom: 60px;
     /* Espaçamento inferior */
-    background-color: #F5F5F5;
+    background-color: #ffffff;
 }
 
 .content {
@@ -158,16 +151,17 @@ p {
 .illustration {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
 }
 
 .illustration img {
-    margin-top: 50px;
+    display: flex;
     width: auto;
     height: auto;
     padding-right: 15px;
     padding-left: 15px;
-    max-height: 15vh;
+    max-height: 25svh;
 }
 
 .mission {
@@ -232,7 +226,7 @@ p {
     /* Adjust this value as needed */
     border-radius: 20px;
     /* Bordas arredondadas */
-    background-color: lightgrey;
+    background-color: rgb(255, 255, 255);
     /* Just for visual reference */
 }
 
@@ -240,7 +234,7 @@ p {
 main {
     padding-bottom: 60px;
     /* Espaçamento inferior */
-    background-color: #F5F5F5;
+    background-color: #ffffff;
 }
 
 .content {
@@ -251,9 +245,8 @@ main {
 body {
     font-family: "Nova Square";
     margin: 0;
-    padding: 0;
-    background-color: #F5F5F5;
-    color: #333;
+    background-color: #ffffff;
+    color: #333333;
 }
 
 header {
