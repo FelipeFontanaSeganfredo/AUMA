@@ -1,50 +1,34 @@
-.bottom-box {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%; 
-    border-radius: 20px;
-    background-color: lightgrey;
-}
-
-main {
-    padding-bottom: 60px;
-    background-color: #F5F5F5;
-}
-
-.content {
-    padding-bottom: 40px;
-}
-
+/* Estilos gerais */
 body {
-    font-family: "Nova Square";
+    font-family: "Nova Square", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #F5F5F5;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    border-bottom: 2px solid #E0E0E0;
+    padding: 2% 3%;
+    border-bottom: 0.02% solid #E0E0E0;
 }
 
-.logo {
-    width: 30px;
-    height: 40px;
-    border-radius: 4px;
+.logo img {
+    width: 100%;
+    height: auto;
 }
 
+/* Menu normal (para desktop) */
 nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
+    justify-content: space-around;
 }
 
 nav ul li {
@@ -55,40 +39,48 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    font-size: 1vw;
 }
 
+/* Botão DOAR */
 .doar-button {
     background-color: #6666FF;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
+    font-size: 1.5vw;
+    display: inline-block;
 }
 
+/* Responsividade para conteúdo principal */
 main .content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 40px 20px;
 }
 
+/* Ajustes para o lado esquerdo (imagem) */
 .left {
     flex: 1;
-    text-align: center;
+    text-align: center; /* Centraliza a imagem no contêiner */
+    margin-top: 20px;
+    margin-left: auto;  /* Centraliza horizontalmente */
+    margin-right: auto;
 }
 
 .left img {
-    width: 185%;
+    width: 80%;
     height: auto;
-    margin-top: 10%;
-    margin-left: 100%;
 }
 
+/* Ajustes para o lado direito (texto e botão) */
 .right {
-    flex: 2;
-    text-align: justify;
-    font-size: xx-large;
-    margin-right: 15%;
-    margin-left: 30%;
+    flex: 1;
+    text-align: justify;  /* Justifica o texto */
+    font-size: 2.5vw;  /* Tamanho da fonte no desktop */
+    margin-left: -15%;
+    margin-right: 5%;
     margin-top: -10%;
 }
 
@@ -97,22 +89,190 @@ main .content {
 }
 
 .doe-button {
-    display: block; /* Altera para block para centralizar mais facilmente */
-    margin: 20px auto; /* Centraliza horizontalmente */
-    padding: 5% 10%; /* Usa porcentagens para o padding */
-    background-color: #6666FF;
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3366FF;
     color: white;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 50px; /* Bordas arredondadas */
-    font-size: 2vw; /* Usa viewport width para o tamanho da fonte */
-    max-width: 70%; /* Define uma largura máxima usando porcentagem */
-    min-width: 200px; /* Define uma largura mínima para manter um tamanho adequado */
+    border-radius: 50px;
+    font-size: 1.5vw;
+    max-width: 50%;
+    margin-left: auto;  /* Centraliza o botão horizontalmente */
+    margin-right: auto;
 }
 
+/* Menu colapsado (aparece em telas menores) */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;  /* Menu oculto fora da tela */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
 
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
 
-.doe-button:hover {
-    background-color: #254EDD;
+.nav-menu ul li {
+    margin: 20px 0;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.close-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Ícone de menu (hambúrguer) para dispositivos móveis */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    /* Esconde o menu normal e mostra o ícone de hambúrguer no mobile */
+    nav ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .doar-button-mobile {
+        display: inline-block;
+    }
+    
+    .left {
+        flex: 1;
+        text-align: center; /* Centraliza a imagem no contêiner */
+        margin-top: 20px;
+        margin-left: auto;  /* Centraliza horizontalmente */
+        margin-right: auto;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 5vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        flex-direction: column;
+        font-size: 4vw;
+    }
+
+    .left img {
+    width: 80%;  /* Ajuste a largura conforme necessário */
+    height: auto;
+}
+}
+
+@media (max-width: 480px) {
+    .right {
+        font-size: 5vw;
+    }
+
+    .doe-button {
+        font-size: 5vw;
+    }
+
+    nav ul li a {
+        font-size: 3vw;
+    }
+
+    .doar-button {
+        font-size: 3vw;
+    }
+
+    .left {
+        flex: 1;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 3vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        font-size: 4vw;
+        flex-direction: column;
+    }
+
+    .left img {
+        width: 100%;
+        height: auto;
+    }
 }
