@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUMA - HomePage</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
+
+<!-- Header com navbar -->
     <header>
-        <div class="logo"></div>
         <nav>
             <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">contato</a></li>
-                <li><a href="#">quem somos</a></li>
-                <li><a href="#">notícias</a></li>
-                <li><a href="#" class="doar-button">DOAR</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <div class="section section1">
-            <div class="sub-div" id="homeTitleDiv"><h1 id="homeTitle">Mudando o futuro de autistas e suas famílias</h1></div>
-            <div class="sub-div" id="buttonDiv"><button id="donateButton">Doar agora</button></div>
-            <div class="sub-div"><img src="../Assets/linhas.png" alt="" id="linesImage"></div>
-        </div>
-        <div class="section section0">
-            <img src="../Assets/astronaut.png" alt="" id="astronautImage">
-        </div>
-    </div>
 
-    <!-- Parte inferior -->
-    <div class="container" id="bottomSection">
-        <div class="left">
-            <img src="../Assets/kids.png" alt="" id="kidsImage">
+    <main>
+<!-- Seção de cima com botão, texto e imagem das linhas com astronauta -->
+        <div class="top-section">
+            <div class="top-image">
+                <img src="../Assets/linhasEastrounautas.png" alt="Imagem Principal" class="DesktopImage">
+                <img src="../Assets/linhas.png" alt="" class="MobileLines">
+                <img src="../Assets/astronaut.png" alt="" class="MobileAstronaut">
+            </div>
+            <div class="top-content">
+                <p>Mudando o futuro de autistas e suas famílias</p>
+                <button class="DonateButton">Doar Agora</button>
+            </div>
         </div>
-        <div class="right">
-            <img src="../Assets/autism.png" alt="" id="autismImage">
-            <p id="AUMAtext">O autista vê o mundo de um ângulo <br> diferente. A AUMA vê o mesmo <br> ângulo.</p>
-            <button id="donateButtonBottom">Conferir atuação</button>
+<!-- Seção inferior com botão, texto, imagem de crianças e título -->
+        <div class="bottom-section">
+            <div class="bottom-right">
+                <img src="../Assets/kids.png" alt="Imagem à Esquerda">
+            </div>
+            <div class="bottom-left">
+                <img src="../Assets/autism.png" alt="Imagem à Direita">
+                <p>O autista vê o mundo de um ângulo
+                    diferente. A AUMA vê o mesmo
+                    ângulo.</p>
+                <button>Conferir atuação</button>
+            </div>
         </div>
-    </div>
+    </main>
+
+<!-- Footer -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+
 </body>
 </html>
