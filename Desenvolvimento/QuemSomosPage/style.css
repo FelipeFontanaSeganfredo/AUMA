@@ -7,12 +7,17 @@
 }
 
 .corpo {
+    display: block;
+    align-items: center;
     font-family: "Nova Square";
     background-color: #ffffff;
-    margin: 0;
-    padding-left: 10%;
-    padding-right: 10%;
     padding-top: 15px;
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center;    /* Centraliza horizontalmente */
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 nav ul {
@@ -82,8 +87,24 @@ main {
 }
 
 .content {
-    padding-bottom: 40px;
-    /* Espaçamento inferior */
+    display: block;
+    align-items: center;
+    font-family: "Nova Square";
+    background-color: #ffffff;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center;    /* Centraliza horizontalmente */
+    text-align: center;
+}
+
+.content p{
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 90vh;
 }
 
 
@@ -153,6 +174,7 @@ p {
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    max-width: 90vh;
 }
 
 .illustration img {
@@ -253,9 +275,17 @@ main {
     background-color: #ffffff;
 }
 
-.content {
-    padding-bottom: 40px;
-    /* Espaçamento inferior */
+.content p {
+    display: block;
+    align-items: center;
+    font-family: "Nova Square";
+    background-color: #ffffff;
+    padding-top: 15px;
+    display: flex;
+    max-width: 60%;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center;    /* Centraliza horizontalmente */
+    text-align: center;
 }
 
 body {
