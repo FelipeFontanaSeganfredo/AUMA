@@ -13,8 +13,10 @@
     background-color: #ffffff;
     padding-top: 15px;
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
-    align-items: center;    /* Centraliza horizontalmente */
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
@@ -93,12 +95,14 @@ main {
     background-color: #ffffff;
     padding-top: 15px;
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
-    align-items: center;    /* Centraliza horizontalmente */
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
     text-align: center;
 }
 
-.content p{
+.content p {
     text-align: justify;
     display: flex;
     justify-content: space-between;
@@ -235,8 +239,8 @@ p {
     margin: 20px 1%;
     vertical-align: top;
     flex: 1 1 200px;
-    flex-wrap: wrap;
-    
+    text-align: -webkit-center;
+    max-width: 40vh;
 }
 
 .values .value-item img {
@@ -246,10 +250,14 @@ p {
 
 .values .value-item p {
     display: flex;
+    align-self: center;
     font-family: "Nova Square";
     font-size: 16px;
     margin-top: 10px;
     line-height: 1.4;
+    min-width: 15px;
+    max-width: 80%;
+    text-align: justify;
 }
 
 /* General styles */
@@ -276,15 +284,18 @@ main {
 }
 
 .content p {
-    display: block;
+    display: flex;
     align-items: center;
     font-family: "Nova Square";
     background-color: #ffffff;
     padding-top: 15px;
-    display: flex;
-    max-width: 60%;
-    flex-direction: column; /* Alinha os itens verticalmente */
-    align-items: center;    /* Centraliza horizontalmente */
+    max-height: 25svh;
+    min-height: 25px;
+    min-width: 30%;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
     text-align: center;
 }
 
