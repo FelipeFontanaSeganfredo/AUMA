@@ -14,8 +14,8 @@
 
 <body>
     <header>
-        <div class="logo"></div>
-        <nav>
+        <div class="logo"><img src="../Assets/logo.png" alt="logo-img" width="180%" height="115%"></div>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#">home</a></li>
                 <li><a href="#">contato</a></li>
@@ -24,7 +24,41 @@
                 <li><a href="#" class="doar-button">DOAR</a></li>
             </ul>
         </nav>
+
+        <!-- Ícone de menu (hambúrguer) para dispositivos móveis -->
+        <div class="menu-toggle">☰</div>
+
+        <!-- Menu colapsado para mobile -->
+        <div class="nav-menu">
+            <div class="close-menu">&times;</div> <!-- Ícone para fechar o menu -->
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">contato</a></li>
+                <li><a href="#">quem somos</a></li>
+                <li><a href="#">notícias</a></li>
+                <li><a href="#" class="doar-button" id="doarBtnMobile">DOAR</a></li>
+            </ul>
+        </div>
     </header>
+
+    <script>
+        // Funcionalidade para o menu colapsado
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navMenu = document.querySelector('.nav-menu');
+            var closeMenu = document.querySelector('.close-menu');
+
+            // Abre o menu ao clicar no ícone de hambúrguer
+            menuToggle.addEventListener('click', function () {
+                navMenu.style.left = '0';  // Desliza o menu para dentro da tela
+            });
+
+            // Fecha o menu ao clicar no ícone de fechar (×)
+            closeMenu.addEventListener('click', function () {
+                navMenu.style.left = '-100%';  // Desliza o menu para fora da tela
+            });
+        });
+    </script>
     <div class="corpo">
 
         <h1>História</h1>
