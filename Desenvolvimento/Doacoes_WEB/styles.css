@@ -65,8 +65,8 @@ main .content {
     flex: 1;
     text-align: center; /* Centraliza a imagem no contêiner */
     margin-top: 20px;
-    margin-left: auto;  /* Centraliza horizontalmente */
-    margin-right: auto;
+    margin-left: auto + 5%;  /* Centraliza horizontalmente */
+    margin-right: auto + 5%;
 }
 
 .left img {
@@ -214,19 +214,19 @@ main .content {
 
 @media (max-width: 480px) {
     .right {
-        font-size: 5vw;
+        font-size: 10vw;
     }
 
     .doe-button {
-        font-size: 5vw;
+        font-size: 7vw;
     }
 
     nav ul li a {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .doar-button {
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .left {
@@ -237,7 +237,7 @@ main .content {
 
     .right {
         text-align: justify;
-        font-size: 3vw;
+        font-size: 4vw;
         margin-right: 0;
         margin-left: 0;
         margin-top: 0;
@@ -260,6 +260,7 @@ main .content {
 
     .right p {
         line-height: 1.6;
+        font-size: 4vw;
     }
 
     main .content {
