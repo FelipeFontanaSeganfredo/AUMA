@@ -55,7 +55,8 @@ nav ul li a {
 .nav-menu {
     position: fixed;
     top: 0;
-    left: -100%;  /* Menu oculto fora da tela */
+    left: -100%;
+    /* Menu oculto fora da tela */
     width: 250px;
     height: 100%;
     background-color: #333;
@@ -87,36 +88,36 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.content{
+.content {
     justify-content: center;
     flex-direction: column;
     padding-left: 25%;
     padding-right: 25%;
 }
 
-.share-content{
+.share-content {
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     align-items: center;
 }
 
-.main-title{
+.main-title {
     padding-top: 25px;
     display: flex;
     word-wrap: break-word;
 }
 
-.main-image img{
+.main-image img {
     padding-top: 15px;
     width: 100%;
 }
 
-.main-text{
+.main-text {
     padding-top: 20px;
     font-size: 16px;
 }
 
-.icon-button{
+.icon-button {
     display: flex;
     padding: 5px;
     border-radius: 14px;
@@ -124,20 +125,42 @@ nav ul li a {
     margin: 5px;
 }
 
-.read-also-title{
+.read-also-title {
     display: flex;
     justify-content: center;
     padding-top: 35px;
 }
 
-.divider{
+.read-also-content {
+    display: flex;
+    gap: 20px;
+}
+
+.read-also-content img {
+    gap: 10px;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.related-news {
+    border: 0px;
+    padding: 10px;
+    background-color: #D9D9D9;
+    border-radius: 40px;
+    width: 50%;
+}
+
+.divider {
     max-width: 100%;
 }
 
 .divider>img {
-    width: 100%;          /* Ajusta a largura da imagem ao tamanho da div pai */
-    height: 7px;         /* Ajusta a altura da imagem ao tamanho da div pai */
-    object-fit: contain; /* Garante que a imagem se ajuste sem cortar ou distorcer */
+    width: 100%;
+    /* Ajusta a largura da imagem ao tamanho da div pai */
+    height: 7px;
+    /* Ajusta a altura da imagem ao tamanho da div pai */
+    object-fit: contain;
+    /* Garante que a imagem se ajuste sem cortar ou distorcer */
 }
 
 
@@ -150,9 +173,10 @@ nav ul li a {
 
 @media (max-width: 768px) {
     button {
-        padding: 10px 15px; 
-        font-size: 0.8em; 
-      }
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+
     /*Esconde o menu normal e mostra o ícone no mobile*/
     nav ul {
         display: none;
@@ -165,12 +189,14 @@ nav ul li a {
     .doar-button-mobile {
         display: inline-block;
     }
-    
+
     .left {
         flex: 1;
-        text-align: center; /*Centraliza a imagem no contêiner*/
+        text-align: center;
+        /*Centraliza a imagem no contêiner*/
         margin-top: 20px;
-        margin-left: auto;  /*Centraliza horizontalmente*/
+        margin-left: auto;
+        /*Centraliza horizontalmente*/
         margin-right: auto;
     }
 
@@ -196,7 +222,7 @@ nav ul li a {
         margin-left: 0;
         margin-top: 0;
     }
-    
+
     .right p {
         line-height: 1.6;
     }
@@ -211,9 +237,9 @@ nav ul li a {
     }
 
     .left img {
-    width: 80%; 
-    height: auto;
-}
+        width: 80%;
+        height: auto;
+    }
 }
 
 @media (max-width: 480px) {
