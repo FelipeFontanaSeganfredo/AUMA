@@ -1,74 +1,105 @@
-.site-footer {
-    background-color: #2d2d2d;
-    color: #ffffff;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
+/* Adicionando a fonte global ao body */
+body {
+    font-family: "Nova Square", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o footer vai para o fundo mesmo com pouco conteúdo */
 }
 
+/* Estilo do footer */
+.site-footer {
+    background-color: #ECECEC;
+    color: #333;
+    padding: 2em 4%; /* Aumentando o padding */
+    font-family: "Nova Square", sans-serif;
+    margin-top: auto; /* Faz o footer ficar no final da página */
+    display: flex; /* Flexbox para organizar o footer */
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Aumentando o espaçamento entre os itens */
+    align-items: flex-start; /* Aumentando o espaçamento vertical */
+}
+
+/* Área com o conteúdo do footer */
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%!important; /* A largura do conteúdo agora é uma porcentagem maior */
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
-    padding-bottom: 30px;
+    gap: 5%!important; /* Aumentando o espaçamento entre as colunas */
+    padding-bottom: 2em; /* Aumentando o padding */
     border-bottom: 1px solid #444;
 }
 
 .footer-col {
     flex: 1;
-    min-width: 250px;
+    min-width: 20%; /* A largura mínima da coluna é 20% do espaço disponível */
 }
 
 .footer-col h3 {
-    color: #fff;
-    font-size: 1.2em;
-    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2em; /* Usando em para tamanho de fonte relativo */
+    margin-bottom: 0.8em; /* Menos espaço abaixo do título */
     text-transform: uppercase;
 }
 
 .contact-list li,
 .footer-links li {
     list-style: none;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em; /* Espaçamento entre os itens */
 }
 
 .contact-list a,
 .footer-links a {
-    color: #cccccc;
+    color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-list a:hover,
 .footer-links a:hover {
-    color: #ffffff;
+    color: #333;
 }
 
 .social-divider {
     border: 0;
     border-top: 1px solid #666;
-    margin: 15px 0;
+    margin: 1em 0; /* Menor margem */
 }
 
+/* Estilo para a imagem da instituição */
 .institution-info {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #999;
+    display: flex;
+    justify-content: flex-start!important; /* Alinha a imagem à esquerda */
+    align-items: flex-start!important; /* Alinha a imagem ao topo, se necessário */
+    margin-top: 1.2em; /* Menos espaço acima */
+
 }
 
-.institution-info p {
-    margin: 5px 0;
+.imageIF {
+    max-width: 15vw; /* A largura da imagem será 15% da largura da viewport */
+    max-height: 10vh; /* A altura da imagem será 10% da altura da viewport */
+    margin-right: 2%; /* Espaço à direita da imagem */
 }
 
-/* Responsive Design */
+/* Responsividade */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
     }
     
     .footer-col {
-        margin-bottom: 25px;
+        margin-bottom: 1em; /* Menor espaço entre as colunas */
+    }
+
+    .institution-info {
+        text-align: center; /* Centraliza o conteúdo no mobile */
+        margin-top: 2em;
+    }
+
+    .imageIF {
+        max-width: 30vw; /* No mobile, a largura da imagem é 30% da largura da viewport */
+        max-height: 15vh; /* No mobile, a altura da imagem é 15% da altura da viewport */
     }
 }
