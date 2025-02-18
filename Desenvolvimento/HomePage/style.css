@@ -36,15 +36,6 @@ body {
     line-height: 1.6;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 nav ul {
     display: flex;
     justify-content: center;
@@ -246,7 +237,7 @@ footer p {
 
     nav ul li a {
         font-size: 1rem;
-        color: white; /* Garante que o texto do link fique visível */
+        color: rgb(255, 255, 255); /* Garante que o texto do link fique visível */
     }
 
     /* Top Section para mobile */
@@ -255,11 +246,15 @@ footer p {
         flex-direction: column;
         align-items: center;
         text-align: center; 
+        position: relative;
     }
 
     /* Ordem dos elementos */
     .top-content {
-        order: 1; /* Coloca o texto primeiro */
+        order: 1; 
+        position: absolute;
+        top: 5vw; /* Ajuste conforme necessário para posicionar verticalmente */
+        left: 0;
         width: 100%;
         padding: 0;
     }
@@ -284,19 +279,24 @@ footer p {
     }
 
     .MobileAstronaut {
-        margin-top: -20vw !important;
+        margin-top: -30vw !important;
     }
 
     .top-image {
         order: 2; /* Coloca a imagem das linhas logo após o texto */
         width: 100%;
-        padding: 7rem 0; /* Aumenta o padding para empurrar as linhas mais para baixo */
+        padding: 13rem 0;
     }
 
     .top-image img {
         width: 100vw;
         height: auto;
         margin-top: 0; /* Aumenta a margem superior para afastar mais as linhas do conteúdo acima */
+    }
+
+    .MobileLines{
+        width: 190% !important;
+        height: auto !important;
     }
 
     /* Astronauta (bottom section) */
