@@ -1,0 +1,74 @@
+.site-footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.contact-list li,
+.footer-links li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.contact-list a,
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover,
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.social-divider {
+    border: 0;
+    border-top: 1px solid #666;
+    margin: 15px 0;
+}
+
+.institution-info {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.institution-info p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-col {
+        margin-bottom: 25px;
+    }
+}
