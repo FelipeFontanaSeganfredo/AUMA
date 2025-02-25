@@ -1,53 +1,58 @@
-/* Adicionando a fonte global ao body */
 body {
     font-family: "Nova Square", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o footer vai para o fundo mesmo com pouco conteúdo */
+    min-height: 100vh;
 }
 
-/* Estilo do footer */
 .site-footer {
     background-color: #ECECEC;
     color: #333;
-    padding: 2em 4%; /* Aumentando o padding */
-    font-family: "Nova Square", sans-serif;
-    margin-top: auto; /* Faz o footer ficar no final da página */
-    display: flex; /* Flexbox para organizar o footer */
-    flex-wrap: wrap;
-    justify-content: space-evenly; /* Aumentando o espaçamento entre os itens */
-    align-items: flex-start; /* Aumentando o espaçamento vertical */
-}
-
-/* Área com o conteúdo do footer */
-.footer-content {
-    width: 100%!important; /* A largura do conteúdo agora é uma porcentagem maior */
-    margin: 0;
+    padding: 2em 4%;
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 5%!important; /* Aumentando o espaçamento entre as colunas */
-    padding-bottom: 2em; /* Aumentando o padding */
+}
+
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    max-width: 1200px;
+    padding: 2em 0;
     border-bottom: 1px solid #444;
 }
 
 .footer-col {
     flex: 1;
-    min-width: 20%; /* A largura mínima da coluna é 20% do espaço disponível */
+    min-width: 200px;
+    padding: 0 15px;
+    text-align: left; /* Alinhamento geral à esquerda */
 }
 
 .footer-col h3 {
     color: #333;
-    font-size: 1.2em; /* Usando em para tamanho de fonte relativo */
-    margin-bottom: 0.8em; /* Menos espaço abaixo do título */
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
     text-transform: uppercase;
+    text-align: left; /* Títulos alinhados à esquerda */
+}
+
+.contact-list,
+.footer-links {
+    max-width: 250px; /* Limita a largura máxima dos itens da lista */
+    margin: 0 auto; /* Centraliza o bloco de lista */
+    padding-left: 0; /* Remove o padding padrão da lista */
 }
 
 .contact-list li,
 .footer-links li {
     list-style: none;
-    margin-bottom: 0.5em; /* Espaçamento entre os itens */
+    margin-bottom: 0.5em;
 }
 
 .contact-list a,
@@ -55,51 +60,93 @@ body {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha ícones e textos à esquerda */
+    gap: 8px;
 }
 
 .contact-list a:hover,
 .footer-links a:hover {
-    color: #333;
+    color: #666;
 }
 
 .social-divider {
     border: 0;
     border-top: 1px solid #666;
-    margin: 1em 0; /* Menor margem */
+    margin: 1em 0;
 }
 
-/* Estilo para a imagem da instituição */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1em;
+    justify-content: center;
+}
+
+.social-icon,
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover,
+.contact-icon:hover {
+    fill: #666;
+}
+
 .institution-info {
     display: flex;
-    justify-content: flex-start!important; /* Alinha a imagem à esquerda */
-    align-items: flex-start!important; /* Alinha a imagem ao topo, se necessário */
-    margin-top: 1.2em; /* Menos espaço acima */
-
+    align-items: center;
+    justify-content: center;
 }
 
 .imageIF {
-    max-width: 15vw; /* A largura da imagem será 15% da largura da viewport */
-    max-height: 10vh; /* A altura da imagem será 10% da altura da viewport */
-    margin-right: 2%; /* Espaço à direita da imagem */
+    max-width: 150px;
+    height: auto;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-    
+
     .footer-col {
-        margin-bottom: 1em; /* Menor espaço entre as colunas */
+        margin-bottom: 2em;
+        width: 100%;
+        text-align: center; /* Centraliza tudo no mobile */
+    }
+
+    .footer-col h3 {
+        text-align: center; /* Centraliza títulos no mobile */
+    }
+
+    .contact-list,
+    .footer-links {
+        max-width: 100%; /* Remove a limitação de largura no mobile */
+        text-align: center; /* Centraliza textos no mobile */
+    }
+
+    .contact-list a,
+    .footer-links a {
+        justify-content: center; /* Centraliza ícones e textos no mobile */
+    }
+
+    .social-icons {
+        justify-content: center;
     }
 
     .institution-info {
-        text-align: center; /* Centraliza o conteúdo no mobile */
         margin-top: 2em;
     }
 
     .imageIF {
-        max-width: 30vw; /* No mobile, a largura da imagem é 30% da largura da viewport */
-        max-height: 15vh; /* No mobile, a altura da imagem é 15% da altura da viewport */
+        max-width: 30vw;
+        max-height: 15vh;
     }
 }
