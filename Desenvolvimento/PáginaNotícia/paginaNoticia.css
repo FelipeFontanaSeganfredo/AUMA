@@ -133,6 +133,7 @@ nav ul li a {
 
 .read-also-content {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -147,7 +148,21 @@ nav ul li a {
     padding: 10px;
     background-color: #D9D9D9;
     border-radius: 40px;
-    width: 50%;
+    width: 50%; /* Padrão: 50% da largura da tela */
+}
+
+/* Quando a tela for pequena, ocupa 100% da largura */
+@media (max-width < 768px) {
+    .related-news {
+        width: 100%;
+    }
+}
+
+/* Quando a tela for muito grande, ocupa 50% mas com no máximo 100vh */
+@media (min-width: 1024px) {
+    .related-news {
+        width: 50%;
+    }
 }
 
 .divider {
