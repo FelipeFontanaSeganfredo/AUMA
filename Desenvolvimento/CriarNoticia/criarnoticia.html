@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUMA</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Header/style.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
 </head>
 <body>
@@ -44,7 +45,7 @@
             <input type="tituloNoticia" id="tituloNoticia" placeholder="Digite o título da notícia" required>
 
             <label for="capa">Imagem de capa</label>
-            <input type="capa" id=" capa" placeholder="Anexar a sua imagem" required>
+            <input class="file-upload-button" type="file" id=" capa" accept="image/*" required>
 
             <label for="textoNoticia">Texto da notícia</label>
             <textarea id="textoNoticia" placeholder="Conteúdo da notícia" required></textarea>
