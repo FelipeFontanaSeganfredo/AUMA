@@ -9,33 +9,8 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
 </head>
 <body>
-    <header>
-        <div class="logo"><img src="../Assets/logo.png" alt="logo-img" width="180%" height="115%"></div>
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">contato</a></li>
-                <li><a href="#">quem somos</a></li>
-                <li><a href="#">notícias</a></li>
-                <li><a href="#" class="doar-button">DOAR</a></li>
-            </ul>
-        </nav>
-
-        <!-- Ícone de menu (hambúrguer) para dispositivos móveis -->
-        <div class="menu-toggle">☰</div>
-
-        <!-- Menu colapsado para mobile -->
-        <div class="nav-menu">
-            <div class="close-menu">&times;</div> <!-- Ícone para fechar o menu -->
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">contato</a></li>
-                <li><a href="#">quem somos</a></li>
-                <li><a href="#">notícias</a></li>
-                <li><a href="#" class="doar-button" id="doarBtnMobile">DOAR</a></li>
-            </ul>
-        </div>
-    </header>
+    
+    <div id="header-container"></div>
 
     <main>
         <!-- Área do Login -->
@@ -61,6 +36,7 @@
             <p class="create-account">Não tem uma conta? <a href="#">Criar conta</a></p>
         </div>
     </main>
+    <script src="../Header/header.js"></script>
     <script>
         // Funcionalidade para o menu colapsado
         document.addEventListener('DOMContentLoaded', function () {
