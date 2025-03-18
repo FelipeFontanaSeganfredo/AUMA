@@ -1,0 +1,104 @@
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo no topo em vez de no centro */
+    padding: 20px; /* Adiciona um pouco de espaçamento nas bordas */
+}
+
+.content {
+    width: 100%; /* Permite que o conteúdo ocupe a largura disponível */
+    max-width: 700px; /* Limita a largura máxima para 700px */
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar o conteúdo */
+}
+
+/* Layout principal - Container */
+.container {
+    display: flex;
+    justify-content: space-between; /* Alinha as notícias principais lado a lado */
+    gap: 30px; /* Espaço entre as duas principais */
+    margin-bottom: 30px; /* Espaço abaixo das notícias principais */
+}
+
+/* Estilo para as notícias principais */
+.headline {
+    display: flex;
+    justify-content: space-between; /* Coloca as notícias lado a lado */
+    gap: 30px;
+}
+
+.noticia.destaque {
+    text-align: center;
+    width: 50%; /* Define o tamanho das notícias principais */
+}
+
+.noticia.destaque img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a lista de notícias */
+.newslist {
+    display: block;
+}
+
+.newslist .noticia {
+    display: flex; /* Flexbox para exibir imagem e texto lado a lado */
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.newslist .noticia img {
+    width: 35%; /* Define a largura da imagem */
+    height: auto;
+}
+
+.newslist .noticia .texto {
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+    padding-left: 20px;
+}
+
+.newslist .noticia h1 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.newslist .noticia p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+button {
+    padding: 10px;
+    background-color: #6666FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 5% 0 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password, .create-account {
+    font-size: 0.9em;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.create-account a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
