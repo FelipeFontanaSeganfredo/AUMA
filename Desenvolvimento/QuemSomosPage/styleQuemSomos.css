@@ -299,47 +299,6 @@ body {
     color: #333333;
 }
 
-header {
-    background-color: #F5F5F5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 2px solid #E0E0E0;
-}
-
-.logo {
-    width: 40px;
-    height: 40px;
-    background-color: #000066;
-    /* Replace with actual logo image */
-    border-radius: 4px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.doar-button {
-    background-color: #6666FF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
 main .content {
     display: flex;
     justify-content: space-around;
