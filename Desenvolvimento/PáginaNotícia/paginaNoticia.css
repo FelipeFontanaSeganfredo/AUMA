@@ -136,6 +136,7 @@ nav ul li a {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .read-also-content img {
