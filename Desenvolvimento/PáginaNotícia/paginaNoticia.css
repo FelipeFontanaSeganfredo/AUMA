@@ -1,0 +1,330 @@
+body {
+    font-family: "Nova Square";
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E0E0E0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    margin: 20px 10px;
+    position: relative;
+}
+
+.logo img {
+    margin-left: 15%;
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.doar-button {
+    background-color: #6666FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Menu colapsado (aparece em telas menores) */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* Menu oculto fora da tela */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 20px 0;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.close-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.content {
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.share-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-title {
+    padding-top: 25px;
+    display: flex;
+    word-wrap: break-word;
+}
+
+.main-image img {
+    padding-top: 15px;
+    width: 100%;
+}
+
+.main-text {
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.icon-button {
+    display: flex;
+    padding: 5px;
+    border-radius: 14px;
+    background-color: #D9D9D9;
+    margin: 5px;
+}
+
+.read-also-title {
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+}
+
+.read-also-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.read-also-content img {
+    gap: 10px;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.related-news {
+    border: 0px;
+    padding: 10px;
+    background-color: #D9D9D9;
+    border-radius: 40px;
+    width: 100%; /* Padrão: 50% da largura da tela */
+    max-width: 100%;
+}
+
+/* Quando a tela for pequena, ocupa 100% da largura */
+@media (max-width > 768px) {
+    .related-news {
+        flex-wrap: wrap;
+        width: 100vh;
+    }
+}
+
+/* Quando a tela for muito grande, ocupa 50% mas com no máximo 100vh */
+@media (min-width: 1024px) {
+    .related-news {
+        width: 100%;
+    }
+
+    .read-also-content{
+        flex-wrap: nowrap;
+    }
+}
+
+.divider {
+    max-width: 100%;
+}
+
+.divider>img {
+    width: 100%;
+    /* Ajusta a largura da imagem ao tamanho da div pai */
+    height: 7px;
+    /* Ajusta a altura da imagem ao tamanho da div pai */
+    object-fit: contain;
+    /* Garante que a imagem se ajuste sem cortar ou distorcer */
+}
+
+
+/* Ícone de menu (hambúrguer) para dispositivos móveis */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+
+    /*Esconde o menu normal e mostra o ícone no mobile*/
+    nav ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .doar-button-mobile {
+        display: inline-block;
+    }
+
+    .left {
+        flex: 1;
+        text-align: center;
+        /*Centraliza a imagem no contêiner*/
+        margin-top: 20px;
+        margin-left: auto;
+        /*Centraliza horizontalmente*/
+        margin-right: auto;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 5vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        flex-direction: column;
+        font-size: 4vw;
+    }
+
+    .left img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .right {
+        font-size: 5vw;
+    }
+
+    .doe-button {
+        font-size: 5vw;
+    }
+
+    nav ul li a {
+        font-size: 3vw;
+    }
+
+    .doar-button {
+        font-size: 3vw;
+    }
+
+    .left {
+        flex: 1;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 3vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        font-size: 4vw;
+        flex-direction: column;
+    }
+
+    .left img {
+        width: 100%;
+        height: auto;
+    }
+}
