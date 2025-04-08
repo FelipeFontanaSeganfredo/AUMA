@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação AUMA</title>
     <link rel="stylesheet" href="styleDoacoes.css">
+    <link rel="stylesheet" href="styleDoacoes.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
-    <link rel="stylesheet" href="../Header/style.css">    
+    <link rel="stylesheet" href="../Header/styleHeader.css">    
 </head>
 <body>
-    
     <div id="header-container"></div>
 
     <main>
@@ -23,7 +23,8 @@
                 <p>
                     Sua doação transforma vidas: ajude a AUMA a oferecer terapias, apoio educacional e atividades que promovem inclusão e bem-estar para pessoas com autismo e suas famílias.
                 </p>
-                <a href="#" class="doe-button" id="doeAquiBtn">DOE AQUI</a>
+                <button class="doe-button" id="doeAquiBtn">DOE AQUI</button>
+
             </div>
         </div>
     </main>
@@ -32,11 +33,8 @@
     <script>
         // Funcionalidade de doação
         function showDonationModal() {
-        const qrDiv = document.createElement('div');
-        qrDiv.id = 'qrcode';
-
         Swal.fire({
-            title: 'Doe via QR Code ou Depósito Bancário',
+            title: "Doe via QR Code ou Depósito Bancário",
             html: `
                 <div style="display: flex; flex-direction: column; align-items: center;">
                     <div id="qrContainer"></div> <!-- Div onde o QR será gerado -->
@@ -51,20 +49,20 @@
             `,
             showCloseButton: true,
             focusConfirm: false,
-            confirmButtonText: 'Fechar',
+            confirmButtonText: "Fechar",
             willOpen: () => {
-                // Gerar o QR code dentro do modal após a abertura
-                new QRCode(document.getElementById("qrContainer"), {
-                    text: "https://br.lipsum.com/",
-                    width: 128,
-                    height: 128
-                });
+                const qrContainer = document.getElementById("qrContainer");
+                if (qrContainer) {
+                    new QRCode(qrContainer, {
+                        text: "https://br.lipsum.com/",
+                        width: 128,
+                        height: 128
+                    });
+                }
             }
         });
     }
-
-        document.getElementById('doarBtn').addEventListener('click', showDonationModal);
-        document.getElementById('doarBtnMobile').addEventListener('click', showDonationModal);
+    
         document.getElementById('doeAquiBtn').addEventListener('click', showDonationModal);
 
         // Funcionalidade para o menu colapsado
@@ -84,8 +82,8 @@
             });
         });
     </script>
+    <div id="footer-container"></div>
     <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
 </body>
 </html>
-
-<script src="../Header/header.js"></script>

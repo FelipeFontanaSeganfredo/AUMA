@@ -1,63 +1,11 @@
-/* Estilos gerais */
-body {
-    font-family: "Nova Square", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #333;
-}
-
-/* Header */
-header {
-    background-color: #F5F5F5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2% 3%;
-    border-bottom: 0.02% solid #E0E0E0;
-}
-
-.logo img {
-    width: 100%;
-    height: auto;
-}
-
-/* Menu normal (para desktop) */
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: space-around;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1vw;
-}
-
-/* Botão DOAR */
-.doar-button {
-    background-color: #6666FF;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.5vw;
-    display: inline-block;
-}
-
 /* Responsividade para conteúdo principal */
 main .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
+    padding: 4% 10%;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 /* Ajustes para o lado esquerdo (imagem) */
@@ -75,17 +23,13 @@ main .content {
 }
 
 /* Ajustes para o lado direito (texto e botão) */
-.right {
+.text-right {
     flex: 1;
     text-align: justify;  /* Justifica o texto */
-    font-size: 2.5vw;  /* Tamanho da fonte no desktop */
+    font-size: 2.2vw;  /* Tamanho da fonte no desktop */
     margin-left: -15%;
     margin-right: 5%;
     margin-top: -10%;
-}
-
-.right p {
-    line-height: 1.6;
 }
 
 .doe-button {
@@ -104,176 +48,60 @@ main .content {
     margin-right: auto;
 }
 
-/* Menu colapsado (aparece em telas menores) */
-.nav-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;  /* Menu oculto fora da tela */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    transition: left 0.3s;
-    padding: 20px;
-    z-index: 1000;
-}
-
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-menu ul li {
-    margin: 20px 0;
-}
-
-.nav-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.close-menu {
-    font-size: 30px;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Ícone de menu (hambúrguer) para dispositivos móveis */
-.menu-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* Media Query para telas menores */
-@media (max-width: 768px) {
-    /* Esconde o menu normal e mostra o ícone de hambúrguer no mobile */
-    nav ul {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .doar-button-mobile {
-        display: inline-block;
-    }
-    
-    .left {
+@media (max-width: 768px) 
+{
+    .text-right {
         flex: 1;
-        text-align: center; /* Centraliza a imagem no contêiner */
-        margin-top: 20px;
-        margin-left: auto;  /* Centraliza horizontalmente */
-        margin-right: auto;
-    }
-
-    .logo img {
-        width: 75%;
-        height: auto;
-    }
-
-    /* Header */
-    header {
-        background-color: #F5F5F5;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        border-bottom: 2px solid #E0E0E0;
-    }
-
-    .right {
-        text-align: justify;
-        font-size: 5vw;
-        margin-right: 0;
-        margin-left: 0;
-        margin-top: 0;
-    }
-    
-    .right p {
-        line-height: 1.6;
-    }
-
-    main .content {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 40px 20px;
-        flex-direction: column;
-        font-size: 4vw;
-    }
-
-    .left img {
-    width: 80%;  /* Ajuste a largura conforme necessário */
-    height: auto;
-}
-}
-
-@media (max-width: 480px) {
-    .right {
-        font-size: 10vw;
+        text-align: justify;  /* Justifica o texto */
+        font-size: 5vw;  
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 0%;
     }
 
     .doe-button {
-        font-size: 7vw;
-    }
-
-    nav ul li a {
-        font-size: 4vw;
-    }
-
-    .doar-button {
-        font-size: 4vw;
-    }
-
-    .left {
-        flex: 1;
-        text-align: center;
+        display: block;
         margin-top: 20px;
-    }
-
-    .right {
-        text-align: justify;
-        font-size: 4vw;
-        margin-right: 0;
-        margin-left: 0;
-        margin-top: 0;
-    }
-
-    .logo img {
-        width: 75%;
-        height: auto;
-    }
-
-    /* Header */
-    header {
-        background-color: #F5F5F5;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 10px 20px;
-        border-bottom: 2px solid #E0E0E0;
+        background-color: #3366FF;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 50px;
+        font-size: 1.5vw;
+        max-width: 50%;
+        margin-left: auto;  /* Centraliza o botão horizontalmente */
+        margin-right: auto;
     }
+}
 
-    .right p {
+@media (max-width: 480px)
+{
+    .text-right {
+        flex: 1;
+        text-align: justify;  /* Justifica o texto */
+        font-size: 5vw;  
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 0%;
         line-height: 1.6;
-        font-size: 4vw;
     }
 
-    main .content {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 40px 20px;
-        font-size: 4vw;
-        flex-direction: column;
-    }
-
-    .left img {
-        width: 100%;
-        height: auto;
+        .doe-button {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #3366FF;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 50px;
+        font-size: 1.5vw;
+        max-width: 50%;
+        margin-left: auto;  /* Centraliza o botão horizontalmente */
+        margin-right: auto;
+        line-height: 1.6;
     }
 }
