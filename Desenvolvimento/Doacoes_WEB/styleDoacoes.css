@@ -35,9 +35,10 @@ main .content {
 .doe-button {
     display: block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 15px 50px;
     background-color: #3366FF;
     color: white;
+    border-color: #3366FF;
     text-align: center;
     text-decoration: none;
     font-weight: bold;

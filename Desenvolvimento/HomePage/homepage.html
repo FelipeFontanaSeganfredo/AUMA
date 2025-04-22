@@ -1,5 +1,3 @@
-<!-- home.html -->
-<!-- home.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,11 +12,11 @@
 </head>
 <body>
     <script src="../fade-transitions/fade-transition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
     <!-- Container onde o header será injetado -->
     <div id="header-container"></div>
 
     <main>
-        <!-- Seção de cima com botão, texto e imagem das linhas com astronauta -->
         <!-- Seção de cima com botão, texto e imagem das linhas com astronauta -->
         <div class="top-section">
             <div class="top-image">
@@ -28,15 +26,14 @@
             </div>
             <div class="top-content">
                 <div class="text-container">
-                    <p class="typewriter" data-text="Mudando o futuro de autistas e suas famílias">
-                        Mudando o futuro de autistas e suas famílias
+                    <p class="typewriter" id = "typewriter" data-text="Mudando o futuro de autistas e suas famílias.">
+                        Mudando o futuro de autistas e suas famílias.
                     </p>
                 </div>
                 <button class="DonateButton" onclick="window.location.href='../Doacoes_WEB/doacoes.html'">Doar Agora</button>
             </div>
             </div>
         </div>
-        <!-- Seção inferior com botão, texto, imagem de crianças e título -->
         <!-- Seção inferior com botão, texto, imagem de crianças e título -->
         <div class="bottom-section">
             <div class="bottom-right">
@@ -56,5 +53,15 @@
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
+    <script>
+        new TypeIt("#typewriter", {
+          speed: 50,
+          cursor: true,
+          waitUntilVisible: true,
+        })
+        //.type("Mudando o futuro de autistas e suas famílias")
+        .go();
+      </script>
+      
 </body>
 </html>
