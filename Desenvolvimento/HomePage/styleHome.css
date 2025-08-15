@@ -360,3 +360,182 @@ footer p {
     }
 }
 
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        /* Linhas coloridas de fundo usando SVG */
+        .lines-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wave-line {
+            width: 100%;
+            height: auto;
+            margin: -10px 0;
+        }
+
+        /* Conteúdo da esquerda */
+        .content-left {
+            position: relative;
+            z-index: 2;
+            /* max-width: 500px; */
+            padding: 40px;
+            /* background: rgba(255, 255, 255, 0.9); */
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .donate-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(135deg, #ff5252, #e53935);
+        }
+
+        .donate-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Astronauta */
+        .astronaut-container {
+            position: relative;
+            z-index: 3;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12%;
+        }
+
+        .astronaut {
+            height: auto;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(-2deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        /* Estrelas decorativas */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite alternate;
+        }
+
+        .star:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 30%; left: 80%; animation-delay: 0.5s; }
+        .star:nth-child(3) { top: 60%; left: 10%; animation-delay: 1s; }
+        .star:nth-child(4) { top: 80%; left: 85%; animation-delay: 1.5s; }
+        .star:nth-child(5) { top: 10%; left: 50%; animation-delay: 0.8s; }
+
+        @keyframes twinkle {
+            from { opacity: 0.3; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .content-left {
+                max-width: 100%;
+                margin-bottom: 30px;
+                padding: 30px 20px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .astronaut-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .lines-background {
+                width: 100%;
+                opacity: 0.5;
+            }}
+
