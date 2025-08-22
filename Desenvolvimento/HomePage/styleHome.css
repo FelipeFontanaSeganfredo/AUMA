@@ -268,85 +268,97 @@ footer p {
         color: rgb(255, 255, 255); /* Garante que o texto do link fique visível */
     }
 
-    /* Top Section para mobile */
+    /* Top Section para mobile - reorganizada como flexbox */
     .top-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center; 
         position: relative;
+        min-height: 100vh; /* Garante altura mínima */
     }
 
-    /* Ordem dos elementos */
-    .top-content {
-        order: 1; 
-        position: absolute;
-        top: 5vw; /* Ajuste conforme necessário para posicionar verticalmente */
-        left: 0;
+    /* Container principal reorganizado */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-        padding: 0;
-    }
-
-    .top-content p {
-        margin-top: 10vw;
-        font-size: 8vw !important; /* Tamanho da fonte para telas pequenas */
-        margin-left: 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .bottom-section {
-        display: none !important; /* Oculta a seção inferior na versão mobile */
-    }
-
-    .top-content button {
-        order: 3; /* Coloca o botão depois do texto e da imagem das linhas */
-        font-size: 4vw !important;
-        padding: 1rem 4rem;
-        margin-left: 0;
-    }
-
-    .MobileAstronaut {
-        margin-top: -30vw !important;
-    }
-
-    .top-image {
-        order: 2; /* Coloca a imagem das linhas logo após o texto */
-        width: 100%;
-        padding: 13rem 0;
-    }
-
-    .top-image img {
-        width: 100vw;
         height: auto;
-        margin-top: 0; /* Aumenta a margem superior para afastar mais as linhas do conteúdo acima */
+        padding: 2rem 5%;
+    }
+
+    /* Texto principal */
+    .content-left {
+        order: 1; 
+        position: relative; /* Mudado de absolute para relative */
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .main-title {
+        font-size: 8vw !important; /* Tamanho da fonte para telas pequenas */
+        text-align: center;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+    }
+
+    /* Botão principal */
+    .donate-btn {
+        order: 2;
+        font-size: 4vw !important;
+        padding: 1rem 2rem;
+        margin: 2rem 0;
+        border-radius: 25px;
+        width: auto;
+    }
+
+    /* Linhas decorativas */
+    .lines-background {
+        order: 3;
+        position: relative; /* Mudado de absolute para relative */
+        width: 100%;
+        height: 40vh; /* Altura fixa para as linhas */
+        margin: 2rem 0;
+    }
+
+    .wave-line {
+        position: absolute;
+        max-width: 100%;
+    }
+
+    /* Astronauta - agora vem por último */
+    .astronaut-container {
+        order: 4; /* Garantindo que vem após o botão */
+        position: relative;
+        width: 80vw;
+        max-width: 300px;
+        height: auto;
+        margin: 2rem 0 4rem 0; /* Margem superior e inferior */
+        z-index: 10;
+    }
+
+    .astronaut {
+        height: auto;
+        margin-top: 0; /* Remove margem negativa */
+    }
+
+    /* Oculta a seção inferior original no mobile */
+    .bottom-section {
+        display: none !important;
+    }
+
+    /* Remove regras conflitantes */
+    .top-content {
+        display: none; /* Oculta o top-content antigo */
     }
 
     .MobileLines{
-        width: 190% !important;
+        width: 100% !important;
         height: auto !important;
-    }
-
-    /* Astronauta (bottom section) */
-    .bottom-section {
-        order: 4; /* Coloca o astronauta abaixo do botão */
-        display: flex; /* Certifique-se de que a seção do astronauta esteja visível */
-        flex-direction: column; /* Empilha verticalmente */
-        align-items: center;
-    }
-
-    .bottom-section div {
-        width: 100%; 
-    }
-
-    .bottom-left img, .bottom-right img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Texto da seção inferior */
-    .bottom-section p {
-        font-size: 4vw; /* Texto maior para mobile */
     }
 
     /* Footer */
@@ -354,9 +366,180 @@ footer p {
         order: 5; /* Rodapé no fim */
         font-size: 1rem;
         padding: 1rem 0;
-        background-color: #333; /* Cor de fundo para o rodapé */
-        color: white; /* Garante que o texto do rodapé fique visível */
-        text-align: center; /* Centraliza o texto do rodapé */
+        background-color: #333;
+        color: white;
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
+/* Estilos desktop mantidos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+/* Linhas coloridas de fundo usando SVG */
+.lines-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wave-line {
+    width: 100%;
+    height: auto;
+    margin: -10px 0;
+}
+
+/* Conteúdo da esquerda */
+.content-left {
+    position: relative;
+    z-index: 10;
+    padding: 40px;
+    border-radius: 20px;
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.main-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #000000; /* Texto preto */
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Removido o gradiente e propriedades relacionadas */
+}
+
+.donate-btn {
+    background: #D9D9D9; /* Cor cinza sólida */
+    color: #000000;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(217, 217, 217, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.donate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(217, 217, 217, 0.4);
+    background: #C0C0C0; /* Cinza mais escuro no hover */
+}
+
+.donate-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Astronauta */
+.astronaut-container {
+    position: relative;
+    z-index: 3;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12%;
+}
+
+.astronaut {
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+/* Estrelas decorativas */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.star:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.star:nth-child(2) { top: 30%; left: 80%; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 60%; left: 10%; animation-delay: 1s; }
+.star:nth-child(4) { top: 80%; left: 85%; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 10%; left: 50%; animation-delay: 0.8s; }
+
+@keyframes twinkle {
+    from { opacity: 0.3; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Responsivo para tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .content-left {
+        max-width: 100%;
+        margin-bottom: 30px;
+        padding: 30px 20px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .astronaut-container {
+        width: 300px;
+        height: 300px;
+    }
+}
