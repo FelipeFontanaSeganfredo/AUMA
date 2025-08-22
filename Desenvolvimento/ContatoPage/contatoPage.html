@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="contatoPage.css">
+    <link rel="stylesheet" href="../Header/styleHeader.css">
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+
+    <div id="header-container"></div>
+
+    <main class="contact-section">
+        <h1 class="main-title">Entre em contato!</h1>
+
+        <div class="contact-container">
+            <div class="form-container">
+                <h2>Envie um email:</h2>
+                <form action="#" method="POST">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email">
+    
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem"></textarea>
+                </form>
+            </div>
+    
+            <div class="social-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide">
+                        <h2>Redes sociais:</h2>
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> Linkedin</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="carousel-slide">
+                        <h2>Telefone:</h2>
+                        <ul class="contact-info">
+                            <li><a href="tel:54555555555"><i class="fas fa-phone"></i> 54 555555555</a></li>
+                            <li><a href="https://wa.me/5554555555555" target="_blank"><i class="fab fa-whatsapp"></i> Contate-nos pelo Whatsapp!</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="carousel-slide quote-slide">
+                        <div class="quote-content">
+                            <p>"O autista vê o mundo de um ângulo diferente. A AUMA vê o mesmo ângulo."</p>
+                            <img src="../Assets/person.png" alt="Desenho de um menino autista">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="pagination-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="contatoPage.js" defer></script>
+
+</body>
+</html>
+</body>
+</html>
