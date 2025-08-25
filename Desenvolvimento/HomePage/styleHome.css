@@ -243,12 +243,6 @@ footer p {
         display: flex !important;
     }
 
-    /* Ajustar header e navegação */
-    header {
-        flex-direction: column; /* Manter os itens em coluna para centralizar */
-        padding: 1rem;
-        align-items: center; /* Centraliza os itens no header */
-    }
 
     nav ul {
         display: flex; /* Exibe os itens em linha */
