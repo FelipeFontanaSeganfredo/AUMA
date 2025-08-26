@@ -15,7 +15,7 @@ body {
 .contact-section {
     width: 100%;
     max-width: 900px;
-    margin: 40px auto; /* Centraliza a seção na página e adiciona margens */
+    margin: 40px auto;
 }
 
 .contact-section .main-title {
@@ -81,6 +81,23 @@ body {
     overflow: hidden;
 }
 
+.submit-button {
+    padding: 3% 40%;
+    font-family: 'Nova Square', sans-serif;
+    font-size: 1.2em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin: 5% auto 0; 
+    display: block; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
 .contact-section .carousel-wrapper {
     display: flex;
     width: 300%;
@@ -88,13 +105,17 @@ body {
     flex-grow: 1;
 }
 
+
 .contact-section .carousel-slide {
-    width: 35%;
+    width: 33.33%;
     flex-shrink: 0;
     padding: 0 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .contact-section .carousel-slide h2 {
@@ -105,10 +126,16 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .contact-section .carousel-slide li {
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-section .carousel-slide li:hover {
+    transform: scale(1.05);
 }
 
 .contact-section .carousel-slide a {
@@ -135,20 +162,14 @@ body {
     font-size: 1.1em;
 }
 
-.contact-section .quote-slide {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 .contact-section .quote-content {
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     font-size: 200%;
     flex-grow: 1;
-    transform: translateX(-10%);
+    /* transform: translateX(-10%);  Removido para centralizar o conteúdo */
 }
 
 .contact-section .quote-content p {
@@ -158,8 +179,9 @@ body {
 }
 
 .contact-section .quote-content img {
-    max-width: 120px;
+    max-width: 250px;  
     height: auto;
+    margin-top: 7%;
 }
 
 .contact-section .pagination-dots {
@@ -188,28 +210,24 @@ body {
 
     /* 1. Mude o layout de colunas para linhas */
     .contact-section .contact-container {
-        flex-direction: column; /* Esta é a mudança principal! */
+        flex-direction: column;
     }
 
     /* 2. Ajuste as bordas arredondadas para o novo layout */
     .contact-section .form-container {
-        /* Arredonda os cantos de cima, mas não os de baixo */
         border-radius: 15px 15px 0 0;
     }
 
     .contact-section .social-container {
-        /* Arredonda os cantos de baixo, mas não os de cima */
         border-radius: 0 0 15px 15px;
     }
 
-    /* 3. (Opcional, mas recomendado) Ajuste de espaçamento e fontes */
+    /* 3. Ajuste de espaçamento e fontes */
     .contact-section {
-        /* Adiciona um pouco de espaço nas laterais para o conteúdo não colar na borda da tela */
         padding: 0 15px;
     }
 
     .contact-section .main-title {
-        /* Diminui um pouco o título principal em telas menores */
         font-size: 2em;
     }
 }
