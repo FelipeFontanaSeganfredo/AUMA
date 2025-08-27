@@ -150,7 +150,8 @@ nav ul li a {
     padding: 10px;
     background-color: #D9D9D9;
     border-radius: 40px;
-    width: 100%; /* Padrão: 50% da largura da tela */
+    width: 100%;
+    /* Padrão: 50% da largura da tela */
     max-width: 100%;
 }
 
@@ -168,7 +169,7 @@ nav ul li a {
         width: 100%;
     }
 
-    .read-also-content{
+    .read-also-content {
         flex-wrap: nowrap;
     }
 }
@@ -248,6 +249,31 @@ nav ul li a {
 
     .right p {
         line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 12px !important;
+        padding-top: 20px;
+    }
+
+    a {
+        font-size: 12px
+    }
+
+    .icon-button>img {
+        font-size: 15px !important;
+        max-width: 25px !important;
+    }
+
+    .content {
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 7%;
+        padding-right: 7%;
     }
 
     main .content {
