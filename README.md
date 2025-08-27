@@ -5,7 +5,6 @@ Bem-vindo! Criei o repositório para facilitar a organização do grupo, qualque
 ## Visão Geral
 
 O presente projeto faz parte da matéria de Práticas Curriculares em Sociedade e possuí cunho social.
-
 ## Status do Projeto
 
 Estamos atualmente na fase inicial de desenvolvimento do projeto. Adicione suas páginas (HTML, CSS E JS) dentro da página desenvolvimento.
