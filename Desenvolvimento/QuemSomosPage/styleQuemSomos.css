@@ -1,4 +1,3 @@
-
 .corpo {
     display: block;
     align-items: center;
@@ -346,6 +345,7 @@ main .content {
     font-family: "Nova Square";
 
 }
+
 body {
     font-family: "Nova Square";
     margin: 0;
@@ -403,7 +403,8 @@ nav ul li a {
 .nav-menu {
     position: fixed;
     top: 0;
-    left: -100%;  /* Menu oculto fora da tela */
+    left: -100%;
+    /* Menu oculto fora da tela */
     width: 250px;
     height: 100%;
     background-color: #333;
@@ -444,12 +445,66 @@ nav ul li a {
 
 @media (max-width: 768px) {
     button {
-        padding: 10px 15px; 
-        font-size: 0.8em; 
-      }
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+
     /*Esconde o menu normal e mostra o ícone no mobile*/
     nav ul {
         display: none;
+    }
+
+    .corpo {
+        display: block;
+        align-items: center;
+        font-family: "Nova Square";
+        background-color: #ffffff;
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .illustration {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        max-width: 40vh;
+    }
+
+    .illustration img {
+        display: flex;
+        width: auto;
+        height: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+        max-height: 25svh;
+        min-height: 25px;
+        min-width: 25%;
+        object-fit: contain;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .values .value-item p {
+        display: flex;
+        align-self: center;
+        font-family: "Nova Square";
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 1.4;
+        min-width: 15px;
+        max-width: 80%;
+        text-align: justify;
     }
 
     .menu-toggle {
@@ -459,12 +514,14 @@ nav ul li a {
     .doar-button-mobile {
         display: inline-block;
     }
-    
+
     .left {
         flex: 1;
-        text-align: center; /*Centraliza a imagem no contêiner*/
+        text-align: center;
+        /*Centraliza a imagem no contêiner*/
         margin-top: 20px;
-        margin-left: auto;  /*Centraliza horizontalmente*/
+        margin-left: auto;
+        /*Centraliza horizontalmente*/
         margin-right: auto;
     }
 
@@ -490,7 +547,7 @@ nav ul li a {
         margin-left: 0;
         margin-top: 0;
     }
-    
+
     .right p {
         line-height: 1.6;
     }
@@ -505,9 +562,9 @@ nav ul li a {
     }
 
     .left img {
-    width: 80%; 
-    height: auto;
-}
+        width: 80%;
+        height: auto;
+    }
 }
 
 @media (max-width: 480px) {

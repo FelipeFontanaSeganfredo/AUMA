@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - AUMA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleNews.css">    
+    <link rel="stylesheet" href="../Header/styleHeader.css">    
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="stylesheet" href="homeNoticias.css">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    
+    <!-- Container onde o header será injetado -->
+    <div id="header-container"></div>
+
+<main>
+
+    
+    <!-- Seção de destaque principal -->
+    <section class="destaque-section">
+        <article class="destaque-principal noticia-destaque" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html'">
+            <img src="../Assets/imagemNoticia.png">
+            <div class="noticia-overlay">
+                <span class="categoria">EDUCAÇÃO</span>
+                <h2>Sesc Passo Fundo entrega à AUMA doações coletadas no Dia do Desafio - SESC-RS</h2>
+                <p class="resumo">Queremos agradecer a Secretária da Pessoa com Deficiência da Cidade de São Paulo e a Cidade Solidária (Ação de voluntariado de São Paulo contra o Coronavírus, pelas doações de cestas básicas pás as famílias de alunos da AUMA.</p>
+                <p class="data">25 de agosto de 2025</p>
+            </div>
+        </article>
+        
+        <article class="destaque-secundario noticia-destaque">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop" alt="Notícia Secundária">
+            <div class="noticia-overlay">
+                <span class="categoria">TECNOLOGIA</span>
+                <h2>Laboratório de Inteligência Artificial é Inaugurado</h2>
+                <p class="resumo">Nova infraestrutura fortalece pesquisa e desenvolvimento na área.</p>
+                <p class="data">24 de agosto de 2025</p>
+            </div>
+        </article>
+    </section>
+    
+    <!-- Seção de notícias secundárias -->
+    <section class="noticias-secundarias">
+        <div class="noticias-menores">
+            <article class="noticia-menor">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=200&h=150&fit=crop" alt="Notícia menor 1">
+                <div class="noticia-menor-content">
+                    <span class="categoria">EVENTOS</span>
+                    <h3>Semana Acadêmica 2025 Movimenta o Campus</h3>
+                    <p class="data">23 de agosto de 2025</p>
+                </div>
+            </article>
+            
+            <article class="noticia-menor">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=150&fit=crop" alt="Notícia menor 2">
+                <div class="noticia-menor-content">
+                    <span class="categoria">PESQUISA</span>
+                    <h3>Projeto de Sustentabilidade Recebe Prêmio Nacional</h3>
+                    <p class="data">22 de agosto de 2025</p>
+                </div>
+            </article>
+        </div>
+
+    </section>
+</main>
+    <!-- Container do footer movido para fora do main -->
+    <div id="footer-container"></div>
+
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+
+ 
+</body>
+</html>
