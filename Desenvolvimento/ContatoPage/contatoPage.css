@@ -169,7 +169,6 @@ body {
     align-items: center;
     font-size: 200%;
     flex-grow: 1;
-    /* transform: translateX(-10%);  Removido para centralizar o conteúdo */
 }
 
 .contact-section .quote-content p {
@@ -229,5 +228,40 @@ body {
 
     .contact-section .main-title {
         font-size: 2em;
+    }
+
+    .contact-section .carousel-slide {
+        width: 33.33%;
+        flex-shrink: 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-section .quote-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 100%;
+        flex-grow: 1;
+    }
+    .contact-section .contact-info a {
+        font-size: 1.0em;
+    }
+}
+@media (max-width: 600px)
+{
+    .contact-section .contact-info a {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 500px)
+{
+    .contact-section .contact-info a {
+        font-size: 0.75em;
     }
 }
