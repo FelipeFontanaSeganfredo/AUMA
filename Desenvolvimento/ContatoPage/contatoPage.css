@@ -13,7 +13,7 @@ body {
 
 /* Seção de Contato Principal */
 .contact-section {
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     margin: 40px auto;
 }
