@@ -228,7 +228,6 @@ main {
 
     .destaque-section {
         flex-direction: column;
-        height: auto;
         gap: 20px;
     }
 
@@ -250,6 +249,8 @@ main {
     .noticia-menor {
         flex-direction: column;
         padding: 20px;
+        border-left: 6px solid #ffffff;
+        
     }
 
     .noticia-menor img {
