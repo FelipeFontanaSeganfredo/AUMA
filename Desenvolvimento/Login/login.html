@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="styleLogin.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
     <link rel="shortcut icon" href="../Assets/auma-logo.png">
-
 </head>
 <body>
     
     <div id="header-container"></div>
 
     <main>
-        <!-- Área do Login -->
         <div class="content">
             <div class="tittle">
                 <div class="user-logo">
@@ -23,17 +21,16 @@
                 </div>
                 <h1>Login</h1>
             </div>
-            <!-- Inserção do email -->
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="Digite seu email" required>
+            <form id="login-form">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu email" required>
 
-            <!-- Inserção da senha -->
-            <label for="password">Senha</label>
-            <input type="password" id="password" placeholder="Digite sua senha" required>
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+                
+                <button type="submit" id="submit-button">Entrar</button>
+            </form>
             
-            <button type="submit">Entrar</button>
-            
-            <!-- Outras possibilidades, links externos -->
             <p class="forgot-password">Esqueci minha senha</p>
             <p class="create-account">Não tem uma conta? <a href="#">Criar conta</a></p>
         </div>
@@ -46,18 +43,22 @@
             var navMenu = document.querySelector('.nav-menu');
             var closeMenu = document.querySelector('.close-menu');
 
-            // Abre o menu ao clicar no ícone de hambúrguer
-            menuToggle.addEventListener('click', function () {
-                navMenu.style.left = '0';  // Desliza o menu para dentro da tela
-            });
+            // Verifica se os elementos existem antes de adicionar o evento
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    navMenu.style.left = '0';
+                });
+            }
 
-            // Fecha o menu ao clicar no ícone de fechar (×)
-            closeMenu.addEventListener('click', function () {
-                navMenu.style.left = '-100%';  // Desliza o menu para fora da tela
-            });
+            if (closeMenu && navMenu) {
+                closeMenu.addEventListener('click', function () {
+                    navMenu.style.left = '-100%';
+                });
+            }
         });
     </script>
     <div id="footer-container"></div>
     <script src="../Footer/footer.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

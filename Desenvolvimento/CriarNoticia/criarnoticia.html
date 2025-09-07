@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias</title>
+    <title>Criar Notícia</title>
     <link rel="stylesheet" href="styleNoticias.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
     <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
     <link rel="shortcut icon" href="../Assets/auma-logo.png">
-
 </head>
 <body>
     <script src="../fade-transitions/fade-transition.js"></script>
-
     <div id="header-container"></div>
 
     <main>
         <div class="content">
+            <form id="post-form" method="POST">
+                <label for="tituloNoticia">Título da notícia</label>
+                <input type="text" id="title" placeholder="Digite o título da notícia" required>
 
-            <label for="tituloNoticia">Titulo da notícia</label>
-            <input type="tituloNoticia" id="tituloNoticia" placeholder="Digite o título da notícia" required>
+                <label for="capa">Imagem de capa</label>
+                <input class="file-upload-button" type="file" id="image" accept="image/*">
 
-            <label for="capa">Imagem de capa</label>
-            <input class="file-upload-button" type="file" id=" capa" accept="image/*" required>
-
-            <label for="textoNoticia">Texto da notícia</label>
-            <textarea id="textoNoticia" placeholder="Conteúdo da notícia" required></textarea>
-            
-            <button type="submit" class="cadastrar-button">Cadastrar notícia</button>
+                <label for="textoNoticia">Texto da notícia</label>
+                <textarea id="text" placeholder="Conteúdo da notícia" required></textarea>
+                
+                <button type="submit" class="cadastrar-button">Cadastrar notícia</button>
+            </form>
         </div>
     </main>
 
@@ -39,20 +38,25 @@
             var navMenu = document.querySelector('.nav-menu');
             var closeMenu = document.querySelector('.close-menu');
 
-            // Abre o menu ao clicar no ícone de hambúrguer
-            menuToggle.addEventListener('click', function () {
-                navMenu.style.left = '0';  // Desliza o menu para dentro da tela
-            });
+            // Verifica se os elementos existem antes de adicionar o evento
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    navMenu.style.left = '0';
+                });
+            }
 
-            // Fecha o menu ao clicar no ícone de fechar (×)
-            closeMenu.addEventListener('click', function () {
-                navMenu.style.left = '-100%';  // Desliza o menu para fora da tela
-            });
+            if (closeMenu && navMenu) {
+                closeMenu.addEventListener('click', function () {
+                    navMenu.style.left = '-100%';
+                });
+            }
         });
     </script>
+
     <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="criarnoticia.js"></script>
 </body>
 </html>
-
-<script src="../Header/header.js"></script>
-<script src="../Footer/footer.js"></script>
