@@ -10,71 +10,33 @@
     <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
     <link rel="stylesheet" href="homeNoticias.css">
     <link rel="shortcut icon" href="../Assets/auma-logo.png">
-
 </head>
 <body>
     <script src="../fade-transitions/fade-transition.js"></script>
     
-    <!-- Container onde o header será injetado -->
     <div id="header-container"></div>
 
-<main>
-
-    
-    <!-- Seção de destaque principal -->
-    <section class="destaque-section">
-        <article class="destaque-principal noticia-destaque" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html'">
-            <img src="../Assets/imagemNoticia.png">
-            <div class="noticia-overlay">
-                <span class="categoria">EDUCAÇÃO</span>
-                <h2>Sesc Passo Fundo entrega doações coletadas no Dia do Desafio - SESC-RS</h2>
-                <p class="resumo">Queremos agradecer a Secretária da Pessoa com Deficiência da Cidade de São Paulo e a Cidade Solidária.</p>
-                <p class="data">25 de agosto de 2025</p>
+    <main>
+        <section class="destaque-section">
+            <div id="destaque-principal-container">
+                <p>Carregando notícia de destaque...</p>
             </div>
-        </article>
+            <div id="destaque-secundario-container">
+                <p>Carregando notícia secundária...</p>
+            </div>
+        </section>
         
-        <article class="destaque-secundario noticia-destaque" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html'">
-            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop" alt="Notícia Secundária">
-            <div class="noticia-overlay">
-                <span class="categoria">Lorem Ipsum</span>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                <p class="resumo">Fusce blandit ex non nisi dignissim, in posuere elit varius. Morbi sollicitudin eget sapien vel pharetra..</p>
-                <p class="data">24 de agosto de 2025</p>
+        <section class="noticias-secundarias">
+            <div id="noticias-menores-container" class="noticias-menores">
+                <p>Carregando notícias...</p>
             </div>
-        </article>
-    </section>
+        </section>
+    </main>
     
-    <!-- Seção de notícias secundárias -->
-    <section class="noticias-secundarias">
-        <div class="noticias-menores">
-            <article class="noticia-menor" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html'">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=200&h=150&fit=crop" alt="Notícia menor 1">
-                <div class="noticia-menor-content">
-                    <span class="categoria">Lorem Ipsum</span>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <p class="data">23 de agosto de 2025</p>
-                </div>
-            </article>
-            
-            <article class="noticia-menor" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html'">
-                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200&h=150&fit=crop" alt="Notícia menor 2">
-                <div class="noticia-menor-content">
-                    <span class="categoria">Lorem Ipsum</span>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-                    <p class="data">22 de agosto de 2025</p>
-                </div>
-            </article>
-        </div>
-
-    </section>
-</main>
-    <!-- Container do footer movido para fora do main -->
     <div id="footer-container"></div>
-
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
-
- 
+    <script src="homeNoticias.js"></script>
 </body>
 </html>
