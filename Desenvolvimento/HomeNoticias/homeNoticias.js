@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (posts.length > 1) {
             const segundoPost = posts[1];
             // Usa o texto do post, ou o Lorem Ipsum se estiver vazio
-            const textoSecundario = segundoPost.text && segundoPost.text.trim() !== '' ? segundoPost.text : loremIpsumText;
+            const textoSecundario = segundoPost.content && segundoPost.content.trim() !== '' ? segundoPost.content : loremIpsumText;
             
             destaqueSecundarioContainer.innerHTML = `
                 <article class="destaque-secundario noticia-destaque" onclick="window.location.href='../PaginaNoticia/paginaNoticia.html?id=${segundoPost.id}'">

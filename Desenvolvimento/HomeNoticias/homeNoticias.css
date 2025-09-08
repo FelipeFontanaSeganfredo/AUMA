@@ -1,46 +1,31 @@
-/* homeNoticias.css - Estilos específicos para a página de notícias */
-
-/* Reset e configurações base */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px;
     background-color: #fff;
     min-height: 100vh;
+    margin-top: 20px; /* integração com header */
 }
 
 .page-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: #c41e3a;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: center;
     border-bottom: 4px solid #c41e3a;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 
-/* Layout principal de destaque */
 .destaque-section {
     display: flex;
     gap: 30px;
     margin-bottom: 60px;
-    height: 550px;
+    height: auto; /* sem fixo */
 }
 
-.destaque-principal {
-    flex: 0 0 60%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-}
-
-.destaque-principal:hover {
-    transform: translateY(-8px);
-}
-
+.destaque-principal,
 .destaque-secundario {
-    /* flex: 0 0 40%; */
+    flex: 1;
     position: relative;
     overflow: hidden;
     border-radius: 12px;
@@ -48,14 +33,20 @@ main {
     transition: transform 0.3s ease;
 }
 
+.destaque-principal:hover,
 .destaque-secundario:hover {
     transform: translateY(-8px);
 }
 
-.noticia-destaque img {
+/* Imagens de destaque padronizadas */
+.destaque-principal img,
+.destaque-secundario img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 350px;         /* fixo: todas iguais */
+    aspect-ratio: 16 / 9;  /* mantém proporção widescreen */
+    object-fit: cover;     /* corta excesso sem distorcer */
+    border-radius: 12px;
+    display: block;
 }
 
 .noticia-overlay {
@@ -69,13 +60,13 @@ main {
 }
 
 .noticia-destaque h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 12px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .destaque-secundario h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .noticia-destaque .categoria {
@@ -90,15 +81,15 @@ main {
 }
 
 .noticia-destaque .resumo {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.9;
     margin-top: 8px;
 }
 
 .noticia-destaque .data {
-    font-size: 1rem;
+    font-size: 0.95rem;
     opacity: 0.8;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 /* Seção de notícias secundárias */
@@ -131,6 +122,7 @@ main {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
+/* Imagens consistentes para notícias menores */
 .noticia-menor img {
     width: 180px;
     height: 120px;
@@ -140,9 +132,9 @@ main {
 }
 
 .noticia-menor-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #333;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.4;
 }
 
@@ -153,12 +145,12 @@ main {
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: inline-block;
 }
 
 .noticia-menor-content .data {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
 }
 
@@ -172,10 +164,10 @@ main {
 }
 
 .conteudo-principal h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #c41e3a;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
     border-bottom: 3px solid #eee;
 }
 
@@ -191,80 +183,52 @@ main {
 }
 
 .conteudo-principal p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
     color: #444;
     text-align: justify;
 }
 
 .conteudo-principal .data-principal {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #666;
-    margin-top: 25px;
+    margin-top: 20px;
     font-style: italic;
 }
 
 /* Responsividade */
 @media (max-width: 1200px) {
-    main {
-        max-width: 1200px;
-        padding: 25px;
-    }
-    
     .page-title {
-        font-size: 3rem;
-    }
-    
-    .destaque-section {
-        height: 500px;
+        font-size: 2.8rem;
     }
 }
 
 @media (max-width: 768px) {
-    main {
-        padding: 20px;
-    }
-
-    /* Transformar seção de destaque em lista de notícias menores */
     .destaque-section {
         flex-direction: column;
         gap: 20px;
-        height: auto;
         margin-bottom: 40px;
     }
 
     .destaque-principal, .destaque-secundario {
-        /* Converter para o estilo de notícia menor */
         flex: none;
-        height: auto;
-        position: relative;
-        overflow: visible;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         display: flex;
-        gap: 25px;
-        padding: 25px;
+        gap: 20px;
+        padding: 20px;
         background: #fff;
         border-left: 6px solid #c41e3a;
+        height: auto;
     }
 
-    .destaque-principal:hover, .destaque-secundario:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    /* Resetar estilos de imagem para mobile */
     .destaque-principal img, .destaque-secundario img {
         width: 120px;
         height: 90px;
         object-fit: cover;
         border-radius: 8px;
         flex-shrink: 0;
-        position: static;
     }
 
-    /* Resetar overlay para mobile */
     .destaque-principal .noticia-overlay, .destaque-secundario .noticia-overlay {
         position: static;
         background: none;
@@ -273,19 +237,16 @@ main {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
     }
 
-    /* Ajustar títulos para mobile */
     .destaque-principal h2, .destaque-secundario h2 {
         font-size: 1.2rem;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         text-shadow: none;
         color: #333;
         line-height: 1.4;
     }
 
-    /* Ajustar categoria para mobile */
     .destaque-principal .categoria, .destaque-secundario .categoria {
         background-color: #e6f3ff;
         color: #0066cc;
@@ -293,22 +254,18 @@ main {
         border-radius: 12px;
         font-size: 0.85rem;
         font-weight: bold;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         display: inline-block;
     }
 
-    /* Ocultar resumo no mobile */
     .destaque-principal .resumo, .destaque-secundario .resumo {
         display: none;
     }
 
-    /* Ajustar data para mobile */
     .destaque-principal .data, .destaque-secundario .data {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #666;
-        opacity: 1;
         margin-top: 0;
-        font-style: normal;
     }
 
     .noticias-secundarias {
@@ -333,16 +290,16 @@ main {
     }
 
     .page-title {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
+        font-size: 2.4rem;
+        margin-bottom: 25px;
     }
     
     .noticia-menor-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .conteudo-principal h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .conteudo-principal p {
@@ -351,40 +308,25 @@ main {
 }
 
 @media (max-width: 480px) {
-    main {
-        padding: 15px;
-    }
-    
-    .page-title {
-        font-size: 2rem;
-        margin-bottom: 25px;
-    }
-    
-    /* Ajustar layout para telas muito pequenas */
-    .destaque-principal, .destaque-secundario {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .destaque-principal img, .destaque-secundario img {
-        width: 100%;
-        height: 150px;
-    }
-
+    .destaque-principal, .destaque-secundario,
     .noticia-menor {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        gap: 12px;
+        padding: 18px;
     }
 
+    .destaque-principal img, .destaque-secundario img,
     .noticia-menor img {
         width: 100%;
         height: 150px;
     }
+
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
 }
 
-/* Efeitos de hover nos links */
 .noticia-destaque, .noticia-menor {
     cursor: pointer;
     text-decoration: none;
@@ -396,17 +338,10 @@ main {
     color: #c41e3a;
 }
 
-/* Animações suaves */
 .noticia-destaque, .noticia-menor, .conteudo-principal {
     transition: all 0.3s ease;
 }
 
-/* Estilo adicional para manter consistência com o site */
 body {
     background-color: #f5f5f5;
-}
-
-/* Ajustes para integração com o header existente */
-main {
-    margin-top: 20px;
 }
