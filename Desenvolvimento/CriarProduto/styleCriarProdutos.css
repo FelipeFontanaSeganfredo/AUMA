@@ -102,6 +102,41 @@ label {
     background-color: #0056b3;
 }
 
+/* Aparência dos SELECTs */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    font-family: "Nova Square";
+    font-size: 15px;
+    color: #333;
+    appearance: none;            
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+    border-color: #6666FF;
+}
+
+select:focus {
+    outline: none;
+    border-color: #6666FF;
+    box-shadow: 0 0 5px rgba(102, 102, 255, 0.4);
+}
+
+select::-ms-expand {
+    display: none;
+}
+
 /* Menu colapsado (aparece em telas menores) */
 .nav-menu {
     position: fixed;

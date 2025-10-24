@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.getElementById('logout-button');
     const createNewsButton = document.getElementById('create-news-button');
+    const createProductButton = document.getElementById('create-product-button');
+    const createPartnerButton = document.getElementById('create-partner-button');
 
     function logout() {
         localStorage.removeItem('jwtToken');
@@ -19,6 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '../CriarNoticia/criarnoticia.html'; 
         });
     }
+
+    if (createProductButton) {
+        createProductButton.addEventListener('click', () => {
+            // Redireciona o usuário para a página de criação de produtos
+            window.location.href = '../CriarProduto/criarproduto.html'; 
+        });
+    }
+
+    /*
+    if (createPartnerButton) {
+        createPartnerButton.addEventListener('click', () => {
+            // Redireciona o usuário para a página de criação de parceiros
+            window.location.href = '../CriarNoticia/criarnoticia.html'; 
+        });
+    } */
 
     function getToken() {
         return localStorage.getItem('jwtToken');
