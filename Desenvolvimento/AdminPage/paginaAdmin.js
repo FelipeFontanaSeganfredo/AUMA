@@ -29,21 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /*
     if (createPartnerButton) {
         createPartnerButton.addEventListener('click', () => {
             // Redireciona o usuário para a página de criação de parceiros
-            window.location.href = '../CriarNoticia/criarnoticia.html'; 
+            window.location.href = '../CriarParceiro/criarparceiro.html'; 
         });
-    } */
+    }
 
     function getToken() {
         return localStorage.getItem('jwtToken');
     }
 
     const token = getToken();
-
+    
     if (!token) {
      window.location.href = '../Login/login.html';
     }
+
 });
