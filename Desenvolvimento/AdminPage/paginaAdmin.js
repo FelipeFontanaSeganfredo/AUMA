@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const createNewsButton = document.getElementById('create-news-button');
     const createProductButton = document.getElementById('create-product-button');
     const createPartnerButton = document.getElementById('create-partner-button');
+    const editNewsButton = document.getElementById('edit-news-button');
+    const editProductButton = document.getElementById('edit-product-button');
+    const editPartnerButton = document.getElementById('edit-partner-button');
 
     function logout() {
         localStorage.removeItem('jwtToken');
@@ -36,12 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (editNewsButton) {
+        editNewsButton.addEventListener('click', () => {
+            // Redireciona o usuário para a página de edição de notícias
+            window.location.href = '../EditarNoticia/editarNoticia.html'; 
+        });
+    }
+
+    if (editProductButton) {
+        editProductButton.addEventListener('click', () => {
+            // Redireciona o usuário para a página de edição de produtos
+            window.location.href = '../EditarProduto/editarProduto.html'; 
+        });
+    }
+
     function getToken() {
         return localStorage.getItem('jwtToken');
     }
 
     const token = getToken();
-    
+
     if (!token) {
      window.location.href = '../Login/login.html';
     }

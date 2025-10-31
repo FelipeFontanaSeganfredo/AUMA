@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Notícias</title>
+    <link rel="stylesheet" href="styleEditarNoticia.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="news-section">
+            <h1 class="news-title">Edição de Notícias</h1>
+
+            <div class="news-grid" id="news-grid">
+                <div class="news-item" data-id="1">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Notícia 1">
+                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 1</p>
+                    </a>
+                </div>
+                <div class="news-item" data-id="2">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Notícia 2">
+                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 2</p>
+                    </a>
+                </div>
+                <div class="news-item" data-id="3">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Notícia 3">
+                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 3</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Editar Notícia</h2>
+
+            <form id="edit-form">
+                <label for="edit-title">Título da notícia</label>
+                <input type="text" id="edit-title" placeholder="Digite o título da notícia">
+
+                <label for="edit-image">Imagem de capa</label>
+                <input class="file-upload-button" type="file" id="edit-image" accept="image/*">
+
+                <label for="edit-text">Texto da notícia</label>
+                <textarea id="edit-text" placeholder="Conteúdo da notícia"></textarea>
+
+                <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+                    <button type="button" class="cadastrar-button" id="save-btn">Salvar</button>
+                    <button type="button" class="cadastrar-button" id="delete-btn" style="background-color: #b71c1c;">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsItems = document.querySelectorAll(".news-item");
+            const modal = document.getElementById("edit-modal");
+            const closeModalBtn = document.getElementById("close-modal");
+        
+            // Abrir o modal ao clicar em uma notícia
+            newsItems.forEach(item => {
+                item.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    modal.style.display = "flex"; // mostra o modal
+                });
+            });
+        
+            // Fechar o modal
+            closeModalBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+        
+            // Fechar clicando fora do modal
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Funcionalidade para o menu colapsado
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navMenu = document.querySelector('.nav-menu');
+            var closeMenu = document.querySelector('.close-menu');
+
+            // Verifica se os elementos existem antes de adicionar o evento
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    navMenu.style.left = '0';
+                });
+            }
+
+            if (closeMenu && navMenu) {
+                closeMenu.addEventListener('click', function () {
+                    navMenu.style.left = '-100%';
+                });
+            }
+        });
+    </script>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    
+</body>
+</html>
