@@ -60,11 +60,21 @@
 #admin-content .admin-options h2 {
     font-size: 1.5em;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+/* Container apenas dos botões */
+#admin-content .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* espaçamento uniforme */
+    justify-content: flex-start;
 }
 
 /* Botões de ação */
 #admin-content .action-button {
+    flex: 1 1 calc(45% - 15px); /* dois por linha em telas médias */
+    min-width: 220px;
     padding: 15px 30px;
     background-color: #6666FF;
     color: #fff;
@@ -74,8 +84,7 @@
     font-size: 1.1em;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    display: inline-block;
-    margin-right: 15px;
+    text-align: center;
 }
 
 #admin-content .action-button:hover {
@@ -100,11 +109,16 @@
         margin-bottom: 10px;
     }
 
-    #admin-content .logout-button,
-    #admin-content .action-button {
+    #admin-content .logout-button {
         width: 100%;
         text-align: center;
         margin-bottom: 10px;
+    }
+
+    /* Em telas menores, um botão por linha */
+    #admin-content .action-button {
+        flex: 1 1 100%;
+        margin: 0;
     }
 }
 

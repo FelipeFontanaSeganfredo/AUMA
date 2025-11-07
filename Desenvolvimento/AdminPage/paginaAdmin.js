@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (editPartnerButton) {
+        editPartnerButton.addEventListener('click', () => {
+            // Redireciona o usuário para a página de edição de parceiros
+            window.location.href = '../EditarParceiro/editarParceiro.html'; 
+        });
+    }
+
+
     function getToken() {
         return localStorage.getItem('jwtToken');
     }

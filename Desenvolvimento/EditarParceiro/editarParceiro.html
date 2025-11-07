@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Parceiros</title>
+    <link rel="stylesheet" href="styleEditarParceiro.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="partner-section">
+            <h1 class="partner-title">Edição de Parceiros</h1>
+
+            <div class="partner-grid" id="partner-grid">
+                <div class="partner-item" data-id="1">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Parceiro 1">
+                        <p style="color:white; text-align:center; margin-top:10px;">Parceiro 1</p>
+                    </a>
+                </div>
+                <div class="partner-item" data-id="2">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Parceiro 2">
+                        <p style="color:white; text-align:center; margin-top:10px;">Título da Parceiro 2</p>
+                    </a>
+                </div>
+                <div class="partner-item" data-id="3">
+                    <a href="#">
+                        <img src="../Assets/auma-logo.png" alt="Parceiro 3">
+                        <p style="color:white; text-align:center; margin-top:10px;">Título da Parceiro 3</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Editar Parceiro</h2>
+
+            <form id="edit-form">
+                <label for="edit-name">Nome do parceiro</label>
+                <input type="text" id="edit-title" placeholder="Digite o nome do parceiro">
+
+                <label for="edit-image">Imagem de capa</label>
+                <input class="file-upload-button" type="file" id="edit-image" accept="image/*">
+
+                <label for="edit-text">Link para redirecionamento</label>
+                <input type="text" id="edit-link" placeholder="Insira o link do site">
+
+                <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+                    <button type="button" class="cadastrar-button" id="save-btn">Salvar</button>
+                    <button type="button" class="cadastrar-button" id="delete-btn" style="background-color: #b71c1c;">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsItems = document.querySelectorAll(".partner-item");
+            const modal = document.getElementById("edit-modal");
+            const closeModalBtn = document.getElementById("close-modal");
+        
+            // Abrir o modal ao clicar em um parceiro
+            newsItems.forEach(item => {
+                item.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    modal.style.display = "flex"; // mostra o modal
+                });
+            });
+        
+            // Fechar o modal
+            closeModalBtn.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+        
+            // Fechar clicando fora do modal
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Funcionalidade para o menu colapsado
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navMenu = document.querySelector('.nav-menu');
+            var closeMenu = document.querySelector('.close-menu');
+
+            // Verifica se os elementos existem antes de adicionar o evento
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    navMenu.style.left = '0';
+                });
+            }
+
+            if (closeMenu && navMenu) {
+                closeMenu.addEventListener('click', function () {
+                    navMenu.style.left = '-100%';
+                });
+            }
+        });
+    </script>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    
+</body>
+</html>

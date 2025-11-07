@@ -52,7 +52,6 @@ nav ul li a {
     box-sizing: border-box; /* Garante que padding e border estejam dentro da largura/altura dos elementos */
 }
 
-/* === SEÇÃO PRINCIPAL DE PRODUTOS === */
 .product-section {
     max-width: 1000px;
     margin: 40px auto;
@@ -68,7 +67,6 @@ nav ul li a {
     color: #333;
 }
 
-/* === GRADE DE PRODUTOS === */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -107,9 +105,8 @@ nav ul li a {
     margin: 0;
 }
 
-/* === MODAL (POP-UP) DE EDIÇÃO === */
-/* Modal */
 
+/* Modal (pop-up) de edição*/
 .modal {
     display: none;
     position: fixed;
