@@ -1,75 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definindo a URL base da API
-    const API_BASE_URL = 'https://auma-api.onrender.com';
 
-    // Funções para autenticação e token (reutilizadas)
-    function getToken() {
-        return localStorage.getItem('jwtToken');
-    }
+    const API_URL = 'https://auma-api.onrender.com';
+    const postForm = document.getElementById('post-form');
 
-    function getUserEmail() {
-        return localStorage.getItem('userEmail');
-    }
-
-    function isAuthenticated() {
-        return !!getToken();
-    }
-
-    function logout() {
-        localStorage.removeItem('jwtToken');
-        localStorage.removeItem('userEmail');
-        window.location.href = 'login.html';
-    }
-
-    // Se o usuário não estiver autenticado, redireciona
-    if (!isAuthenticated()) {
-        alert('Você precisa estar logado para cadastrar um parceiro.');
-        // Considerar redirecionar para o login
-        // window.location.href = '../Login/login.html'; 
+    // Verifica se tem token ao carregar a página
+    const token = localStorage.getItem('jwtToken');
+    if (!token) {
+        alert('Você precisa fazer login primeiro!');
+        window.location.href = '../Login/login.html';
         return;
     }
 
-    // Obtém o formulário e adiciona o evento de submissão
-    const postForm = document.getElementById('post-form');
     postForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const token = getToken();
-        
-        // Coleta os dados específicos do formulário de PARCEIRO
-        const name = document.getElementById('name').value;
-        const link = document.getElementById('link').value;
-        const imageFile = document.getElementById('image').files[0];
-        const userEmail = getUserEmail(); // Mantém o e-mail do admin que está cadastrando
+        // Pega o token atualizado (caso tenha mudado em outra aba)
+        const currentToken = localStorage.getItem('jwtToken');
 
-        // Cria um objeto FormData para enviar os dados
         const formData = new FormData();
-        formData.append('name', name);
-        formData.append('link', link);
-        formData.append('userEmail', userEmail);
-        
-        if (imageFile) {
-            formData.append('image', imageFile);
+
+        const partnerDto = {
+            name: document.getElementById('name').value,
+            description: "Parceiro AUMA", // Valor padrão para passar na validação @NotBlank do DTO
+            partnerUrl: document.getElementById('link').value,
+            imageUrl: "" // Pode ir vazio agora que removemos @NotBlank do DTO, ou string vazia
+        };
+
+        const jsonBlob = new Blob(
+            [JSON.stringify(partnerDto)],
+            { type: 'application/json' }
+        );
+
+        formData.append('request', jsonBlob);
+
+        const fileInput = document.getElementById('image');
+        if (fileInput.files.length > 0) {
+            formData.append('image', fileInput.files[0]);
         }
 
         try {
-            // Faz a requisição POST para o endpoint /partners
-            const response = await fetch(`${API_BASE_URL}/partners`, {
+            const response = await fetch(`${API_URL}/partners`, {
                 method: 'POST',
-                headers: { 'Authorization': `Bearer ${token}` },
+                headers: {
+                    'Authorization': `Bearer ${currentToken}`
+                    // Não defina Content-Type aqui, o browser define automático para multipart
+                },
                 body: formData
             });
 
-            if (response.ok) {
-                alert('Parceiro criado com sucesso!');
-                postForm.reset(); // Limpa o formulário
-            } else {
-                const errorData = await response.json();
-                alert(`Erro ao criar parceiro: ${errorData.message || response.statusText}`);
+            if (response.status === 401) {
+                alert("Sessão expirada. Por favor, faça login novamente.");
+                window.location.href = '../Login/login.html';
+                return;
             }
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("ERRO:", errorText);
+                alert("Erro ao criar parceiro. Verifique o console.");
+                throw new Error("Erro ao criar parceiro");
+            }
+
+            const result = await response.json();
+            console.log("Parceiro criado:", result);
+            alert("Parceiro criado com sucesso!");
+            postForm.reset();
+
         } catch (error) {
-            console.error('Erro de rede:', error);
-            alert('Não foi possível conectar ao servidor. Tente novamente mais tarde.');
+            console.error("Erro na requisição:", error);
         }
     });
 });

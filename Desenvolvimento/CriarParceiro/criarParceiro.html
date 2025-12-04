@@ -17,7 +17,7 @@
     <main>
         <div class="content">
             <h1>Cadastro de Parceiros</h1>
-            <form id="post-form" method="POST">
+            <form id="post-form" enctype="multipart/form-data">
                 <label for="nomeParceiro">Nome do parceiro</label>
                 <input type="text" id="name" placeholder="Digite o nome do parceiro" required>
 
@@ -33,13 +33,11 @@
     </main>
 
     <script>
-        // Funcionalidade para o menu colapsado
         document.addEventListener('DOMContentLoaded', function () {
             var menuToggle = document.querySelector('.menu-toggle');
             var navMenu = document.querySelector('.nav-menu');
             var closeMenu = document.querySelector('.close-menu');
 
-            // Verifica se os elementos existem antes de adicionar o evento
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function () {
                     navMenu.style.left = '0';
@@ -58,6 +56,6 @@
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
-    <script src="criarnoticia.js"></script>
+    <script src="criarParceiro.js"></script>
 </body>
 </html>
