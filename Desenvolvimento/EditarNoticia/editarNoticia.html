@@ -17,26 +17,8 @@
     <main>
         <section class="news-section">
             <h1 class="news-title">Edição de Notícias</h1>
-
             <div class="news-grid" id="news-grid">
-                <div class="news-item" data-id="1">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Notícia 1">
-                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 1</p>
-                    </a>
-                </div>
-                <div class="news-item" data-id="2">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Notícia 2">
-                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 2</p>
-                    </a>
-                </div>
-                <div class="news-item" data-id="3">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Notícia 3">
-                        <p style="color:white; text-align:center; margin-top:10px;">Título da Notícia 3</p>
-                    </a>
-                </div>
+                <!-- Notícias serão carregadas aqui dinâmicamente-->
             </div>
         </section>
     </main>
@@ -65,34 +47,6 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const newsItems = document.querySelectorAll(".news-item");
-            const modal = document.getElementById("edit-modal");
-            const closeModalBtn = document.getElementById("close-modal");
-        
-            // Abrir o modal ao clicar em uma notícia
-            newsItems.forEach(item => {
-                item.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    modal.style.display = "flex"; // mostra o modal
-                });
-            });
-        
-            // Fechar o modal
-            closeModalBtn.addEventListener("click", () => {
-                modal.style.display = "none";
-            });
-        
-            // Fechar clicando fora do modal
-            window.addEventListener("click", (event) => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            });
-        });
-    </script>
-
-    <script>
         // Funcionalidade para o menu colapsado
         document.addEventListener('DOMContentLoaded', function () {
             var menuToggle = document.querySelector('.menu-toggle');
@@ -118,6 +72,7 @@
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
+    <script src="editarNoticia.js"></script>
     
 </body>
 </html>
