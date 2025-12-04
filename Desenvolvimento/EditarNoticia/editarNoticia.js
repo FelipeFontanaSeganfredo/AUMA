@@ -7,14 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
         return localStorage.getItem('jwtToken');
     }
 
+    function getUserEmail() {
+        return localStorage.getItem('userEmail');
+    }
+
     function isAuthenticated() {
         return !!getToken();
     }
 
-    // Bloqueio de segurança se não estiver logado
-    if (!isAuthenticated()) {
-        alert('Você precisa estar logado para editar notícias.');
+    function logout() {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('userEmail');
         window.location.href = 'login.html';
+    }
+
+    // Se o usuário não estiver autenticado, redireciona para a página de login
+    if (!isAuthenticated()) {
+        alert('Você precisa estar logado para cadastrar uma notícia.');
         return;
     }
 

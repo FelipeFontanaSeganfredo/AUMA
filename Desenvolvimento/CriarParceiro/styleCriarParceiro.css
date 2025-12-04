@@ -145,6 +145,22 @@ label {
     cursor: pointer;
 }
 
+.btn-voltar {
+    display: inline-block; /* Para que ele se comporte como um botão/bloco */
+    padding: 10px 15px;
+    background-color: #333; /* Cor de fundo */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #555;
+}
+
 @media (max-width: 768px) {
     button {
         padding: 10px 15px; 
