@@ -19,24 +19,8 @@
             <h1 class="partner-title">Edição de Parceiros</h1>
 
             <div class="partner-grid" id="partner-grid">
-                <div class="partner-item" data-id="1">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Parceiro 1">
-                        <p style="color:white; text-align:center; margin-top:10px;">Parceiro 1</p>
-                    </a>
-                </div>
-                <div class="partner-item" data-id="2">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Parceiro 2">
-                        <p style="color:white; text-align:center; margin-top:10px;">Título da Parceiro 2</p>
-                    </a>
-                </div>
-                <div class="partner-item" data-id="3">
-                    <a href="#">
-                        <img src="../Assets/auma-logo.png" alt="Parceiro 3">
-                        <p style="color:white; text-align:center; margin-top:10px;">Título da Parceiro 3</p>
-                    </a>
-                </div>
+                <!-- Os parceiros serão carregados dinamicamente aqui -->
+                <p style="color: #666; text-align: center; grid-column: 1/-1;">Carregando parceiros...</p>
             </div>
             <a href="../AdminPage/paginaAdmin.html" class="btn-voltar"> &larr; Voltar</a>
         </section>
@@ -48,14 +32,14 @@
             <h2>Editar Parceiro</h2>
 
             <form id="edit-form">
-                <label for="edit-name">Nome do parceiro</label>
-                <input type="text" id="edit-title" placeholder="Digite o nome do parceiro">
+                <label for="edit-title">Nome do parceiro</label>
+                <input type="text" id="edit-title" placeholder="Digite o nome do parceiro" required>
 
                 <label for="edit-image">Imagem de capa</label>
                 <input class="file-upload-button" type="file" id="edit-image" accept="image/*">
 
-                <label for="edit-text">Link para redirecionamento</label>
-                <input type="text" id="edit-link" placeholder="Insira o link do site">
+                <label for="edit-link">Link para redirecionamento</label>
+                <input type="text" id="edit-link" placeholder="Insira o link do site" required>
 
                 <div style="margin-top: 20px; display: flex; justify-content: space-between;">
                     <button type="button" class="cadastrar-button" id="save-btn">Salvar</button>
@@ -65,60 +49,10 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const newsItems = document.querySelectorAll(".partner-item");
-            const modal = document.getElementById("edit-modal");
-            const closeModalBtn = document.getElementById("close-modal");
-        
-            // Abrir o modal ao clicar em um parceiro
-            newsItems.forEach(item => {
-                item.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    modal.style.display = "flex"; // mostra o modal
-                });
-            });
-        
-            // Fechar o modal
-            closeModalBtn.addEventListener("click", () => {
-                modal.style.display = "none";
-            });
-        
-            // Fechar clicando fora do modal
-            window.addEventListener("click", (event) => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            });
-        });
-    </script>
-
-    <script>
-        // Funcionalidade para o menu colapsado
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuToggle = document.querySelector('.menu-toggle');
-            var navMenu = document.querySelector('.nav-menu');
-            var closeMenu = document.querySelector('.close-menu');
-
-            // Verifica se os elementos existem antes de adicionar o evento
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function () {
-                    navMenu.style.left = '0';
-                });
-            }
-
-            if (closeMenu && navMenu) {
-                closeMenu.addEventListener('click', function () {
-                    navMenu.style.left = '-100%';
-                });
-            }
-        });
-    </script>
-
     <div id="footer-container"></div>
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
-    
+    <script src="editarParceiro.js"></script>
 </body>
 </html>
