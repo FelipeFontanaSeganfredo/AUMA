@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Definindo a URL base da API
-    const API_URL = 'https://auma-api.onrender.com'; // <--- Você declarou como API_URL
+    const API_URL = 'https://auma-api.onrender.com';
 
     // Função para verificar se o usuário já está logado
     function checkAuthentication() {
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         try {
-            // CORREÇÃO: Usar API_URL ao invés de API_BASE_URL
             const response = await fetch(`${API_URL}/auth/login`, { 
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -34,14 +33,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('jwtToken', data.accessToken);
                 localStorage.setItem('userEmail', email); 
                 
-                alert('Login bem-sucedido!');
-                window.location.href = '../AdminPage/paginaAdmin.html';
+                // --- SUCESSO ---
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login bem-sucedido!',
+                    text: 'Redirecionando...',
+                    showConfirmButton: false,
+                    timer: 1500 // Fecha automaticamente após 1.5 segundos
+                }).then(() => {
+                    // O redirecionamento acontece após o alerta fechar
+                    window.location.href = '../AdminPage/paginaAdmin.html';
+                });
+
             } else {
-                alert('Email ou senha incorretos.');
+                // --- ERRO DE CREDENCIAIS ---
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Acesso Negado',
+                    text: 'Email ou senha incorretos.',
+                    confirmButtonColor: '#d33', // Opcional: cor vermelha no botão
+                    confirmButtonText: 'Tentar novamente'
+                });
             }
         } catch (error) {
             console.error('Erro no login:', error);
-            alert('Não foi possível conectar ao servidor. Tente novamente mais tarde.');
+            
+            // --- ERRO DE SERVIDOR/CONEXÃO ---
+            Swal.fire({
+                icon: 'warning',
+                title: 'Erro de Conexão',
+                text: 'Não foi possível conectar ao servidor. Verifique sua internet ou tente mais tarde.',
+            });
         }
     });
 });
