@@ -1,19 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definindo a URL base da API
     const API_BASE_URL = 'https://auma-api.onrender.com';
 
-    // Funções para autenticação e token
-    function getToken() {
-        return localStorage.getItem('jwtToken');
-    }
-
-    function getUserEmail() {
-        return localStorage.getItem('userEmail');
-    }
-
-    function isAuthenticated() {
-        return !!getToken();
-    }
+    function getToken() { return localStorage.getItem('jwtToken'); }
+    function getUserEmail() { return localStorage.getItem('userEmail'); }
+    function isAuthenticated() { return !!getToken(); }
 
     function logout() {
         localStorage.removeItem('jwtToken');
@@ -21,13 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
     }
 
-    // Se o usuário não estiver autenticado, redireciona para a página de login
+    // Se o usuário não estiver autenticado
     if (!isAuthenticated()) {
-        alert('Você precisa estar logado para cadastrar uma notícia.');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Acesso Restrito',
+            text: 'Você precisa estar logado para cadastrar uma notícia.',
+            confirmButtonText: 'Ir para Login'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Ajuste o caminho se necessário (ex: '../Login/login.html')
+                window.location.href = 'login.html'; 
+            }
+        });
         return;
     }
 
-    // Obtém o formulário e adiciona o evento de submissão
     const postForm = document.getElementById('post-form');
     postForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -38,37 +37,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageFile = document.getElementById('image').files[0];
         const userEmail = getUserEmail();
 
-        // Cria um objeto FormData para enviar os dados, incluindo a imagem
         const formData = new FormData();
         formData.append('title', title);
         formData.append('text', text);
-        if (imageFile) {
-            formData.append('image', imageFile);
-        }
+        if (imageFile) formData.append('image', imageFile);
         formData.append('userEmail', userEmail);
 
         try {
-            // Faz a requisição POST para o endpoint /posts
             const response = await fetch(`${API_BASE_URL}/posts`, {
                 method: 'POST',
-                // O header Authorization é crucial para a autenticação
                 headers: { 'Authorization': `Bearer ${token}` },
                 body: formData
             });
 
             if (response.ok) {
-                alert('Notícia criada com sucesso!');
-                postForm.reset(); // Limpa o formulário
-                // Opcionalmente, redirecionar para a página inicial ou de notícias
-                // window.location.href = 'index.html'; 
+                // SUCESSO
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: 'Notícia criada com sucesso!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                postForm.reset(); 
             } else {
-                // Se a resposta não for OK, tenta pegar o erro do servidor
+                // ERRO DA API
                 const errorData = await response.json();
-                alert(`Erro ao criar notícia: ${errorData.message || response.statusText}`);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: `Erro ao criar notícia: ${errorData.message || response.statusText}`
+                });
             }
         } catch (error) {
             console.error('Erro de rede:', error);
-            alert('Não foi possível conectar ao servidor. Tente novamente mais tarde.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro de Conexão',
+                text: 'Não foi possível conectar ao servidor.'
+            });
         }
     });
 });

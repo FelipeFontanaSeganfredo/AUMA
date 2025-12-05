@@ -1,29 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const API_URL = 'https://auma-api.onrender.com';
     const postForm = document.getElementById('post-form');
 
-    // Verifica se tem token ao carregar a página
     const token = localStorage.getItem('jwtToken');
+    
+    // Verificação inicial de Login
     if (!token) {
-        alert('Você precisa fazer login primeiro!');
-        window.location.href = '../Login/login.html';
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção',
+            text: 'Você precisa fazer login primeiro!',
+            confirmButtonText: 'Ir para Login'
+        }).then(() => {
+            window.location.href = '../Login/login.html';
+        });
         return;
     }
 
     postForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        // Pega o token atualizado (caso tenha mudado em outra aba)
         const currentToken = localStorage.getItem('jwtToken');
-
         const formData = new FormData();
 
         const partnerDto = {
             name: document.getElementById('name').value,
-            description: "Parceiro AUMA", // Valor padrão para passar na validação @NotBlank do DTO
+            description: "Parceiro AUMA",
             partnerUrl: document.getElementById('link').value,
-            imageUrl: "" // Pode ir vazio agora que removemos @NotBlank do DTO, ou string vazia
+            imageUrl: ""
         };
 
         const jsonBlob = new Blob(
@@ -43,31 +47,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${currentToken}`
-                    // Não defina Content-Type aqui, o browser define automático para multipart
                 },
                 body: formData
             });
 
+            // Sessão Expirada (401)
             if (response.status === 401) {
-                alert("Sessão expirada. Por favor, faça login novamente.");
-                window.location.href = '../Login/login.html';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Sessão Expirada',
+                    text: 'Por favor, faça login novamente.',
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    window.location.href = '../Login/login.html';
+                });
                 return;
             }
 
             if (!response.ok) {
                 const errorText = await response.text();
                 console.error("ERRO:", errorText);
-                alert("Erro ao criar parceiro. Verifique o console.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Erro ao criar parceiro. Verifique os dados.'
+                });
                 throw new Error("Erro ao criar parceiro");
             }
 
             const result = await response.json();
             console.log("Parceiro criado:", result);
-            alert("Parceiro criado com sucesso!");
+
+            // SUCESSO
+            Swal.fire({
+                icon: 'success',
+                title: 'Parceiro Criado!',
+                showConfirmButton: false,
+                timer: 1500
+            });
             postForm.reset();
 
         } catch (error) {
             console.error("Erro na requisição:", error);
+            // O catch pode capturar o throw new Error acima, 
+            // então verificamos se já exibimos um alert antes ou se é erro de rede
         }
     });
 });
