@@ -22,33 +22,39 @@
             <div class="search-filter">
                 <input type="text" class="search-input" placeholder="Pesquisar produtos...">
                 <select class="filter-select">
-                    <option>Tipo</option>
-                    <option>Eletrônicos</option>
-                    <option>Roupas</option>
-                    <option>Acessórios</option>
+                    <option value="">Todos os Tipos</option>
+                    <option value="Eletrônicos">Eletrônicos</option>
+                    <option value="Roupas">Roupas</option>
+                    <option value="Acessórios">Acessórios</option>
                 </select>
             </div>
         </div>
 
         <div class="main-grid">
             <aside class="sidebar">
-                <h3>Tipo</h3>
+                <h3>Categorias</h3>
                 <ul>
                     <li><a href="#">Eletrônicos</a></li>
                     <li><a href="#">Roupas</a></li>
                     <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">Artesanato</a></li>
                 </ul>
                 <h3>Tamanho</h3>
                 <ul>
                     <li><a href="#">P</a></li>
                     <li><a href="#">M</a></li>
                     <li><a href="#">G</a></li>
+                    <li><a href="#">GG</a></li>
                 </ul>
             </aside>
 
-            <section class="products-grid" id="products-container">
-                <p>Carregando produtos...</p>
-            </section>
+            <div class="products-area">
+                <section class="products-grid" id="products-container">
+                    <p>Carregando produtos...</p>
+                </section>
+
+                <div id="pagination-container" class="pagination"></div>
+            </div>
         </div>
     </main>
 

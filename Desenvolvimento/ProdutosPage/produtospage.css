@@ -1,6 +1,6 @@
-/* produtos.css - Adaptado do seu padrão */
+/* produtospage.css */
 body {
-    font-family: "Nova Square";
+    font-family: "Nova Square", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F5F5F5;
@@ -8,16 +8,20 @@ body {
 }
 
 .content {
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-top: 25px;
+    /* ALTERAÇÃO PRINCIPAL: Reduzi as margens laterais de 25% para 5% */
+    padding: 25px 5%; 
+    max-width: 1600px; /* Limite para ecrãs gigantes não esticarem demais */
+    margin: 0 auto;    /* Centraliza o conteúdo */
+    
     display: flex;
     flex-direction: column;
+    min-height: 80vh; /* Garante altura mínima */
+    padding-bottom: 100px; /* Espaço para o footer não tapar o conteúdo */
 }
 
 .page-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .main-title {
@@ -30,7 +34,7 @@ body {
     display: flex;
     gap: 15px;
     justify-content: center;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -38,63 +42,96 @@ body {
     padding: 12px;
     border: 2px solid #E0E0E0;
     border-radius: 8px;
-    font-family: "Nova Square";
+    font-family: "Nova Square", sans-serif;
     font-size: 16px;
+}
+
+.search-input {
+    flex: 2;
+}
+
+.filter-select {
     flex: 1;
 }
 
+/* Layout Principal */
 .main-grid {
     display: flex;
     gap: 30px;
+    align-items: flex-start; /* Impede que a sidebar estique */
 }
 
+/* Barra Lateral */
 .sidebar {
-    width: 200px;
+    width: 220px;
     flex-shrink: 0;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .sidebar h3 {
     margin-bottom: 15px;
     color: #333;
     font-size: 1.2em;
+    border-bottom: 2px solid #6666FF;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
 }
 
 .sidebar li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .sidebar a {
     text-decoration: none;
     color: #666;
     font-weight: bold;
+    transition: color 0.2s;
+    display: block;
 }
 
 .sidebar a:hover {
     color: #6666FF;
+    transform: translateX(5px);
+}
+
+/* Área de Produtos */
+.products-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .products-grid {
-    flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    /* 4 Colunas no Desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
+/* Cartão do Produto */
 .product-card {
     background: white;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.2s, border-color 0.2s;
     border: 2px solid transparent;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -102,70 +139,127 @@ body {
     border-color: #6666FF;
 }
 
-.product-card img {
+/* Moldura da Imagem (Fixa altura para não quebrar layout) */
+.product-image-box {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
-.product-card h3 {
+.product-image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ajusta sem cortar. Use 'cover' se preferir preencher tudo */
+}
+
+.product-info h3 {
     margin: 10px 0;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    height: 2.6em; /* Limita a 2 linhas de texto */
+    overflow: hidden;
 }
 
-.product-price {
-    font-size: 1.5em;
-    color: #6666FF;
-    font-weight: bold;
+.category, .gender {
+    font-size: 0.9em;
+    color: #777;
+    margin: 5px 0;
 }
 
 .product-button {
     background-color: #6666FF;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 10px 15px;
     border-radius: 8px;
-    font-family: "Nova Square";
+    font-family: "Nova Square", sans-serif;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+    transition: background-color 0.2s;
 }
 
-/* Responsivo - Adaptado do seu padrão */
-@media (max-width: 768px) {
-    .content {
-        padding-left: 7%;
-        padding-right: 7%;
-    }
+.product-button:hover {
+    background-color: #5555EE;
+}
 
-    .main-grid {
-        flex-direction: column;
-    }
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto; /* Empurra para o fundo se houver espaço */
+    padding-top: 20px;
+}
 
-    .sidebar {
-        width: 100%;
-        order: 2;
-    }
+.pagination button {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Nova Square", sans-serif;
+    font-weight: bold;
+    transition: all 0.2s;
+}
 
+.pagination button:hover:not(:disabled) {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.pagination button.active {
+    background-color: #6666FF;
+    color: white;
+    border-color: #6666FF;
+}
+
+.pagination button:disabled {
+    background-color: #f9f9f9;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em ecrãs médios */
     }
+}
 
+@media (max-width: 900px) {
+    .content {
+        padding: 20px 3%; /* Menos margem em tablets */
+    }
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+    .sidebar {
+        display: none; /* Opcional: esconder sidebar em telas menores ou transformar em menu superior */
+    }
+    .main-grid {
+        display: block; /* Remove o flex lateral */
+    }
+}
+
+@media (max-width: 550px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telemóveis */
+    }
     .search-filter {
         flex-direction: column;
     }
-}
-
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 2em;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
+    .product-image-box {
+        height: 250px; /* Imagem maior no mobile */
     }
 }
