@@ -1,0 +1,633 @@
+.corpo {
+    display: block;
+    align-items: center;
+    font-family: "Nova Square";
+    background-color: #ffffff;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #fafafa;
+}
+
+.doar-button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.doar-button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General styles */
+
+/* Novo estilo para o retângulo cinza na parte inferior */
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    /* Adjust this value as needed */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    background-color: rgb(255, 255, 255);
+    /* Just for visual reference */
+}
+
+/* Ajuste para posicionamento e margem */
+main {
+    padding-bottom: 60px;
+    /* Espaçamento inferior */
+    background-color: #ffffff;
+}
+
+.content {
+    display: block;
+    align-items: center;
+    font-family: "Nova Square";
+    background-color: #ffffff;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+}
+
+.content p {
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 90vh;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.right {
+    flex: 2;
+    text-align: justify;
+}
+
+.right p {
+    line-height: 1.6;
+}
+
+.doe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #3366FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.doe-button:hover {
+    background-color: #254EDD;
+}
+
+.text {
+    font-family: "Nova Square";
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.illustration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 90vh;
+}
+
+.illustration img {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-height: 25svh;
+    min-height: 25px;
+    min-width: 30%;
+    object-fit: contain;
+}
+
+.mission {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mission h1,
+.values h1 {
+    font-family: "Nova Square";
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.mission p {
+    font-family: "Nova Square";
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: justify;
+}
+
+.values {
+    text-align: center;
+    font-family: "Nova Square";
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.values h1 {
+    margin-top: 50px;
+    font-family: "Nova Square";
+}
+
+.values .value-item {
+    display: inline-block;
+    width: 23%;
+    margin: 20px 1%;
+    vertical-align: top;
+    flex: 1 1 200px;
+    text-align: -webkit-center;
+    max-width: 40vh;
+}
+
+.values .value-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.values .value-item p {
+    display: flex;
+    align-self: center;
+    font-family: "Nova Square";
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.4;
+    min-width: 15px;
+    max-width: 80%;
+    text-align: justify;
+}
+
+/* General styles */
+
+/* Novo estilo para o retângulo cinza na parte inferior */
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    /* Adjust this value as needed */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    background-color: rgb(255, 255, 255);
+    /* Just for visual reference */
+}
+
+/* Ajuste para posicionamento e margem */
+main {
+    padding-bottom: 60px;
+    /* Espaçamento inferior */
+    background-color: #ffffff;
+}
+
+.content p {
+    display: flex;
+    align-items: center;
+    font-family: "Nova Square";
+    background-color: #ffffff;
+    padding-top: 15px;
+    max-height: 25svh;
+    min-height: 25px;
+    min-width: 30%;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+}
+
+body {
+    font-family: "Nova Square";
+    margin: 0;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+main .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.left {
+    flex: 1;
+    text-align: center;
+}
+
+.left img {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.right {
+    flex: 2;
+    text-align: justify;
+}
+
+.right p {
+    line-height: 1.6;
+}
+
+.doe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #3366FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.doe-button:hover {
+    background-color: #254EDD;
+}
+
+.text {
+    font-family: "Nova Square";
+
+}
+
+body {
+    font-family: "Nova Square";
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+header {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E0E0E0;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    margin: 20px 10px;
+    position: relative;
+}
+
+.logo img {
+    margin-left: 15%;
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.doar-button {
+    background-color: #6666FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Menu colapsado (aparece em telas menores) */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* Menu oculto fora da tela */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 20px 0;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.close-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Ícone de menu (hambúrguer) para dispositivos móveis */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+
+    /*Esconde o menu normal e mostra o ícone no mobile*/
+    nav ul {
+        display: none;
+    }
+
+    .corpo {
+        display: block;
+        align-items: center;
+        font-family: "Nova Square";
+        background-color: #ffffff;
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .illustration {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        max-width: 40vh;
+    }
+
+    .illustration img {
+        display: flex;
+        width: auto;
+        height: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+        max-height: 25svh;
+        min-height: 25px;
+        min-width: 25%;
+        object-fit: contain;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .values .value-item p {
+        display: flex;
+        align-self: center;
+        font-family: "Nova Square";
+        font-size: 14px;
+        margin-top: 10px;
+        line-height: 1.4;
+        min-width: 15px;
+        max-width: 80%;
+        text-align: justify;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .doar-button-mobile {
+        display: inline-block;
+    }
+
+    .left {
+        flex: 1;
+        text-align: center;
+        /*Centraliza a imagem no contêiner*/
+        margin-top: 20px;
+        margin-left: auto;
+        /*Centraliza horizontalmente*/
+        margin-right: auto;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 5vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        flex-direction: column;
+        font-size: 4vw;
+    }
+
+    .left img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .right {
+        font-size: 5vw;
+    }
+
+    .doe-button {
+        font-size: 5vw;
+    }
+
+    nav ul li a {
+        font-size: 3vw;
+    }
+
+    .doar-button {
+        font-size: 3vw;
+    }
+
+    .left {
+        flex: 1;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .right {
+        text-align: justify;
+        font-size: 3vw;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .logo img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* Header */
+    header {
+        background-color: #F5F5F5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 2px solid #E0E0E0;
+    }
+
+    .right p {
+        line-height: 1.6;
+    }
+
+    main .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px;
+        font-size: 4vw;
+        flex-direction: column;
+    }
+
+    .left img {
+        width: 100%;
+        height: auto;
+    }
+}

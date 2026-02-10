@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - AUMA</title>
+    <link rel="stylesheet" href="produtospage.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+</head>
+
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+
+    <div id="header-container"></div>
+
+    <main class="content">
+        <div class="page-header">
+            <h1 class="main-title">Produtos</h1>
+            <div class="search-filter">
+                <input type="text" class="search-input" placeholder="Pesquisar produtos...">
+                <select class="filter-select">
+                    <option>Tipo</option>
+                    <option>Eletrônicos</option>
+                    <option>Roupas</option>
+                    <option>Acessórios</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <aside class="sidebar">
+                <h3>Tipo</h3>
+                <ul>
+                    <li><a href="#">Eletrônicos</a></li>
+                    <li><a href="#">Roupas</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                </ul>
+                <h3>Tamanho</h3>
+                <ul>
+                    <li><a href="#">P</a></li>
+                    <li><a href="#">M</a></li>
+                    <li><a href="#">G</a></li>
+                </ul>
+            </aside>
+
+            <section class="products-grid" id="products-container">
+                <p>Carregando produtos...</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="produtospage.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação AUMA</title>
+    <link rel="stylesheet" href="styleDoacoes.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../Header/styleHeader.css">    
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+
+    <div id="header-container"></div>
+
+    <main>
+        <div class="content">
+            <div class="left">
+                <img class="left img" src="../Assets/doe_fundo.png" alt="Desenho de uma criança">
+            </div>
+            <div class="text-right">
+                <p>
+                    Sua doação transforma vidas: ajude a AUMA a oferecer terapias, apoio educacional e atividades que promovem inclusão e bem-estar para pessoas com autismo e suas famílias.
+                </p>
+                <button class="doe-button" id="doeAquiBtn">DOE AQUI</button>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Funcionalidade de doação
+        function showDonationModal() {
+        Swal.fire({
+            title: "Doe via QR Code ou Depósito Bancário",
+            html: `
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div id="qrContainer"></div> <div style="text-align: left;">
+                        <h4>Depósito Bancário:</h4>
+                        <p><strong>Banco:</strong> Banco do Brasil</p>
+                        <p><strong>Agência:</strong> 0001</p>
+                        <p><strong>Conta Corrente:</strong> 12345-6</p>
+                        <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+                    </div>
+                </div>
+            `,
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText: "Fechar",
+            willOpen: () => {
+                const qrContainer = document.getElementById("qrContainer");
+                if (qrContainer) {
+                    new QRCode(qrContainer, {
+                        text: "https://br.lipsum.com/",
+                        width: 128,
+                        height: 128
+                    });
+                }
+            }
+        });
+    }
+    
+        document.getElementById('doeAquiBtn').addEventListener('click', showDonationModal);
+
+        // Funcionalidade para o menu colapsado
+        document.addEventListener('DOMContentLoaded', function () {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navMenu = document.querySelector('.nav-menu');
+            var closeMenu = document.querySelector('.close-menu');
+
+            // Abre o menu ao clicar no ícone de hambúrguer
+            menuToggle.addEventListener('click', function () {
+                navMenu.style.left = '0';  // Desliza o menu para dentro da tela
+            });
+
+            // Fecha o menu ao clicar no ícone de fechar (×)
+            closeMenu.addEventListener('click', function () {
+                navMenu.style.left = '-100%';  // Desliza o menu para fora da tela
+            });
+        });
+    </script>
+    <div id="footer-container"></div>
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+</body>
+</html>

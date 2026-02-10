@@ -1,0 +1,113 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Nova Square', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contêiner Principal da Página de Parceiros */
+.partners-section {
+    max-width: 1000px;
+    margin: 40px auto; /* Centraliza a seção e adiciona espaço */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partners-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+}
+
+/* Grid de Parceiros */
+.partners-grid {
+    display: grid;
+    /* Cria 4 colunas de tamanho igual */
+    grid-template-columns: repeat(4, 1fr);
+    /* Espaçamento entre os itens da grade */
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 60px; /* Espaço antes do banner CTA */
+}
+
+/* Item Individual da Grade */
+.partner-item {
+    background-color: #1a237e; /* Cor azul escura dos quadrados */
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.partner-item a {
+    display: block;
+    padding: 15px; /* Espaço interno para a imagem respirar */
+}
+
+.partner-item img {
+    width: 100%; /* Garante que a imagem ocupe todo o espaço */
+    height: auto;
+    display: block; /* Remove espaços extras abaixo da imagem */
+}
+
+/* Banner de Chamada para Ação (CTA) */
+.cta-banner {
+    width: 100%;
+    max-width: 600px; /* Largura máxima do banner */
+    background-color: #283593; /* Azul um pouco mais claro */
+    color: white;
+    border-radius: 50px; /* Bordas bem arredondadas */
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+.cta-banner p {
+    margin: 0;
+    font-size: 1.2em;
+    padding-left: 15px;
+}
+
+.cta-button {
+    background-color: #3f51b5; /* Azul do botão */
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #5c6bc0; /* Cor mais clara ao passar o mouse */
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .partners-grid {
+        /* Muda de 4 para 2 colunas em telas menores */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .partners-title {
+        font-size: 2.2em;
+    }
+
+    .cta-banner {
+        flex-direction: column; /* Empilha o texto e o botão */
+        text-align: center;
+        padding: 20px;
+        gap: 15px; /* Espaço entre o texto e o botão */
+    }
+}

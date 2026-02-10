@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleHome.css">    
+    <link rel="stylesheet" href="../Header/styleHeader.css">    
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- Container onde o header será injetado -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Seção de cima com botão, texto e imagem das linhas com astronauta -->
+        <div class="top-section">
+            <div class="container">
+
+        
+                <!-- Linhas coloridas de fundo usando SVG -->
+                <div class="lines-background">
+                    <!-- Linha Azul -->
+                    <div class="lines-background">
+                        <!-- Blue Wave (Left and Right) -->
+                        <img src="../Assets/wave-blue-left.png" class="wave-line" style="width: 50%; position: absolute; left: 0; transform: translateY(-38%);">
+        
+                        <img src="../Assets/wave-blue-right.png" class="wave-line" style="width: 50%; position: absolute; right: 0;">
+        
+        
+                    
+                        <!-- Yellow Wave (Left and Right) -->
+                        <img src="../Assets/wave-yellow-left.png" class="wave-line" style="width: 50%; position: absolute; left: 0; top: 45%; transform: translateY(-55%);">
+                        <img src="../Assets/wave-yellow-right.png" class="wave-line" style="width: 50%; position: absolute; right: 0; transform: translateY(-50%);">
+        
+        
+                    
+                        <!-- Red Wave (Left and Right) -->
+                        <img src="../Assets/wave-red-left.png" class="wave-line" style="width: 50%; position: absolute; left: 0;">
+                        <img src="../Assets/wave-red-right.png" class="wave-line" style="width: 50%; position: absolute; right: 0;">
+        
+                        <!-- Dark Blue Wave (Left and Right) -->
+                        <img src="../Assets/wave-darkblue-left.png" class="wave-line" style="width: 50%; position: absolute; left: 0; transform: translateY(40%);">
+                        <img src="../Assets/wave-darkblue-right.png" class="wave-line" style="width: 50%; position: absolute; right: 0; transform: translateY(22%);">
+        
+        
+                    </div>
+                </div>
+        
+                <!-- Conteúdo da esquerda -->
+                <div class="content-left">
+                    <h1 class="main-title">Mudando o futuro de autistas e suas famílias</h1>
+                    <button class="donate-btn" onclick="window.location.href='../Doacoes_WEB/doacoes.html'">Doar agora</button>                </div>
+        
+                <!-- Astronauta -->
+                <div class="astronaut-container">
+                    <img src="../Assets/astronaut.png" alt="Astronauta" class="astronaut">
+                </div>
+            </div>
+        </div>
+        <!-- Seção inferior com botão, texto, imagem de crianças e título -->
+        <div class="bottom-section">
+            <div class="bottom-right">
+                <img src="../Assets/kids.png" alt="Imagem à Esquerda">
+            </div>
+            <div class="bottom-left">
+                <img src="../Assets/autism.png" alt="Imagem à Direita">
+                <p class="typewriter">
+                    O autista vê o mundo de um ângulo diferente. A AUMA vê o mesmo ângulo.
+                </p>
+                <button class="DonateButton" onclick="window.location.href='../QuemSomosPage/QuemSomosPage.html'">Conferir atuação</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="homeScript.js" defer></script>
+</body>
+</html>

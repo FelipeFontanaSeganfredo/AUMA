@@ -1,0 +1,267 @@
+/* Estilos Gerais (Estes podem ser globais) */
+body {
+    font-family: 'Nova Square', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* Removido o display: flex e align-items para não afetar o layout geral.
+       O ideal é que o header e footer ocupem a largura total. */
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE CONTATO --- */
+
+/* Seção de Contato Principal */
+.contact-section {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.contact-section .main-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Contêiner das duas colunas (Flexbox) */
+.contact-section .contact-container {
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Coluna da Esquerda: Formulário */
+.contact-section .form-container {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+.contact-section .form-container h2 {
+    margin-top: 0;
+}
+
+.contact-section .form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section .form-container label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-section .form-container input,
+.contact-section .form-container textarea {
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Nova Square', sans-serif;
+    font-size: 1em;
+}
+
+.contact-section .form-container input:focus,
+.contact-section .form-container textarea:focus {
+    outline: 2px solid #3d4ef5;
+}
+
+
+.contact-section .social-container {
+    flex: 1;
+    background-color: #3d4ef5;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button {
+    padding: 3% 40%;
+    font-family: 'Nova Square', sans-serif;
+    font-size: 1.2em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin: 5% auto 0; 
+    display: block; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+.contact-section .carousel-wrapper {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
+    flex-grow: 1;
+}
+
+
+.contact-section .carousel-slide {
+    width: 33.33%;
+    flex-shrink: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-section .carousel-slide h2 {
+    margin-top: 0;
+}
+
+.contact-section .carousel-slide ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.contact-section .carousel-slide li {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-section .carousel-slide li:hover {
+    transform: scale(1.05);
+}
+
+.contact-section .carousel-slide a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.contact-section .carousel-slide a:hover {
+    transform: translateX(5px);
+}
+
+.contact-section .carousel-slide i {
+    font-size: 1.5em;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-section .contact-info a {
+    font-size: 1.1em;
+}
+
+.contact-section .quote-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+    flex-grow: 1;
+}
+
+.contact-section .quote-content p {
+    font-size: 1.1em;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+.contact-section .quote-content img {
+    max-width: 250px;  
+    height: auto;
+    margin-top: 7%;
+}
+
+.contact-section .pagination-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+.contact-section .dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section .dot.active {
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Mude o layout de colunas para linhas */
+    .contact-section .contact-container {
+        flex-direction: column;
+    }
+
+    /* 2. Ajuste as bordas arredondadas para o novo layout */
+    .contact-section .form-container {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .contact-section .social-container {
+        border-radius: 0 0 15px 15px;
+    }
+
+    /* 3. Ajuste de espaçamento e fontes */
+    .contact-section {
+        padding: 0 15px;
+    }
+
+    .contact-section .main-title {
+        font-size: 2em;
+    }
+
+    .contact-section .carousel-slide {
+        width: 33.33%;
+        flex-shrink: 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-section .quote-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 100%;
+        flex-grow: 1;
+    }
+    .contact-section .contact-info a {
+        font-size: 1.0em;
+    }
+}
+@media (max-width: 600px)
+{
+    .contact-section .contact-info a {
+        font-size: 0.8em;
+    }
+}
+@media (max-width: 500px)
+{
+    .contact-section .contact-info a {
+        font-size: 0.75em;
+    }
+}

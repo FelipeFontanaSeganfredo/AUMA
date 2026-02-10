@@ -1,0 +1,152 @@
+body {
+    font-family: "Nova Square", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-footer {
+    background-color: #ECECEC;
+    color: #333;
+    padding: 2em 4%;
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    max-width: 1200px;
+    padding: 2em 0;
+    border-bottom: 1px solid #444;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+    text-align: left; /* Alinhamento geral à esquerda */
+}
+
+.footer-col h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+    text-transform: uppercase;
+    text-align: left; /* Títulos alinhados à esquerda */
+}
+
+.contact-list,
+.footer-links {
+    max-width: 250px; /* Limita a largura máxima dos itens da lista */
+    margin: 0 auto; /* Centraliza o bloco de lista */
+    padding-left: 0; /* Remove o padding padrão da lista */
+}
+
+.contact-list li,
+.footer-links li {
+    list-style: none;
+    margin-bottom: 0.5em;
+}
+
+.contact-list a,
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha ícones e textos à esquerda */
+    gap: 8px;
+}
+
+.contact-list a:hover,
+.footer-links a:hover {
+    color: #666;
+}
+
+.social-divider {
+    border: 0;
+    border-top: 1px solid #666;
+    margin: 1em 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1em;
+    justify-content: center;
+}
+
+.social-icon,
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover,
+.contact-icon:hover {
+    fill: #666;
+}
+
+.institution-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageIF {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 2em;
+        width: 100%;
+        text-align: center; /* Centraliza tudo no mobile */
+    }
+
+    .footer-col h3 {
+        text-align: center; /* Centraliza títulos no mobile */
+    }
+
+    .contact-list,
+    .footer-links {
+        max-width: 100%; /* Remove a limitação de largura no mobile */
+        text-align: center; /* Centraliza textos no mobile */
+    }
+
+    .contact-list a,
+    .footer-links a {
+        justify-content: center; /* Centraliza ícones e textos no mobile */
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .institution-info {
+        margin-top: 2em;
+    }
+
+    .imageIF {
+        max-width: 30vw;
+        max-height: 15vh;
+    }
+}

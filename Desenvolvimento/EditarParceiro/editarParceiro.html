@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Parceiros</title>
+    <link rel="stylesheet" href="styleEditarParceiro.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="partner-section">
+            <h1 class="partner-title">Edição de Parceiros</h1>
+
+            <div class="partner-grid" id="partner-grid">
+                <!-- Os parceiros serão carregados dinamicamente aqui -->
+                <p style="color: #666; text-align: center; grid-column: 1/-1;">Carregando parceiros...</p>
+            </div>
+            <a href="../AdminPage/paginaAdmin.html" class="btn-voltar"> &larr; Voltar</a>
+        </section>
+    </main>
+
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Editar Parceiro</h2>
+
+            <form id="edit-form">
+                <label for="edit-title">Nome do parceiro</label>
+                <input type="text" id="edit-title" placeholder="Digite o nome do parceiro" required>
+
+                <label for="edit-image">Imagem de capa</label>
+                <input class="file-upload-button" type="file" id="edit-image" accept="image/*">
+
+                <label for="edit-link">Link para redirecionamento</label>
+                <input type="text" id="edit-link" placeholder="Insira o link do site" required>
+
+                <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+                    <button type="button" class="cadastrar-button" id="save-btn">Salvar</button>
+                    <button type="button" class="cadastrar-button" id="delete-btn" style="background-color: #b71c1c;">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="editarParceiro.js"></script>
+</body>
+</html>

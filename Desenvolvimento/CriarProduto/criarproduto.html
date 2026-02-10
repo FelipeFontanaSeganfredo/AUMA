@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar produto</title>
+    <link rel="stylesheet" href="styleCriarProdutos.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
+    <link rel="stylesheet" href="../fade-transitions/fade-transition.css">
+    <link rel="shortcut icon" href="../Assets/auma-logo.png">
+</head>
+<body>
+    <script src="../fade-transitions/fade-transition.js"></script>
+    <div id="header-container"></div>
+
+    <main>
+        <div class="content">
+            <h1>Cadastro de Produtos</h1>
+            <form id="product-form" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" id="name" placeholder="Digite o nome do produto" required>
+
+                <label for="dimension">Dimensão</label>
+                <select id="dimension">
+                    <option value="">Selecione...</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+
+                <label for="category">Categoria</label>
+                <input type="text" id="category" placeholder="Informe a categoria (ex: Roupas)" required>
+
+                <label for="gender">Gênero</label>
+                <select id="gender">
+                    <option value="">Selecione...</option>
+                    <option value="FEMININO">Feminino</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="UNISSEX">Unissex</option>
+                </select>
+
+
+
+
+                <label for="image">Imagem de capa</label>
+                <input class="file-upload-button" type="file" id="image" accept="image/*">
+                <div id="image-preview"></div>
+
+                <label for="description">Descrição</label>
+                <textarea id="description" placeholder="Descrição do produto"></textarea>
+                
+                <button type="submit" class="enviar-button">Cadastrar produto</button>
+            </form>
+            <a href="../AdminPage/paginaAdmin.html" class="btn-voltar"> ← Voltar</a>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../Header/header.js"></script>
+    <script src="../Footer/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="criarProduto.js"></script> <!-- ✅ CORRIGIDO -->
+</body>
+</html>
