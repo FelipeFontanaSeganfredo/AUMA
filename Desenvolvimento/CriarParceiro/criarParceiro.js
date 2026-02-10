@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_URL = 'https://auma-api.onrender.com';
+    const API_URL = 'https://auma-api-9w04.onrender.com';
     const postForm = document.getElementById('post-form');
 
     const token = localStorage.getItem('jwtToken');
@@ -21,34 +21,45 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const currentToken = localStorage.getItem('jwtToken');
-        const formData = new FormData();
+        const name = document.getElementById('name').value.trim();
+        const partnerUrl = document.getElementById('link').value.trim();
+        const imageFile = document.getElementById('image').files[0];
 
-        const partnerDto = {
-            name: document.getElementById('name').value,
-            description: "Parceiro AUMA",
-            partnerUrl: document.getElementById('link').value,
-            imageUrl: ""
-        };
-
-        const jsonBlob = new Blob(
-            [JSON.stringify(partnerDto)],
-            { type: 'application/json' }
-        );
-
-        formData.append('request', jsonBlob);
-
-        const fileInput = document.getElementById('image');
-        if (fileInput.files.length > 0) {
-            formData.append('image', fileInput.files[0]);
+        // ✅ VALIDAÇÕES
+        if (!name) {
+            Swal.fire('Erro', 'Nome do parceiro é obrigatório!', 'error');
+            return;
+        }
+        if (!partnerUrl) {
+            Swal.fire('Erro', 'URL do parceiro é obrigatória!', 'error');
+            return;
         }
 
         try {
+            // 🔄 CONVERTER IMAGEM PARA BASE64
+            let imageBase64 = null;
+            if (imageFile) {
+                imageBase64 = await new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => resolve(e.target.result); // data:image/jpeg;base64,...
+                    reader.readAsDataURL(imageFile);
+                });
+            }
+
+            // ✅ ENVIAR JSON PURO (NÃO FormData!)
+            const partnerData = {
+                name,
+                partnerUrl,
+                imageBase64
+            };
+
             const response = await fetch(`${API_URL}/partners`, {
                 method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${currentToken}`
+                headers: { 
+                    'Authorization': `Bearer ${currentToken}`,
+                    'Content-Type': 'application/json'  // ← JSON!
                 },
-                body: formData
+                body: JSON.stringify(partnerData)  // ← JSON!
             });
 
             // Sessão Expirada (401)
@@ -65,18 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (!response.ok) {
-                const errorText = await response.text();
-                console.error("ERRO:", errorText);
+                const errorData = await response.json();
                 Swal.fire({
                     icon: 'error',
                     title: 'Erro',
-                    text: 'Erro ao criar parceiro. Verifique os dados.'
+                    text: errorData.message || 'Erro ao criar parceiro.'
                 });
-                throw new Error("Erro ao criar parceiro");
+                return;
             }
-
-            const result = await response.json();
-            console.log("Parceiro criado:", result);
 
             // SUCESSO
             Swal.fire({
@@ -89,8 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error("Erro na requisição:", error);
-            // O catch pode capturar o throw new Error acima, 
-            // então verificamos se já exibimos um alert antes ou se é erro de rede
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro de Conexão',
+                text: 'Não foi possível conectar ao servidor.'
+            });
         }
     });
 });

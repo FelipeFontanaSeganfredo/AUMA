@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_URL = 'https://auma-api.onrender.com';
+    const API_URL = 'https://auma-api-9w04.onrender.com';
     const partnerGrid = document.getElementById('partner-grid');
     const modal = document.getElementById('edit-modal');
     const closeModalBtn = document.getElementById('close-modal');

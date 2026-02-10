@@ -1,4 +1,4 @@
-const API_URL = 'https://auma-api.onrender.com';
+const API_URL = 'https://auma-api-9w04.onrender.com';
 let currentSection = 'posts';
 let currentPage = 0;
 const pageSize = 10;

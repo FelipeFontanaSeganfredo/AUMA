@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_BASE_URL = 'https://auma-api.onrender.com';
+    const API_BASE_URL = 'https://auma-api-9w04.onrender.com';
 
     function getToken() { return localStorage.getItem('jwtToken'); }
     function getUserEmail() { return localStorage.getItem('userEmail'); }
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmButtonText: 'Ir para Login'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Ajuste o caminho se necessário (ex: '../Login/login.html')
                 window.location.href = 'login.html'; 
             }
         });
@@ -32,26 +31,55 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const token = getToken();
-        const title = document.getElementById('title').value;
-        const text = document.getElementById('text').value;
+        const title = document.getElementById('title').value.trim();
+        const text = document.getElementById('text').value.trim();
         const imageFile = document.getElementById('image').files[0];
         const userEmail = getUserEmail();
 
-        const formData = new FormData();
-        formData.append('title', title);
-        formData.append('text', text);
-        if (imageFile) formData.append('image', imageFile);
-        formData.append('userEmail', userEmail);
+        // ✅ VALIDAÇÃO NO FRONTEND
+        if (!title) {
+            Swal.fire('Erro', 'Título é obrigatório!', 'error');
+            return;
+        }
+        if (!text) {
+            Swal.fire('Erro', 'Conteúdo é obrigatório!', 'error');
+            return;
+        }
+        if (!userEmail) {
+            Swal.fire('Erro', 'Faça login novamente!', 'error');
+            logout();
+            return;
+        }
 
         try {
+            // 🔄 CONVERTER IMAGEM PARA BASE64
+            let imageBase64 = null;
+            if (imageFile) {
+                imageBase64 = await new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => resolve(e.target.result); // data:image/jpeg;base64,...
+                    reader.readAsDataURL(imageFile);
+                });
+            }
+
+            // ✅ ENVIAR JSON (NÃO FormData!)
+            const postData = {
+                title,
+                content: text,  // ← 'text' vira 'content'
+                userEmail,
+                imageBase64
+            };
+
             const response = await fetch(`${API_BASE_URL}/posts`, {
                 method: 'POST',
-                headers: { 'Authorization': `Bearer ${token}` },
-                body: formData
+                headers: { 
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'  // ← JSON!
+                },
+                body: JSON.stringify(postData)  // ← JSON!
             });
 
             if (response.ok) {
-                // SUCESSO
                 Swal.fire({
                     icon: 'success',
                     title: 'Sucesso!',
@@ -61,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 postForm.reset(); 
             } else {
-                // ERRO DA API
                 const errorData = await response.json();
                 Swal.fire({
                     icon: 'error',

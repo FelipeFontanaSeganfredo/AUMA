@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_BASE_URL = 'https://auma-api.onrender.com';
+    const API_BASE_URL = 'https://auma-api-9w04.onrender.com';
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
 
-    // Se não houver ID na URL, exibe uma mensagem de erro ou redireciona
     if (!postId) {
         document.querySelector('.content').innerHTML = '<p>Erro: ID da notícia não fornecido.</p>';
         return;
     }
 
-    // Selecionando os placeholders do HTML
     const postTitleElement = document.getElementById('post-title');
     const postDateElement = document.getElementById('post-date');
     const postImageContainer = document.getElementById('post-image-container');
@@ -18,53 +16,55 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadPost() {
         try {
-            const response = await fetch(`${API_BASE_URL}/posts/${postId}`);
+            const response = await fetch(`${API_BASE_URL}/posts/${postId}`); // ← AGORA EXISTE!
             if (!response.ok) {
-                // Se a resposta não for OK, lança um erro com o status
-                throw new Error(`Erro ao carregar a notícia. Status: ${response.status}`);
+                throw new Error(`Erro ${response.status}: ${response.statusText}`);
             }
             const post = await response.json();
 
-            // Formata a data
-            const formattedDate = new Date(post.createdAt).toLocaleDateString('pt-BR');
+            // ✅ CORRIGIDO: created_at → createdAt
+            const formattedDate = new Date(post.created_at).toLocaleDateString('pt-BR');
 
-            // Preenche os placeholders com os dados da API
             postTitleElement.textContent = post.title;
             postDateElement.textContent = `publicado em ${formattedDate}`;
             
             if (post.imageUrl) {
                 postImageContainer.innerHTML = `<img src="${post.imageUrl}" alt="${post.title}">`;
-            } else {
-                postImageContainer.innerHTML = '';
             }
 
-            // Para exibir o texto com parágrafos, a gente o divide por quebras de linha
-            const textParagraphs = post.content.split('\n').map(p => `<p class="main-text">${p}</p>`).join('');
-            postTextContainer.innerHTML = textParagraphs;
+            // ✅ CORRIGIDO: content com parágrafos
+            const textParagraphs = (post.content || '').split('\n')
+                .map(p => `<p class="main-text">${p.trim()}</p>`)
+                .filter(p => p.trim() !== '<p class="main-text"></p>')
+                .join('');
+            postTextContainer.innerHTML = textParagraphs || '<p>Conteúdo não disponível.</p>';
 
         } catch (error) {
-            console.error("Erro ao carregar a notícia principal:", error);
+            console.error("Erro ao carregar notícia:", error);
             document.querySelector('.content').innerHTML = `
-                <p>Não foi possível carregar o conteúdo desta notícia.</p>
-                <p>Verifique se o ID está correto e tente novamente mais tarde.</p>
+                <p>Não foi possível carregar esta notícia (ID: ${postId}).</p>
+                <p>${error.message}</p>
             `;
         }
     }
 
     async function loadRelated() {
         try {
-            const response = await fetch(`${API_BASE_URL}/posts/${postId}/related`);
-            if (!response.ok) {
-                throw new Error("Erro ao carregar posts relacionados");
-            }
-            const relatedPosts = await response.json();
+            // ✅ Busca outros posts (exclui o atual)
+            const response = await fetch(`${API_BASE_URL}/posts?page=0&size=3`);
+            if (!response.ok) throw new Error("Erro ao carregar relacionados");
+            
+            const data = await response.json();
+            const relatedPosts = (data.content || [])
+                .filter(post => post.id != postId)
+                .slice(0, 3);
 
             if (relatedPosts.length === 0) {
-                relatedPostsContainer.innerHTML = "<p>Nenhum post recomendado.</p>";
+                relatedPostsContainer.innerHTML = "<p>Nenhum post relacionado.</p>";
                 return;
             }
 
-            relatedPostsContainer.innerHTML = ""; // Limpa o placeholder de carregamento
+            relatedPostsContainer.innerHTML = "";
             relatedPosts.forEach(post => {
                 const button = document.createElement('button');
                 button.classList.add('related-news');
@@ -75,13 +75,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 relatedPostsContainer.appendChild(button);
             });
-
         } catch (error) {
-            console.error("Erro ao carregar posts recomendados:", error);
+            console.error("Erro relacionados:", error);
             relatedPostsContainer.innerHTML = `<p>Erro ao carregar recomendações.</p>`;
         }
     }
 
-    await loadPost();
-    await loadRelated();
+    await Promise.all([loadPost(), loadRelated()]);
 });

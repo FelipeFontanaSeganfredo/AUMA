@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // ⚙️ Configurações
-    const API_BASE_URL = 'https://auma-api.onrender.com';
+    const API_BASE_URL = 'https://auma-api-9w04.onrender.com';
 
     // Funções Auxiliares de Autenticação
     function getToken() {

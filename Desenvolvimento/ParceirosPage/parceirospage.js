@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // URL da API local
-    const API_URL = 'https://auma-api.onrender.com';
+    const API_URL = 'https://auma-api-9w04.onrender.com';
     const partnersGrid = document.querySelector('.partners-grid');
 
     async function fetchPartners() {

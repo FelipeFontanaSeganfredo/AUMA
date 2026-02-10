@@ -17,66 +17,51 @@
     <main>
         <div class="content">
             <h1>Cadastro de Produtos</h1>
-            <form id="post-form" method="POST">
-                <label for="nomeProduto">Nome</label>
-                <input type="text" id="name" placeholder="Digite o nome do produto" required>   
+            <form id="product-form" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" id="name" placeholder="Digite o nome do produto" required>
 
-                <label for="dimensao">Dimensão</label>
-                <select name="dimention">
-                    <option value="p">P</option>
-                    <option value="m">M</option>
-                    <option value="g">G</option>
+                <label for="dimension">Dimensão</label>
+                <select id="dimension">
+                    <option value="">Selecione...</option>
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
                 </select>
 
-                <label for="categoria">Categoria</label>
-                <input type="text" placeholder="Informe a categoria" required></input>
+                <label for="category">Categoria</label>
+                <input type="text" id="category" placeholder="Informe a categoria (ex: Roupas)" required>
 
-                <label for="genero">Gênero</label>
-                <select name="gender">
-                    <option value="feminino">Feminino</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="unissex">Unissex</option>
+                <label for="gender">Gênero</label>
+                <select id="gender">
+                    <option value="">Selecione...</option>
+                    <option value="FEMININO">Feminino</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="UNISSEX">Unissex</option>
                 </select>
 
-                <label for="capa">Imagem de capa</label>
+
+
+
+                <label for="image">Imagem de capa</label>
                 <input class="file-upload-button" type="file" id="image" accept="image/*">
+                <div id="image-preview"></div>
 
-                <label for="descricaoProduto">Descrição</label>
-                <textarea id="text" placeholder="Descrição do produto" required></textarea>
+                <label for="description">Descrição</label>
+                <textarea id="description" placeholder="Descrição do produto"></textarea>
                 
                 <button type="submit" class="enviar-button">Cadastrar produto</button>
             </form>
-            <a href="../AdminPage/paginaAdmin.html" class="btn-voltar"> &larr; Voltar</a>
+            <a href="../AdminPage/paginaAdmin.html" class="btn-voltar"> ← Voltar</a>
         </div>
     </main>
-
-    <script>
-        // Funcionalidade para o menu colapsado
-        document.addEventListener('DOMContentLoaded', function () {
-            var menuToggle = document.querySelector('.menu-toggle');
-            var navMenu = document.querySelector('.nav-menu');
-            var closeMenu = document.querySelector('.close-menu');
-
-            // Verifica se os elementos existem antes de adicionar o evento
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function () {
-                    navMenu.style.left = '0';
-                });
-            }
-
-            if (closeMenu && navMenu) {
-                closeMenu.addEventListener('click', function () {
-                    navMenu.style.left = '-100%';
-                });
-            }
-        });
-    </script>
 
     <div id="footer-container"></div>
 
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="criarnoticia.js"></script>
+    <script src="criarProduto.js"></script> <!-- ✅ CORRIGIDO -->
 </body>
 </html>
