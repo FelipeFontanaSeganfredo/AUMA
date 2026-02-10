@@ -1,102 +1,146 @@
-/* Estilos Gerais */
+/* parceirosPage.css */
+
+/* Reset básico para evitar problemas de tamanho */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Nova Square', sans-serif;
-    background-color: #ffffff;
+    background-color: #f5f5f5; /* Fundo cinza claro para destacar os cartões */
     color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Contêiner Principal da Página de Parceiros */
+/* Contêiner Principal */
 .partners-section {
-    max-width: 1000px;
-    margin: 40px auto; /* Centraliza a seção e adiciona espaço */
+    max-width: 1200px;
+    margin: 40px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 60vh;
 }
 
 .partners-title {
     font-size: 2.8em;
     margin-bottom: 40px;
+    color: #1a237e; /* Azul escuro */
+    text-align: center;
 }
 
-/* Grid de Parceiros */
+/* --- GRID DE PARCEIROS --- */
 .partners-grid {
     display: grid;
-    /* Cria 4 colunas de tamanho igual */
-    grid-template-columns: repeat(4, 1fr);
-    /* Espaçamento entre os itens da grade */
-    gap: 25px;
+    /* 4 Colunas iguais */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
     width: 100%;
-    margin-bottom: 60px; /* Espaço antes do banner CTA */
+    margin-bottom: 60px;
 }
 
-/* Item Individual da Grade */
+/* Item Individual (O Cartão) */
 .partner-item {
-    background-color: #1a237e; /* Cor azul escura dos quadrados */
-    border-radius: 8px;
-    overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+    background-color: #1a237e; /* Fundo azul do cartão */
+    border-radius: 15px;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Remove sublinhado do link */
+    height: 100%; /* Garante altura igual em todos */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .partner-item:hover {
-    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-.partner-item a {
-    display: block;
-    padding: 15px; /* Espaço interno para a imagem respirar */
+/* Moldura da Imagem (A parte branca) */
+.partner-img-box {
+    width: 100%;
+    height: 200px; /* Altura fixa para alinhar o grid */
+    background-color: #ffffff; /* Fundo branco para o logo aparecer bem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Espaço para o logo não colar nas bordas */
 }
 
-.partner-item img {
-    width: 100%; /* Garante que a imagem ocupe todo o espaço */
+.partner-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
-    display: block; /* Remove espaços extras abaixo da imagem */
+    /* 'contain' garante que o logo aparece inteiro sem distorcer */
+    object-fit: contain; 
+}
+
+/* Nome do Parceiro */
+.partner-name {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1; /* Ocupa o espaço restante verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Banner de Chamada para Ação (CTA) */
 .cta-banner {
     width: 100%;
-    max-width: 600px; /* Largura máxima do banner */
-    background-color: #283593; /* Azul um pouco mais claro */
+    max-width: 800px;
+    background-color: #283593;
     color: white;
-    border-radius: 50px; /* Bordas bem arredondadas */
-    padding: 10px 15px;
+    border-radius: 50px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .cta-banner p {
     margin: 0;
-    font-size: 1.2em;
-    padding-left: 15px;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .cta-button {
-    background-color: #3f51b5; /* Azul do botão */
-    color: white;
+    background-color: #ffffff;
+    color: #283593; /* Texto azul no botão branco */
     text-decoration: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-size: 1.1em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .cta-button:hover {
-    background-color: #5c6bc0; /* Cor mais clara ao passar o mouse */
+    background-color: #283593;
+    color: white;
+    border-color: white;
 }
 
-/* --- RESPONSIVIDADE PARA CELULARES --- */
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 por linha em portáteis */
+    }
+}
+
 @media (max-width: 768px) {
     .partners-grid {
-        /* Muda de 4 para 2 colunas em telas menores */
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
         gap: 20px;
     }
 
@@ -105,9 +149,16 @@ body {
     }
 
     .cta-banner {
-        flex-direction: column; /* Empilha o texto e o botão */
+        flex-direction: column;
         text-align: center;
-        padding: 20px;
-        gap: 15px; /* Espaço entre o texto e o botão */
+        padding: 25px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-grid {
+        grid-template-columns: 1fr; /* 1 por linha no telemóvel */
     }
 }

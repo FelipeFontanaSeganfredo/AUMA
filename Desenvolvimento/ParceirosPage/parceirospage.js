@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // URL da API local
+    // URL da API
     const API_URL = 'https://auma-api-9w04.onrender.com';
-    const partnersGrid = document.querySelector('.partners-grid');
+    const partnersGrid = document.getElementById('partners-grid');
 
     async function fetchPartners() {
         try {
-            // Busca os parceiros na API
+            // Busca até 100 parceiros de uma vez (sem paginação visual)
             const response = await fetch(`${API_URL}/partners?page=0&size=100`);
             
             if (!response.ok) {
@@ -13,70 +13,58 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            // Pega o conteúdo da página ou array direto
+            // Garante que pega o array correto (algumas APIs devolvem content, outras array direto)
             const partnersList = data.content || data || [];
 
-            if (partnersList.length > 0) {
-                renderPartners(partnersList);
-            } else {
-                partnersGrid.innerHTML = '<p style="text-align: center; width: 100%; grid-column: 1 / -1;">Nenhum parceiro cadastrado ainda.</p>';
-            }
+            renderPartners(partnersList);
 
         } catch (error) {
             console.error('Erro ao buscar parceiros:', error);
-            partnersGrid.innerHTML = '<p style="text-align: center; width: 100%; grid-column: 1 / -1; color: red;">Erro ao carregar parceiros.</p>';
+            partnersGrid.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center;">
+                    <p>Não foi possível carregar a lista de parceiros.</p>
+                </div>`;
         }
     }
 
     function renderPartners(partners) {
-        // Limpa o conteúdo atual (o texto de "Carregando...")
+        // Limpa o loading
         partnersGrid.innerHTML = '';
 
+        if (partners.length === 0) {
+            partnersGrid.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">Nenhum parceiro cadastrado ainda.</p>';
+            return;
+        }
+
         partners.forEach(partner => {
-            // 1. Cria a div do item
-            const partnerItem = document.createElement('div');
-            partnerItem.className = 'partner-item';
+            // Define o link (se não tiver, usa #)
+            const linkUrl = partner.partnerUrl ? partner.partnerUrl : '#';
+            const cursorStyle = partner.partnerUrl ? 'cursor: pointer;' : 'cursor: default;';
+            const imageUrl = partner.imageUrl || '../Assets/auma-logo.png'; // Fallback se não tiver imagem
 
-            // 2. Cria o link que envolve tudo
-            const link = document.createElement('a');
-            link.href = partner.partnerUrl ? partner.partnerUrl : '#'; 
-            link.target = '_blank';
-            // Remove a decoração de texto padrão do link para não sublinhar o nome
-            link.style.textDecoration = 'none'; 
+            // Cria o elemento
+            const partnerCard = document.createElement('a');
+            partnerCard.className = 'partner-item';
+            partnerCard.href = linkUrl;
             
-            // 3. Cria a imagem
-            const img = document.createElement('img');
-            img.src = partner.imageUrl; 
-            img.alt = partner.name || 'Parceiro';
-            // Estilo para garantir que a imagem não quebre o layout
-            img.style.width = '100%';
-            img.style.height = 'auto';
-            img.style.borderRadius = '8px';
+            // Se tiver link, abre em nova aba. Se for #, não faz nada.
+            if(partner.partnerUrl) {
+                partnerCard.target = '_blank';
+            } else {
+                partnerCard.onclick = (e) => e.preventDefault();
+            }
 
-            // Tratamento de erro da imagem
-            img.onerror = function() {
-                this.src = '../Assets/auma-logo.png'; 
-            };
+            // Estrutura do Cartão:
+            // 1. Box branca da imagem (.partner-img-box)
+            // 2. Nome do parceiro (.partner-name)
+            partnerCard.innerHTML = `
+                <div class="partner-img-box">
+                    <img src="${imageUrl}" alt="${partner.name || 'Parceiro'}" onerror="this.src='../Assets/auma-logo.png'">
+                </div>
+                <h3 class="partner-name">${partner.name || 'Parceiro AUMA'}</h3>
+            `;
 
-            // 4. CORREÇÃO: Cria o parágrafo para o NOME
-            const nameParagraph = document.createElement('p');
-            nameParagraph.textContent = partner.name;
-            
-            // Estilização do nome para aparecer igual ao mockup (branco e centralizado)
-            nameParagraph.style.color = 'white';
-            nameParagraph.style.textAlign = 'center';
-            nameParagraph.style.marginTop = '10px';
-            nameParagraph.style.fontSize = '1.1em';
-            nameParagraph.style.fontWeight = 'bold';
-            nameParagraph.style.fontFamily = "'Nova Square', sans-serif";
-
-            // 5. Monta a estrutura: Link contém Imagem + Nome
-            link.appendChild(img);
-            link.appendChild(nameParagraph);
-            
-            // Adiciona o link ao card, e o card ao grid
-            partnerItem.appendChild(link);
-            partnersGrid.appendChild(partnerItem);
+            partnersGrid.appendChild(partnerCard);
         });
     }
 

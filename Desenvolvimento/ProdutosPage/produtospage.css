@@ -1,4 +1,10 @@
 /* produtospage.css */
+
+/* --- CORREÇÃO 1: Reset Global para evitar cálculos errados de tamanho --- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Nova Square", sans-serif;
     margin: 0;
@@ -8,15 +14,13 @@ body {
 }
 
 .content {
-    /* ALTERAÇÃO PRINCIPAL: Reduzi as margens laterais de 25% para 5% */
-    padding: 25px 5%; 
-    max-width: 1600px; /* Limite para ecrãs gigantes não esticarem demais */
-    margin: 0 auto;    /* Centraliza o conteúdo */
-    
+    padding: 30px 5%; /* Margens laterais de 5% */
+    max-width: 1600px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    min-height: 80vh; /* Garante altura mínima */
-    padding-bottom: 100px; /* Espaço para o footer não tapar o conteúdo */
+    min-height: 80vh;
+    padding-bottom: 100px;
 }
 
 .page-header {
@@ -27,15 +31,16 @@ body {
 .main-title {
     font-size: 2.5em;
     margin-bottom: 20px;
-    word-wrap: break-word;
 }
 
+/* Barra de Pesquisa */
 .search-filter {
     display: flex;
     gap: 15px;
     justify-content: center;
     max-width: 600px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
 }
 
 .search-input, .filter-select {
@@ -46,25 +51,20 @@ body {
     font-size: 16px;
 }
 
-.search-input {
-    flex: 2;
-}
-
-.filter-select {
-    flex: 1;
-}
+.search-input { flex: 2; min-width: 200px; }
+.filter-select { flex: 1; min-width: 150px; }
 
 /* Layout Principal */
 .main-grid {
     display: flex;
     gap: 30px;
-    align-items: flex-start; /* Impede que a sidebar estique */
+    align-items: flex-start;
 }
 
-/* Barra Lateral */
+/* Sidebar */
 .sidebar {
     width: 220px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Impede a sidebar de encolher */
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -86,36 +86,31 @@ body {
     margin: 0 0 25px 0;
 }
 
-.sidebar li {
-    margin-bottom: 12px;
-}
+.sidebar li { margin-bottom: 12px; }
 
 .sidebar a {
     text-decoration: none;
     color: #666;
     font-weight: bold;
-    transition: color 0.2s;
     display: block;
+    transition: color 0.2s;
 }
 
-.sidebar a:hover {
-    color: #6666FF;
-    transform: translateX(5px);
-}
+.sidebar a:hover { color: #6666FF; }
 
 /* Área de Produtos */
 .products-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    flex: 1; /* Ocupa todo o espaço restante */
+    width: 100%; /* Garante que usa a largura disponível */
 }
 
 .products-grid {
     display: grid;
-    /* 4 Colunas no Desktop */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+    /* --- CORREÇÃO 2: minmax(0, 1fr) impede sobreposição --- */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 25px; /* Espaço entre os cartões */
     margin-bottom: 40px;
+    width: 100%;
 }
 
 /* Cartão do Produto */
@@ -132,6 +127,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    
+    /* --- CORREÇÃO 3: Segura o conteúdo dentro do cartão --- */
+    overflow: hidden; 
+    width: 100%; 
 }
 
 .product-card:hover {
@@ -139,10 +138,10 @@ body {
     border-color: #6666FF;
 }
 
-/* Moldura da Imagem (Fixa altura para não quebrar layout) */
+/* Moldura da Imagem */
 .product-image-box {
     width: 100%;
-    height: 220px;
+    height: 200px; /* Altura fixa controlada */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,15 +156,18 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain; /* Ajusta sem cortar. Use 'cover' se preferir preencher tudo */
+    object-fit: contain;
 }
 
 .product-info h3 {
     margin: 10px 0;
     font-size: 1.1em;
-    line-height: 1.3em;
-    height: 2.6em; /* Limita a 2 linhas de texto */
+    /* Limita o texto a 2 linhas para não esticar demais */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
+    height: 2.4em; 
 }
 
 .category, .gender {
@@ -185,20 +187,17 @@ body {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    transition: background-color 0.2s;
 }
 
-.product-button:hover {
-    background-color: #5555EE;
-}
+.product-button:hover { background-color: #5555EE; }
 
 /* Paginação */
 .pagination {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: auto; /* Empurra para o fundo se houver espaço */
     padding-top: 20px;
+    flex-wrap: wrap;
 }
 
 .pagination button {
@@ -210,12 +209,10 @@ body {
     cursor: pointer;
     font-family: "Nova Square", sans-serif;
     font-weight: bold;
-    transition: all 0.2s;
 }
 
 .pagination button:hover:not(:disabled) {
     background-color: #f0f0f0;
-    border-color: #bbb;
 }
 
 .pagination button.active {
@@ -230,36 +227,40 @@ body {
     cursor: not-allowed;
 }
 
-/* Responsividade */
+/* --- RESPONSIVIDADE --- */
+
+/* Telas médias (Notebooks pequenos / Tablets Pro) */
 @media (max-width: 1200px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em ecrãs médios */
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 colunas */
     }
 }
 
+/* Tablets e Telas menores */
 @media (max-width: 900px) {
-    .content {
-        padding: 20px 3%; /* Menos margem em tablets */
-    }
+    .content { padding: 20px 3%; }
+    
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colunas */
     }
-    .sidebar {
-        display: none; /* Opcional: esconder sidebar em telas menores ou transformar em menu superior */
-    }
+    
     .main-grid {
-        display: block; /* Remove o flex lateral */
+        flex-direction: column; /* Sidebar vai para cima ou some */
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
+/* Celulares */
 @media (max-width: 550px) {
     .products-grid {
-        grid-template-columns: 1fr; /* 1 coluna em telemóveis */
+        grid-template-columns: minmax(0, 1fr); /* 1 coluna */
     }
-    .search-filter {
-        flex-direction: column;
-    }
-    .product-image-box {
-        height: 250px; /* Imagem maior no mobile */
-    }
+    
+    .search-filter { flex-direction: column; }
+    
+    .product-image-box { height: 250px; }
 }
