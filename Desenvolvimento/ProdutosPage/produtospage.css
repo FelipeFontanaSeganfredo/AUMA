@@ -256,11 +256,40 @@ body {
 
 /* Celulares */
 @media (max-width: 550px) {
-    .products-grid {
-        grid-template-columns: minmax(0, 1fr); /* 1 coluna */
+
+    /* Remove limitação centralizada */
+    .content {
+        padding: 10px 0;     /* remove padding lateral */
+        max-width: 100%;     /* remove limite */
+        margin: 0;           /* remove centralização */
     }
-    
-    .search-filter { flex-direction: column; }
-    
-    .product-image-box { height: 250px; }
+
+    .main-grid {
+        gap: 0;
+    }
+
+    /* Remove sidebar completamente */
+    .sidebar {
+        display: none;
+    }
+
+    /* Faz a área ocupar tudo */
+    .products-area {
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 12px;  /* pequeno respiro opcional */
+    }
+
+    .product-card {
+        border-radius: 0; /* opcional: remove borda arredondada */
+    }
+
+    .search-filter {
+        flex-direction: column;
+        padding: 0 12px;
+    }
 }
