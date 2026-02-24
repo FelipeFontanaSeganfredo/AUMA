@@ -16,13 +16,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadPost() {
         try {
-            const response = await fetch(`${API_BASE_URL}/posts/${postId}`); // ← AGORA EXISTE!
+            const response = await fetch(`${API_BASE_URL}/posts/${postId}`);
             if (!response.ok) {
                 throw new Error(`Erro ${response.status}: ${response.statusText}`);
             }
             const post = await response.json();
 
-            // ✅ CORRIGIDO: created_at → createdAt
             const formattedDate = new Date(post.created_at).toLocaleDateString('pt-BR');
 
             postTitleElement.textContent = post.title;
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 postImageContainer.innerHTML = `<img src="${post.imageUrl}" alt="${post.title}">`;
             }
 
-            // ✅ CORRIGIDO: content com parágrafos
             const textParagraphs = (post.content || '').split('\n')
                 .map(p => `<p class="main-text">${p.trim()}</p>`)
                 .filter(p => p.trim() !== '<p class="main-text"></p>')
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadRelated() {
         try {
-            // ✅ Busca outros posts (exclui o atual)
             const response = await fetch(`${API_BASE_URL}/posts?page=0&size=3`);
             if (!response.ok) throw new Error("Erro ao carregar relacionados");
             

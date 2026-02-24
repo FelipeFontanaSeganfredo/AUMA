@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const destaqueContainer = document.getElementById('destaque-container');
     const noticiasMenoresContainer = document.getElementById('noticias-menores-container');
     const paginationContainer = document.getElementById('pagination-container');
-    const pageTitle = document.querySelector('.page-title');
 
     // Configuração
     let currentPage = 0;
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- LÓGICA DA PÁGINA 1 (Destaques + Lista) ---
         if (page === 0) {
             destaqueContainer.style.display = 'flex'; // Garante que destaques apareçam
-            pageTitle.innerText = "Últimas Notícias";
 
             // Post 0 e 1 vão para o Destaque
             if (posts.length > 0) {
@@ -73,7 +71,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- LÓGICA DAS OUTRAS PÁGINAS (Apenas Lista) ---
         else {
             destaqueContainer.style.display = 'none'; // Esconde área de destaque
-            pageTitle.innerText = `Notícias - Página ${page + 1}`;
             
             // TODOS os posts vão para a Lista
             renderList(posts);
