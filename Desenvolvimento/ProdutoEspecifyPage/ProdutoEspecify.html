@@ -1,75 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto - Abacate</title>
+  <link rel="stylesheet" href="ProdutoEspecify.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
 </head>
+
 <body>
-    <div class="container">
+  <div id="header-container"></div>
 
-  <!-- Miniaturas -->
-  <div class="thumbnails">
-    <img src="https://via.placeholder.com/150" alt="Produto 1">
-    <img src="https://via.placeholder.com/150" alt="Produto 2">
-    <img src="https://via.placeholder.com/150" alt="Produto 3">
-    <img src="https://via.placeholder.com/150" alt="Produto 4">
-  </div>
+  <div class="container">
+    <header>
+      <button class="btn-back" onclick="history.back()">← Voltar</button>
+      <h1>Detalhes do Produto</h1>
+    </header>
 
-  <!-- Imagem + Info -->
-  <div>
-    <div class="main-image">
-      <img src="https://via.placeholder.com/500x500" alt="Imagem principal">
-    </div>
-
-    <div class="product-info">
-      <h1>Bala Mastigável Iogurte 100 600g Sabor Morango</h1>
-
-      <div class="rating">
-        ★★★★☆ (5104 avaliações)
+    <main class="product-card" id="product-container">
+      <div class="product-image">
+        <img alt="Imagem do Produto" id="img-render">
       </div>
 
-      <div class="price">
-        <div class="old-price">R$ 11,99</div>
-        <div class="current-price">R$ 8,99 <span class="discount">25% OFF</span></div>
-      </div>
+      <div class="product-info">
+        <div class="badge" id="category-badge">Categoria</div>
+        <h2 id="product-name">Carregando...</h2>
+        <p class="description" id="product-desc"></p>
 
-      <div class="options">
-        <div class="option-group">
-          <strong>Sabor:</strong><br><br>
-          <button>Morango</button>
-          <button>Natural</button>
+        <div class="specs">
+          <div class="spec-item">
+            <span>Tamanho</span>
+            <strong id="product-dim">-</strong>
+          </div>
+          <div class="spec-item">
+            <span>Gênero</span>
+            <strong id="product-gender">-</strong>
+          </div>
         </div>
 
-        <div class="option-group">
-          <strong>Peso:</strong><br><br>
-          <button>400g</button>
-          <button>600g</button>
+        <div class="meta-info">
+          <p>Vendido por: <span id="user-email">...</span></p>
+          <small>Adicionado em: <span id="created-at">...</span></small>
+        </div>
+
+        <div class="contato">
+          <h1>ENTRE EM CONTATO:</h1>
+          <h1>contato@auma.com</h1>
         </div>
       </div>
-
-      <p><strong>Descrição:</strong><br>
-      Bala mastigável sabor iogurte, perfeita para quem ama doces macios e saborosos.
-      Ideal para consumo diário ou para revenda.</p>
-    </div>
+    </main>
   </div>
 
-  <!-- Box de compra -->
-  <div class="purchase-box">
-    <h3>Chegará amanhã</h3>
-    <p>Comprando dentro das próximas 4h</p>
+  <div id="footer-container"></div>
 
-    <button class="buy-button">Adicionar ao carrinho</button>
-
-    <div class="shipping">
-      Frete grátis a partir de R$ 249,00<br>
-      Vendido por Loja Exemplo<br>
-      Garantia de 3 meses
-    </div>
-  </div>
-
-</div>
-
-<style scoped src="./ProdutoEspecify.css"></style>
+  <script src="../Header/header.js"></script>
+  <script src="../Footer/footer.js"></script>
+  <script src="ProdutoEspecify.js"></script>
 </body>
+
 </html>

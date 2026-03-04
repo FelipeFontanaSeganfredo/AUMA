@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const API_BASE_URL = 'https://auma-api-9w04.onrender.com';
     const productsContainer = document.getElementById('products-container');
     const paginationContainer = document.getElementById('pagination-container');
-    
+
     // Configurações
     let currentPage = 0;
     const itemsPerPage = 16; // 16 produtos por página (4 linhas x 4 colunas)
@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             // Loading state
             productsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 20px;">Carregando produtos...</p>';
-            
+
             // Busca na API
             const response = await fetch(`${API_BASE_URL}/products?page=${page}&size=${itemsPerPage}`);
-            
+
             if (!response.ok) throw new Error("Não foi possível conectar ao servidor.");
-            
+
             const data = await response.json();
             const products = data.content || [];
             const totalPages = data.totalPages || 0;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Renderiza
             renderProducts(products);
             renderPagination(totalPages, page);
-            
+
             currentPage = page; // Atualiza estado atual
 
         } catch (error) {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Função para desenhar os cartões
     function renderProducts(products) {
         productsContainer.innerHTML = "";
-        
+
         if (products.length === 0) {
             productsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px;">Nenhum produto encontrado.</p>';
             return;
@@ -52,15 +52,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         products.forEach(product => {
             const card = document.createElement('div');
             card.classList.add('product-card');
-            
+
             // Clique no card redireciona
             card.onclick = (e) => {
                 // Evita redirecionar se clicar em botões específicos dentro do card (futuro)
-                window.location.href = `produto.html?id=${product.id}`;
+                window.location.href = `../ProdutoEspecifyPage/ProdutoEspecify.html?id=${product.id}`;
             };
-            
+
             // Imagem de placeholder caso não exista
-            const imageUrl = product.imageUrl || '../Assets/auma-logo.png'; 
+            const imageUrl = product.imageUrl || '../Assets/auma-logo.png';
             const imageStyle = product.imageUrl ? '' : 'opacity: 0.3; padding: 40px;';
 
             card.innerHTML = `
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Função para desenhar a paginação
     function renderPagination(totalPages, page) {
         paginationContainer.innerHTML = "";
-        
+
         // Se houver apenas 1 página ou nenhuma, não mostra paginação
         if (totalPages <= 1) return;
 
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- Números das Páginas ---
         // Lógica inteligente para não mostrar 100 botões se tiver muitas páginas
         // Mostra sempre a primeira, a última e as vizinhas da atual
-        
+
         let startPage = Math.max(0, page - 2);
         let endPage = Math.min(totalPages - 1, page + 2);
 
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (startPage > 0) {
-             paginationContainer.appendChild(createPaginationButton("1", true, () => changePage(0)));
-             if (startPage > 1) paginationContainer.appendChild(createSpan("..."));
+            paginationContainer.appendChild(createPaginationButton("1", true, () => changePage(0)));
+            if (startPage > 1) paginationContainer.appendChild(createSpan("..."));
         }
 
         for (let i = startPage; i <= endPage; i++) {
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             timeout = setTimeout(() => {
                 // AVISO: A API atual precisa suportar filtro por nome para isto funcionar no backend.
                 // Por enquanto recarrega a página 0.
-                loadProducts(0); 
+                loadProducts(0);
             }, 500); // Delay para não chamar a cada letra digitada
         });
     }
