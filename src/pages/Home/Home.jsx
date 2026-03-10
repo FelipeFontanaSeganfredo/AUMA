@@ -20,7 +20,7 @@ export default function Home() {
               <ellipse cx="850" cy="230" rx="30" ry="10" fill="#E0E0E0" />
               <ellipse cx="1150" cy="270" rx="70" ry="25" fill="#E0E0E0" />
             </svg>
-            
+
             {/* Camada frontal da lua */}
             <svg className="moon-front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
               <path fill="#F5F5F5" d="M0,256 Q150,200 320,260 T680,220 T1040,270 T1340,230 L1440,256 L1440,320 L0,320 Z"></path>
@@ -49,7 +49,7 @@ export default function Home() {
                 Conheça nossa missão
               </button>
             </div>
-            
+
             <div className="trust-indicators">
               <span>💙 +30 Anos de atuação</span>
               <span className="dot-divider">•</span>

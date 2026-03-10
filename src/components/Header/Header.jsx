@@ -53,7 +53,7 @@ export default function Header() {
       {/* Logo */}
       <div className="logo">
         <Link to="/">
-          <img src="/auma-animated-logo-resize.gif" alt="AUMA Logo" />
+          <img src="/auma-logo.png" alt="AUMA Logo" />
         </Link>
       </div>
 

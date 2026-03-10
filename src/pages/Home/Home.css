@@ -2,10 +2,12 @@
 .top-section {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 120px); /* Aproximado para o header + margins */
+  height: calc(100vh - 120px);
+  /* Aproximado para o header + margins */
   min-height: 600px;
   overflow: hidden;
   background: #ffffff;
+  scroll-snap-align: start;
 }
 
 .container {
@@ -15,16 +17,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5% 50px 5%; /* Padding bottom para dar espaço à lua */
+  padding: 0 5% 50px 5%;
+  /* Padding bottom para dar espaço à lua */
 }
 
 /* ---- Moon Surface Background ---- */
 .moon-container {
   position: absolute;
-  bottom: -5px; /* Evita fresta branca */
+  bottom: -5px;
+  /* Evita fresta branca */
   left: 0;
   width: 100vw;
-  height: clamp(150px, 20vw, 300px); /* Altura fluida para a lua */
+  height: clamp(150px, 20vw, 300px);
+  /* Altura fluida para a lua */
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
@@ -34,7 +39,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 150%; 
+  width: 150%;
   height: 100%;
   z-index: 1;
   animation: moonFloat 15s ease-in-out infinite alternate;
@@ -44,18 +49,26 @@
   position: absolute;
   bottom: -10px;
   left: 0;
-  width: 150%; 
+  width: 150%;
   height: 100%;
   z-index: 2;
   animation: moonFloat 20s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes moonFloat {
-  0% { transform: translateX(0) scaleY(1); }
-  100% { transform: translateX(-5%) scaleY(1.05); }
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+
+  100% {
+    transform: translateX(-5%) scaleY(1.05);
+  }
 }
+
 /* ---- Stars Effect - Desativado para o visual clean ---- */
-.stars-layer { display: none; }
+.stars-layer {
+  display: none;
+}
 
 /* ---- Content Left ---- */
 .content-left {
@@ -69,7 +82,8 @@
 
 .badge-highlight {
   display: inline-block;
-  background: rgba(102, 102, 255, 0.08); /* Azul AUMA com baixa opacidade */
+  background: rgba(102, 102, 255, 0.08);
+  /* Azul AUMA com baixa opacidade */
   color: #6666FF;
   padding: 8px 18px;
   border-radius: 30px;
@@ -84,14 +98,16 @@
 .main-title {
   font-size: 4rem;
   font-weight: 700;
-  color: #1d1d1f; /* Cor padrão tipografia title Apple */
+  color: #1d1d1f;
+  /* Cor padrão tipografia title Apple */
   line-height: 1.1;
   font-family: 'Nova Square', sans-serif;
   letter-spacing: -1px;
 }
 
 .text-highlight {
-  color: #6666FF; /* Mantendo identidade visual, mas vibrante */
+  color: #6666FF;
+  /* Mantendo identidade visual, mas vibrante */
   position: relative;
   display: inline-block;
 }
@@ -99,7 +115,8 @@
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.7;
-  color: #86868b; /* Cor subtítulo estilo Apple */
+  color: #86868b;
+  /* Cor subtítulo estilo Apple */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   max-width: 95%;
   font-weight: 400;
@@ -119,17 +136,18 @@
   padding: 16px 35px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 30px; /* Bordas arredondadas modernas (pill shape) */
+  border-radius: 30px;
+  /* Bordas arredondadas modernas (pill shape) */
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   letter-spacing: 0.5px;
-  box-shadow: 0 10px 20px rgba(102,102,255,0.25);
+  box-shadow: 0 10px 20px rgba(102, 102, 255, 0.25);
 }
 
 .donate-btn:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 25px rgba(102,102,255,0.35);
+  box-shadow: 0 12px 25px rgba(102, 102, 255, 0.35);
   background: #5555dd;
 }
 
@@ -182,15 +200,23 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(102,102,255,0.06) 0%, rgba(255,255,255,0) 65%);
+  background: radial-gradient(circle, rgba(102, 102, 255, 0.06) 0%, rgba(255, 255, 255, 0) 65%);
   border-radius: 50%;
   z-index: 1;
   animation: pulseGlow 6s infinite alternate ease-in-out;
 }
 
 @keyframes pulseGlow {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  100% { transform: scale(1.2); opacity: 1; filter: blur(10px); }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+    filter: blur(10px);
+  }
 }
 
 .astronaut {
@@ -201,8 +227,58 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-15px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ---- Scroll Indicator ---- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid #6666FF;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  opacity: 0.6;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: #6666FF;
+  border-radius: 2px;
+  animation: scrollWheel 2s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }
 
 /* ===== BOTTOM SECTION ===== */
@@ -210,9 +286,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 5%;
+  padding: 80px 5%;
+  min-height: 100vh;
   gap: 40px;
   background: #fff;
+  scroll-snap-align: start;
 }
 
 .bottom-right {
@@ -220,6 +298,7 @@
   display: flex;
   justify-content: center;
 }
+
 .bottom-right img {
   max-width: 90%;
   height: auto;
@@ -259,12 +338,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Nova Square', sans-serif;
-  box-shadow: 0 8px 24px rgba(102,102,255,0.3);
+  box-shadow: 0 8px 24px rgba(102, 102, 255, 0.3);
 }
+
 .action-btn:hover {
   background: #4444cc;
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(102,102,255,0.4);
+  box-shadow: 0 12px 32px rgba(102, 102, 255, 0.4);
 }
 
 /* ===== MOBILE ===== */
@@ -277,7 +357,11 @@
     text-align: center;
     justify-content: center;
   }
-  .blob-background { opacity: 0.2; }
+
+  .blob-background {
+    opacity: 0.2;
+  }
+
   .content-left {
     max-width: 100%;
     padding: 20px;
@@ -285,33 +369,55 @@
     align-items: center;
     text-align: center;
   }
-  .main-title { font-size: 2.5rem; text-align: center; }
-  .hero-subtitle { margin: 10px auto; text-align: center; }
-  
+
+  .main-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 10px auto;
+    text-align: center;
+  }
+
   .moon-container {
     height: 120px;
   }
+
   .astronaut-container {
     width: 300px;
     height: 300px;
     margin: 20px auto 0;
     order: 2;
   }
+
   .astronaut-glow-ring {
     width: 260px;
     height: 260px;
   }
+
   .bottom-section {
     flex-direction: column;
     padding: 40px 5%;
   }
-  .bottom-quote { font-size: 1.2rem; }
+
+  .bottom-quote {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .container {
     padding: 80px 5%;
   }
-  .main-title { font-size: 3rem; }
-  .astronaut-container { width: 450px; height: 450px; margin-right: 0;}
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .astronaut-container {
+    width: 450px;
+    height: 450px;
+    margin-right: 0;
+  }
 }
