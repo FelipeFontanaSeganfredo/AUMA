@@ -270,7 +270,61 @@
 }
 
 @media (max-width: 768px) {
+  .contact-page {
+    padding: 60px 5% 40px 5%;
+    width: 100%;
+  }
+  .contact-header-wrapper {
+    margin-bottom: 40px;
+  }
+  .contact-main-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+  }
+  .contact-subtitle {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
   .contact-container {
     flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .form-container, .social-container {
+    padding: 25px 20px;
+    width: 100%;
+    margin: 0;
+    flex: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+  }
+  .social-container {
+    min-height: auto;
+    padding-bottom: 30px;
+  }
+  .floating-planet {
+    width: 150px;
+    height: 150px;
+    right: -30px;
+    top: -20px;
+    opacity: 0.4;
+  }
+  .submit-button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+  .form-container h2, .carousel-slide h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-page {
+    padding: 40px 4% 30px 4%;
+  }
+  .contact-main-title {
+    font-size: 1.8rem;
+  }
+  .form-container, .social-container {
+    padding: 20px 15px;
   }
 }

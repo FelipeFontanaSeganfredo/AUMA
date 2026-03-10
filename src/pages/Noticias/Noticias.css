@@ -155,11 +155,32 @@
 }
 
 /* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .noticias-menores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .noticias-page {
+    padding: 20px 6%;
+  }
   .destaque-section {
     flex-direction: column;
+    gap: 15px;
   }
   .destaque-principal, .destaque-secundario {
-    height: 350px;
+    height: 300px;
+    flex: none;
+  }
+  .destaque-principal h2 {
+    font-size: 1.5rem;
+  }
+  .noticia-overlay {
+    padding: 20px 15px;
+  }
+  .noticias-menores {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

@@ -100,14 +100,19 @@
 }
 
 @media (max-width: 768px) {
+  .site-footer {
+    padding: 3em 6% 2em 6%;
+  }
   .footer-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 2.5em;
+    padding: 1.5em 0;
   }
   .footer-col {
     width: 100%;
-    margin-bottom: 1.5em;
+    padding: 0;
   }
   .contact-list a,
   .footer-links a {
@@ -115,5 +120,6 @@
   }
   .social-icons {
     justify-content: center;
+    margin-top: 1.5em;
   }
 }

@@ -324,24 +324,46 @@
 }
 
 @media (max-width: 768px) {
+  .qs-corpo {
+    padding: 40px 15px;
+  }
+  .qs-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  .qs-timeline-container {
+    padding: 20px 0;
+  }
   .qs-timeline-line {
-    left: 20px;
+    left: 15px;
   }
   .qs-timeline-item.left,
   .qs-timeline-item.right {
     width: 100%;
-    left: 0;
-    padding-left: 50px;
-    padding-right: 0;
+    left: 0 !important;
+    padding-left: 45px !important;
+    padding-right: 0 !important;
+    margin-bottom: 40px;
   }
   .qs-timeline-item.left .qs-timeline-node,
   .qs-timeline-item.right .qs-timeline-node {
-    left: 12px;
-    right: auto;
+    left: 7px !important;
+    right: auto !important;
+    top: 25px;
   }
-  .qs-timeline-content { padding: 20px; }
-  .timeline-img-small { max-width: 120px; }
-  .qs-content-block { padding: 30px 25px; }
-  .qs-title { font-size: 2.2rem; margin-bottom: 30px; }
-  .qs-orbit { display: none; } /* Oculta as órbitas longas no mobile para não gerar scroll horizontal indesejado por excesso */
+  .qs-timeline-content {
+    padding: 20px;
+  }
+  .qs-timeline-content h3 {
+    font-size: 1.2rem;
+  }
+  .timeline-img-small {
+    max-width: 100px;
+  }
+  .qs-content-block {
+    padding: 30px 20px;
+  }
+  .qs-orbit {
+    display: none;
+  }
 }
