@@ -1,0 +1,130 @@
+.partners-section {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partners-title {
+  text-align: center;
+  font-family: 'Nova Square', sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.partners-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #6666FF;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.partner-item {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.partner-img-box {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  padding: 10px;
+  overflow: hidden;
+  border: 2px solid #ECECEC;
+  transition: border-color 0.3s ease;
+}
+
+.partner-item:hover .partner-img-box {
+  border-color: #6666FF;
+}
+
+.partner-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.partner-name {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.2rem;
+  color: #444;
+  margin: 0;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, #6666FF, #4444cc);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(102,102,255,0.3);
+}
+
+.cta-banner p {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.cta-button {
+  background-color: white;
+  color: #6666FF;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 900px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}

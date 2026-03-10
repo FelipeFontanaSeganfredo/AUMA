@@ -1,0 +1,119 @@
+.site-footer {
+  background-color: #ECECEC;
+  color: #333;
+  padding: 2em 4%;
+  margin-top: auto;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  padding: 2em 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 160px;
+  padding: 0 15px;
+}
+
+.footer-col h3 {
+  color: #333;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-list,
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li,
+.footer-links li {
+  margin-bottom: 0.5em;
+}
+
+.contact-list a,
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.contact-list a:hover,
+.footer-links a:hover {
+  color: #6666FF;
+}
+
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  fill: #333;
+  flex-shrink: 0;
+}
+
+.social-divider {
+  border: 0;
+  border-top: 1px solid #bbb;
+  margin: 0.8em 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 1em;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  fill: #333;
+  transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  fill: #6666FF;
+  transform: scale(1.15);
+}
+
+.institution-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageIF {
+  max-width: 150px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+  .contact-list a,
+  .footer-links a {
+    justify-content: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}

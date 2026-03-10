@@ -1,0 +1,116 @@
+.quem-somos-page {
+  padding: 0 0 60px 0;
+}
+
+.qs-corpo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.qs-title {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+}
+.qs-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #6666FF;
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+.qs-illustration {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.qs-illustration.reverse {
+  flex-direction: row-reverse;
+}
+.qs-illustration p {
+  flex: 1;
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+.qs-illustration img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.qs-content-block {
+  background: linear-gradient(135deg, #f0f4ff, #e8edff);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin-bottom: 48px;
+  border-left: 6px solid #6666FF;
+}
+.qs-content-block h2 {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  color: #6666FF;
+}
+.qs-content-block p {
+  font-family: 'Nova Square', sans-serif;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.05rem;
+}
+
+.qs-values-section {
+  margin-top: 32px;
+}
+
+.qs-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #6666FF;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 36px rgba(102,102,255,0.15);
+}
+.value-card img {
+  width: 64px;
+  height: auto;
+  margin-bottom: 16px;
+}
+.value-card p {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .qs-illustration, .qs-illustration.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .qs-illustration img { width: 150px; }
+  .qs-content-block { padding: 24px 20px; }
+}

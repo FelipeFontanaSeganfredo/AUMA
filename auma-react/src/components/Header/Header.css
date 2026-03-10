@@ -1,0 +1,228 @@
+.site-header {
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #E0E0E0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 20px 10px;
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+.logo {
+  padding: 10px 0 10px 15%;
+}
+.logo img {
+  width: auto;
+  height: 60px;
+  display: block;
+  transition: transform 0.2s ease;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Desktop NAV */
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0;
+  margin: 0;
+  padding-right: 24px;
+}
+.desktop-nav ul li a,
+.desktop-nav ul li a:visited {
+  font-family: 'Nova Square', sans-serif;
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+.desktop-nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary, #6666FF);
+  transition: width 0.3s ease;
+}
+.desktop-nav ul li a:hover::after,
+.desktop-nav ul li a.active-link::after {
+  width: 100%;
+}
+.desktop-nav ul li a:hover,
+.desktop-nav ul li a.active-link {
+  color: var(--color-primary, #6666FF);
+}
+
+/* Botão DOAR */
+.doar-button {
+  background-color: #6666FF;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.doar-button:hover {
+  background-color: #4444cc;
+  transform: translateY(-2px);
+}
+.doar-button::after { display: none !important; }
+
+/* User menu */
+.user-menu-container {
+  position: relative;
+  display: inline-block;
+}
+.user-btn {
+  background: transparent;
+  border: 2px solid #6666FF;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Nova Square', sans-serif;
+  transition: all 0.2s ease;
+}
+.user-btn:hover {
+  background: #6666FF;
+  color: white;
+}
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: white;
+  min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 200;
+  animation: fadeIn 0.15s ease;
+}
+.dropdown-content a,
+.dropdown-content button {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'Nova Square', sans-serif;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+  background: #f5f5f5;
+  color: #6666FF;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile hamburger */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0 20px;
+  color: #333;
+}
+
+/* Sidebar mobile */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: #222;
+  color: white;
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.nav-menu.open {
+  left: 0;
+}
+.close-menu {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nav-menu ul li a,
+.nav-menu ul li .doar-button-mobile,
+.nav-menu ul li .logout-mobile {
+  display: block;
+  color: white;
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+.nav-menu ul li a:hover {
+  color: #6666FF;
+}
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .menu-toggle { display: block; }
+  .logo { padding-left: 0; }
+}

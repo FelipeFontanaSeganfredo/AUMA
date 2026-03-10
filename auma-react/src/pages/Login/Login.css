@@ -1,0 +1,120 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 40px 5%;
+}
+
+.login-content {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-logo {
+  width: 70px;
+  height: 70px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.user-logo img {
+  width: 35px;
+  height: auto;
+}
+
+.login-title h1 {
+  font-family: 'Nova Square', sans-serif;
+  color: #333;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form label {
+  font-family: 'Nova Square', sans-serif;
+  color: #555;
+  font-weight: bold;
+}
+
+.login-form input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Nova Square', sans-serif;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #6666FF;
+}
+
+.login-form .submit-button {
+  background: #6666FF;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Nova Square', sans-serif;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.login-form .submit-button:hover:not(:disabled) {
+  background: #4444cc;
+}
+
+.login-form .submit-button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.forgot-password {
+  color: #6666FF;
+  font-family: 'Nova Square', sans-serif;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.create-account {
+  margin-top: 15px;
+  font-family: 'Nova Square', sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.create-account a {
+  color: #6666FF;
+  font-weight: bold;
+  text-decoration: none;
+}

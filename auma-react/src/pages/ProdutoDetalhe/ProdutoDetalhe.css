@@ -1,0 +1,126 @@
+.produto-detalhe-page {
+  padding: 40px 5%;
+}
+
+.pd-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pd-grid {
+  display: flex;
+  gap: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.pd-image-section {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.pd-image-section img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.pd-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-category {
+  display: inline-block;
+  background: #ececec;
+  color: #666;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+.pd-title {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pd-meta {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #6666FF;
+  margin-bottom: 25px;
+}
+
+.pd-meta p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.pd-description {
+  margin-bottom: 30px;
+}
+
+.pd-description h3 {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.2rem;
+  color: #6666FF;
+  margin-bottom: 10px;
+}
+
+.pd-description p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.pd-action {
+  margin-top: auto;
+}
+
+.pd-buy-btn {
+  width: 100%;
+  background: #25D366; /* WhatsApp color */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  font-family: 'Nova Square', sans-serif;
+}
+
+.pd-buy-btn:hover {
+  background: #1ebc5a;
+  transform: translateY(-2px);
+}
+
+.pd-disclaimer {
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .pd-grid {
+    flex-direction: column;
+    padding: 20px;
+  }
+}

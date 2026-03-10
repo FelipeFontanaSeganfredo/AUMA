@@ -1,0 +1,80 @@
+.doacoes-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 40px 5%;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+.doacoes-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+  gap: 50px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding: 50px;
+}
+
+.doacoes-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.doacoes-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.doacoes-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.doacoes-right p {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.doe-button {
+  background-color: #6666FF;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Nova Square', sans-serif;
+  box-shadow: 0 8px 20px rgba(102,102,255,0.3);
+}
+
+.doe-button:hover {
+  background-color: #4444cc;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(102,102,255,0.4);
+}
+
+@media (max-width: 768px) {
+  .doacoes-content {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .doacoes-right {
+    align-items: center;
+  }
+}

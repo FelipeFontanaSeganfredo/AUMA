@@ -1,0 +1,276 @@
+.contact-page {
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden; /* Para não vazar o planeta lateral */
+}
+
+/* ================== THEME ESPACIAL CLARO (BACKGROUND) ================== */
+.contact-space-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-planet {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 350px;
+  height: 350px;
+  opacity: 0.6;
+  animation: floatPlanet 12s ease-in-out infinite alternate;
+}
+
+.light-star {
+  position: absolute;
+  animation: twinkleLightStar 4s infinite alternate ease-in-out;
+}
+
+.star-pos-1 { top: 15%; left: 8%; width: 24px; animation-delay: 0s; }
+.star-pos-2 { top: 60%; right: 10%; width: 16px; animation-delay: 1.5s; opacity: 0.8; }
+.star-pos-3 { bottom: 10%; left: 15%; width: 32px; animation-delay: 0.7s; opacity: 0.5; }
+
+@keyframes floatPlanet {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(30px) rotate(5deg); }
+}
+
+@keyframes twinkleLightStar {
+  0% { transform: scale(0.8); opacity: 0.3; }
+  100% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 5px rgba(102,102,255,0.3));}
+}
+
+/* ================== CABEÇALHO DO CONTATO ================== */
+.contact-header-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2; /* Fica acima das estrelas */
+}
+
+.contact-main-title {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 3.5rem;
+  color: #1d1d1f;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.contact-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.2rem;
+  color: #86868b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  position: relative;
+  z-index: 2; /* Acima do BG e planeta */
+}
+
+.form-container {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 24px; /* Bordas mais arredondadas Apple-like */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02); /* Soft premium shadow */
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.form-container h2 {
+  font-family: 'Nova Square', sans-serif;
+  color: #1d1d1f;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: -10px;
+}
+
+.form-container input,
+.form-container textarea {
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #f9f9fb;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #6666FF;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(102, 102, 255, 0.1);
+}
+
+.submit-button {
+  background: #6666FF;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 30px; /* Pill shape */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-top: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.submit-button:hover {
+  background: #5555dd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102,102,255,0.25);
+}
+.success-msg {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.social-container {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px; /* Igualar tamanho aproximado ao form */
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 100%;
+}
+
+.carousel-slide {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-slide h2 {
+  font-family: 'Nova Square', sans-serif;
+  color: #1d1d1f;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.social-list, .contact-info-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.social-list a, .contact-info-list a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #1d1d1f;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: all 0.2s ease;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.social-list a:hover, .contact-info-list a:hover {
+  color: #6666FF;
+  background: #f9f9fb;
+  transform: translateX(5px);
+}
+
+.quote-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.quote-content p {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.quote-content img {
+  max-width: 85%;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #6666FF;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
